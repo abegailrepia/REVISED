@@ -1,0 +1,202 @@
+\chapter{Methodology}
+\begin{refsection}
+This chapter described the step by step processes used in analyzing, modeling, and simulating the flow of students in the Registrars’ Office of Camarines Sur Polytechnic Colleges (CSPC) using both discrete event simulation and continuous simulation models. The study strives to determine the best approaches to reduced traffic, wait times, and service delayed time based on modern simulation techniques and performance evaluation methodologies. The methodology combines a well-organized exploratory research design, careful data collection, appropriate simulation instruments, and a depiction of the underlying reasoning of the study.
+
+\section{Research Design}
+This study adopts a constructive research design to optimize student flow in the CSPC Registrar’s Office by developing and evaluating simulation-based solutions. The research focuses on constructing two simulation models, Discrete-Event Simulation (DES) and Continuous Simulation (CS), that served as tools for addressing inefficiencies in student service flow. These models was built using real-world operational data such as student arrival rates, service duration, and queue lengths. The process involves analyzing the current workflows, identifying bottlenecks, and developing simulation-based prototypes to test and improve system performance. A 3D prototype was constructed to visualize and compare both simulation models under the same conditions. Performance metrics such as wait time, queue length, server utilization, and throughput are used to evaluate the effectiveness of each model. The goal was to construct a functional, decision-support tool that enhanced service delivery and informed process improvements in the Registrar’s Office.
+
+\section{Theorems, Algorithms, and Mathematical Models}
+This chapter was describe the instrument, procedure/process, and
+statistical test that are relevant to the research.
+
+\section{Discrete-Event and Continuous Simulation Flow}
+A Simulation Workflow Model was a structured framework used to optimize system processes through simulation techniques. In this study, it supported both the Discrete-Event Simulation (DES) and Continuous Simulation (CS) methods. The model operates by receiving real-world input data (such as student arrival rates and service duration), selecting the appropriate simulation type, and generating performance metrics \cite{chaka2020modeling}. Each component of the flow from input handled to output visualization—designed to mimicked real-world behavior, where simulation nodes represent decision points, pathways reflect student movement or system changes, and final outputs deliver analytical insights for operational improvement. This section presents the structured workflow presented in \ref{fig:firstFig}, the Prototype Flowchart. The process demonstrates a sequence of stages that guide the system from data input to decision-making, as described below:
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/prototype_flowchart.png}
+    \caption{Prototype Flowchart}
+    \label{fig:firstFig}
+\end{figure}
+
+\textit{Start}. The process began at the Start node, which served as the entry point of the prototype system. At this stage, the primary objective was to initiate the workflow and define the parameters of the simulation studied. The starting point ensured that the process followed a logical sequence and allowed the model to progress smoothly from data input to final decision-making.
+
+\textit{Input Data}. After the start, the process continued with the input of real-world data. This included important details such as student arrival patterns, the number of service counters in operation, and the duration of services provided. These inputs were collected directly from Registrar’s Office operations to ensure that the model reflected actual conditions.
+
+\textit{Simulation Model}. Following data input, the system reached a decision point where the type of simulation model was selected. The user must choose between Discrete-Event Simulation (DES) and Continuous Simulation (CS), depending on the level of analysis required.
+
+\textit{DES}. Choosing DES meant the model would simulate students as individual entities. Each arrival, queuing experience, and service transaction is represented in detail, allowing the model to mirror real-world operations closely. This form of simulation highlights the sequence of actions and the weighted experiences of students.
+
+\textit{CS}. Selecting CS shifted the focus from individual behavior to overall system flow. In this approach, the Registrar’s Office is modeled as a continuous process, emphasizing service rates, congestion patterns, and aggregate performance over time.
+
+\textit{Generate Results}. Once the simulation is completed, the system generates a set of performance metrics that describe the efficiency of the Registrar’s Office. This included average waited time, queue length, throughput, and service utilization.
+
+\textit{Render 3D Visualization}. The numerical results of the simulation were then transformed into a 3D prototype visualization. This representation maps out the Registrar’s Office layout and illustrates student flow, queue formations, and areas where congestion typically occurred.
+
+\textit{Output Decision Panel}. The final stage of the prototype flowchart leads to the Output Decision Panel, where the results of the simulation are organized and presented. This panel served as the point where performance metrics, such as waiting time, queue length, throughput, and service utilization, are interpreted and analyzed. The purpose is to consolidate findings from either the Discrete-Event Simulation (DES) or Continuous Simulation (CS) models.
+
+\textit{End}. The process concludes at the End node, where the outputs of the simulation are summarized and presented. At this stage, the comparative results from both DES and CS are highlighted, providing a balanced view of micro-level and macro-level system performance.
+
+\ref{fig:firstFig} illustrated the structured process of student flow optimization, start with the input of real-world data. It proceeds with the selection of a simulation model, either Discrete Event Simulation (DES) for modeling individual events or Continuous Simulation (CS) for representing flow trends. The chosen model then generates performance metrics, followed by 3D visualization of student movement and countered interactions, leading to the output decision panel for performance comparisons and insights.
+
+\subsection{Materials and Statistical Tools}
+This chapter was describe the instrument, procedure/process, and statistical test that are relevant to the research.
+
+\subsection{Instrument}
+The primary instruments used in this study included observation checklists and data recording sheets designed to capture essential real-world data such as student arrival times, queue lengths, service start and end times, and the number of active service counters. These instruments ensured systematic and accurate collection of operational details needed for simulation input. For simulation development, software tools such as Arena, AnyLogic, or Python libraries like SimPy are employed to model the student flow using Discrete Event and Continuous Simulation techniques. Additionally, 3D visualization was also implemented using React Three Fiber (R3F). It was a React renderer for Three.js, a popular JavaScript library for creating and displaying 3D graphics in a web browser using WebGL. This used to create dynamic representations of the Registrar’s Office layout and student movement patterns.
+
+\subsection{Data Set}
+The dataset compiled for this studied included the followed features:
+
+\begin{itemize}
+    \item \textbf{Date:}The specific day on which data were collected, representing the actual schedule of student transactions at the Registrar’s Office.
+    \item \textbf{Purpose:} The type of service requested by the student, such as Transcript of Records (TOR), Diploma, Certificate of Authentication and Verification (CAV), or other academic documents.
+    \item \textbf{Student Arrival Time:} Timestamp indicating when each student arrived at the Registrar’s Office.
+    \item \textbf{Service Start and End Time:} The time a student began and finished their transaction at a counter.
+    \item \textbf{Service Duration:} The time taken to served each student (calculated as ended time minus started time).
+    \item \textbf{Queue Length:} Number of students in line at different time intervals.
+    \item \textbf{Number of Active Counters:} The number of service windows opened during different hours of the day.
+    \item \textbf{Daily Arrival Rate:} The total number of students arrived within specific time blocks (e.g., hourly).
+    \item \textbf{Office Layout Dimensions:} Physical measurements of the office used for 3D visualization (e.g., counter locations, waited area size). 
+\end{itemize}
+
+This data collected through on-site observations over multiple days, with additional reference to system logs where available. It served as input for both the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models and was also used to validate the simulation outputs against actual performance metrics. \ref{tbl:sampleTbl1} the Sample Dataset, outlined the key variables and records gathered from the Registrar’s Office.
+
+
+\begin{table}[!h]
+\centering
+\caption{Sample Data Set (Registrar’s Office Student Flow)}
+\label{tbl:sampleTbl1}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
+\hline
+\textbf{Date} & \textbf{Student ID} & \textbf{Arrival Time} & 
+\textbf{Service Start} & \textbf{Service End} & 
+\textbf{Service Duration(min)} & \textbf{Purpose} & \textbf{Queue Length} & \textbf{Counter ID}\\ \hline
+04/10/25 & S1  & 6:05 am & 7:55 am & 7:58 am & 3 & TOR            & 18 & C2 \\
+04/10/25 & S2  & 6:12 am & 7:58 am & 8:01 am & 3 & Diploma        & 17 & C1 \\
+04/10/25 & S3  & 6:20 am & 8:01 am & 8:04 am & 3 & CAV            & 16 & C2 \\
+04/10/25 & S4  & 6:27 am & 8:04 am & 8:07 am & 3 & Authentication & 15 & C2 \\
+04/10/25 & S5  & 6:35 am & 8:07 am & 8:10 am & 3 & ID             & 14 & C4 \\
+04/10/25 & S6  & 6:43 am & 8:10 am & 8:13 am & 3 & TOR            & 13 & C2 \\
+04/10/25 & S7  & 6:50 am & 8:13 am & 8:16 am & 3 & COE            & 12 & C3 \\
+04/10/25 & S8  & 6:58 am & 8:16 am & 8:19 am & 3 & Authentication & 11 & C1 \\
+04/10/25 & S9  & 7:06 am & 8:19 am & 8:22 am & 3 & Diploma        & 10 & C2 \\
+04/10/25 & S10 & 7:12 am & 8:22 am & 8:25 am & 3 & ID             & 9  & C4 \\
+04/10/25 & S11 & 7:20 am & 8:25 am & 8:28 am & 3 & Authentication & 8  & C2 \\
+04/10/25 & S12 & 7:29 am & 8:28 am & 8:31 am & 3 & COE            & 7  & C3 \\
+04/10/25 & S13 & 7:37 am & 8:31 am & 8:34 am & 3 & TOR            & 6  & C1 \\
+04/10/25 & S14 & 7:45 am & 8:34 am & 8:37 am & 3 & Diploma        & 5  & C1 \\
+04/10/25 & S15 & 7:52 am & 8:37 am & 8:40 am & 3 & CAV            & 4  & C2 \\
+04/10/25 & S16 & 8:00 am & 8:40 am & 8:43 am & 3 & ID             & 3  & C4 \\
+04/10/25 & S17 & 8:09 am & 8:43 am & 8:46 am & 3 & Authentication & 2  & C2 \\
+04/10/25& S18 & 8:17 am & 8:46 am & 8:49 am & 3 & Diploma         & 1  & C1 \\
+04/10/25 & S19 & 8:24 am & 8:49 am & 8:52 am & 3 & COE            & 0  & C3 \\
+04/10/25 & S20 & 8:31 am & 8:52 am & 8:55 am & 3 & TOR            & 0  & C2 \\
+
+-- & -- & -- & -- & -- & -- & -- & -- & -- \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\ref{tbl:sampleTbl1} presents the sample dataset collected from the Registrar’s Office, which served as the primary input for the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models. The data were gathered through manual observation conducted by the researchers during peak service hours to record the actual sequence of student arrivals, queue lengths, service start and end times, and transaction types. This hands-on data collection ensured that the dataset accurately reflected the real operational flow of the office. The observed data represent the transactions of twenty (20) students recorded on April 10, 2025, across multiple service counters within the Registrar’s Office. Each row corresponds to an individual student transaction and contains key operational variables that describe the flow of students from arrival to service completion. The Date column indicates when the observation took place, ensuring time-based consistency in data collection. The Student ID (S1-S20) uniquely identifies each student, while the Arrival Time records when the student entered the queue. The Service Start and Service End columns specify the exact times when the transaction began and ended, which were used to calculate the Service Duration—consistently measured at three (3) minutes for all transactions, reflecting a uniform service process at the counter. The Purpose column categorizes the type of service availed, including Transcript of Records (TOR), Diploma, Certificate of Authentication and Verification (CAV) or, Authentication, Certificate of Enrollment (COE) and Identification Card (ID), which helps distinguish the variation in service demand. The Queue Length represents the number of students waiting before each service began, starting from eighteen (18) students at the beginning of operations and gradually decreasing to zero (0) as transactions were completed, indicating an orderly and efficient flow of service. The Counter ID indicates the specific service window where each transaction occurred, such as C1, C2, C3, and C4—the CSPC Registrar has four counters, each with an assigned purpose serving the students' needs—corresponding to different operational sections of the Registrar’s Office. For instance, C1 may handle diploma or record requests, C2 is designated for releasing documents, C3 manages certificate of enrollment verification, and C4 assists in identification and authentication processes. These counter assignments reflect their respective service functions, and each counter plays an equally vital role in maintaining efficient office operations. Together, the counters contribute to reducing queue lengths, minimizing waiting times, and ensuring balanced workflow distribution. This dataset—collected through direct manual observation—provides a detailed and realistic representation of student movement and service flow, capturing essential parameters such as arrival patterns, waiting times, and queue dynamics, which serve as the foundation for simulation modeling and performance evaluation in optimizing student service delivery within the Registrar’s Office.
+
+
+\subsection{Evaluation Methods}
+
+\textit{Average Waiting Time (AWT)}
+represents the mean time each student spends waiting before being served. It is calculated by subtracting the arrival time (T ai) from the service start time (T si) for each student, summing the differences for all students, and dividing by the total number of students (n). This metric helps identify how long students typically queue and is critical for assessing service efficiency.
+
+The formula is:
+
+\begin{equation}
+    \mathrm{AWT}=\frac{\sum_{i=1}^{n}\left(T_{s i}-T_{a i}\right)}{n}
+\end{equation}
+
+\textbf{Where:}
+\begin{itemize}
+    \item T si =  Service start time of student i
+    \item T ai = Arrival time of student i
+    \item n = Total number of students
+\end{itemize}
+
+\textit{Average Service Time (AST)}
+measured how long, on average, a student was served at the counter. It was obtained by subtracting the service started time (T si) from the service ended time (T ei) for each transaction, then averaging the results across all students. This value indicates how quickly staff could complete each student’s transaction, which directly impacts throughput and service quality.
+
+The formula is:
+
+\begin{equation}
+    \mathrm{AST}=\frac{\sum_{i=1}^{n}\left(T_{e i}-T_{s i}\right)}{n}
+\end{equation}
+
+\textbf{Where:}
+
+\begin{itemize}
+    \item T ei = Service end time
+    \item T si = Service start time
+    \item n = Total number of student
+\end{itemize}
+
+\textit{Server Utilization (U)}
+was a ratio that showed how effectively the available service counters had been used. It is calculated by dividing the total time spent serving students by the product of the total available service time and the number of counters. A high utilization rate suggested efficient use of resources, while a low rate may indicate underutilized or overstaffed resources.
+
+The formula is:
+
+\begin{equation}
+    U=\frac{\text { Total Service Time }}{\text { Total Available Time } \times \text { Number of Counters }}
+\end{equation}
+
+\textit{Queue Length (QL) Average}
+gave the average number of students waiting in line during a specific timed period. It is calculated by summing the queue lengths recorded at regular intervals (Qi) and dividing by the number of intervals (t). This metric reflected congestion and could help identify peak hours and bottlenecks.
+
+The formula is:
+
+\begin{equation}
+    \text { Average QL }=\frac{\sum_{i=1}^{t} Q_{i}}{t}
+\end{equation}
+
+\begin{itemize}
+    \item Qi = Queue length at time interval i
+    \item t = Total number of time intervals observed
+\end{itemize}
+
+\textit{Throughput (TP)}
+referred to the number of students served within a given period. It was founded by dividing the total number of students processed by the total simulation time. This was a key performance indicator that showed the capacity of the system and how many students could have been effectively served over time.
+
+The formula is:
+
+\begin{equation}
+    T P=\frac{\text { Number of Students Served }}{\text { Simulation Time }}
+\end{equation}
+
+\subsection{Conceptual Framework}
+This section present Conceptual Framework is based on the Input–Process–Output (IPO) model, as shown in \ref{fig:secondFig} used to create a simulation-based system designed to enhance student service flow in the Registrar’s Office. The framework combines Discrete-Event Simulation (DES) and Continuous Simulation (CS) in a 3D interactive environment to deliver a thorough assessment of system performance.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=12 cm\linewidth]{figures/CONCEPTUAL FRAMEWORK.drawio (1).png}
+    \caption{Conceptual Framework}
+    \label{fig:secondFig}
+\end{figure}
+
+\textit{Input}. The simulation began with the collection of real-world operational data from the Registrar’s Office, including student arrival times, service times per transaction, and the number of available service counters. To capture dynamic variations in the system, scenario-based parameters were also incorporated, such as peak hours, student volume, and staffing levels. These inputs served as the fundamental datasets for modeling both the baseline and alternative configurations of the Registrar’s Office. 
+
+\textit{Process}. The processing stage took place within a 3D Interactive Simulation Environment, which functions as the central platform for testing and visualizing scenarios. The simulation integrates two modeling approaches: 
+
+\textit{Discrete-Event Simulation (DES)}. This model represents the system through a sequence of discrete events, such as student arrivals, waiting, and service completions. It employed mathematical modeling to monitor variables such as queued length, average waited time, system utilization, and throughput. DES provided micro-level insights into how individual transactions affect overall system performance.
+
+\textit{Continuous Simulation (CS)}. In contrast, CS models the Registrar’s Office as a continuous flow of students. It emphasizes the overall rate of movement and system behavior over time, focusing on macro-level trends rather than individual interactions. This allowed researchers to analyze long-term system dynamics and aggregate patterns.
+
+\textit{3D Environment Incorporates}.  A scenario simulation panel that allows users to manipulate variables in real time, enabling dynamic testing of service configurations and operational adjustments.
+
+\textit{Output}. The outputs of the system included both quantitative and visual performance measurements. Key Performance Indicators (KPIs) consisted of average waited time, queue length, service utilization, throughput, and overall system efficiency. Beyond numerical data, the framework generates visual outputs, such as graphs of queue trends over time and direct comparisons between DES and CS. These outputs provided actionable insights for identified inefficiencies, tested potential interventions, and enhanced decision-making.
+
+\textit{Feedback}. An integral component of the framework was its feedback loop. Insights obtained from simulation results cycled backend into the input stage, enabling iterative refinement of the system. For example, if results revealed high congestion during peak hours, administrators could adjust staffing levels or increase service counters and rerun the simulation. This continuous feedback mechanism ensured adaptability and fostered evidence-based decision-making in service operations. Systematically combining real-world data, scenario-based modeling, dual simulation techniques, measurable outputs, and iterative feedback, this framework provided a robust decision-support tool for student service management. It enhanced the Registrar’s ability to anticipate operational bottlenecks and allocate resources effectively and improved overall service delivery efficiency \cite{Nickson2021Translational}.  
+ 
+
+%=======================================================%
+%%%%% Do not delete this part %%%%%%
+\clearpage
+
+\printbibliography[heading=subbibintoc, title={\texorpdfstring{\centering}{} Notes}]
+\end{refsection}

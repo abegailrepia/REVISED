@@ -1,0 +1,2399 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global/global}
+    \entry{aye2020student}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=fc2dc307df54593256f8baeb0f34d405}{%
+           family={Aye},
+           familyi={A\bibinitperiod},
+           given={Soe\bibnamedelima Moe},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=666a2653ac1bf79dea7419fd097357e8}{%
+           family={Thant},
+           familyi={T\bibinitperiod},
+           given={Aye\bibnamedelima Aye},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=7005a61081b0be56803ea6806d7bc5c5}{%
+           family={Nwe},
+           familyi={N\bibinitperiod},
+           given={Soe\bibnamedelima Soe},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8817b4c700b108ceb59fc57fa563af6}
+      \strng{fullhash}{182fbd853fefb10ce6e588d0810d715c}
+      \strng{fullhashraw}{182fbd853fefb10ce6e588d0810d715c}
+      \strng{bibnamehash}{182fbd853fefb10ce6e588d0810d715c}
+      \strng{authorbibnamehash}{182fbd853fefb10ce6e588d0810d715c}
+      \strng{authornamehash}{a8817b4c700b108ceb59fc57fa563af6}
+      \strng{authorfullhash}{182fbd853fefb10ce6e588d0810d715c}
+      \strng{authorfullhashraw}{182fbd853fefb10ce6e588d0810d715c}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Scientific Research in Science, Engineering and Technology}
+      \field{number}{3}
+      \field{title}{Student Flow Scheduling System for Student Affairs By Using Queuing Theory}
+      \field{volume}{7}
+      \field{year}{2020}
+      \true{nocite}
+      \field{pages}{583\bibrangedash 591}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.32628/IJSRSET2073126
+      \endverb
+      \verb{urlraw}
+      \verb https://www.academia.edu/44887366/Student_Flow_Scheduling_System_for_Student_Affairs_By_Using_Queuing_Theory
+      \endverb
+      \verb{url}
+      \verb https://www.academia.edu/44887366/Student_Flow_Scheduling_System_for_Student_Affairs_By_Using_Queuing_Theory
+      \endverb
+    \endentry
+    \entry{Biazen2025}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=2f97a08495368aacb48479c8a6996996}{%
+           family={Biazen},
+           familyi={B\bibinitperiod},
+           given={Melkamu\bibnamedelima Ambelu},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=714d71b1d2ccf74144deb6421d876273}{%
+           family={Woldeyohannes},
+           familyi={W\bibinitperiod},
+           given={Abraham\bibnamedelima Debebe},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=5ca7e4ab25090209eb5b9e0e9bfce34f}{%
+           family={Gebeyehu},
+           familyi={G\bibinitperiod},
+           given={Sisay\bibnamedelima Geremew},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific Publishing}%
+      }
+      \strng{namehash}{be91bcebf3027804d350e1bcce01d73b}
+      \strng{fullhash}{8eb1f1bd68211dedd9d89ff4a0e21b45}
+      \strng{fullhashraw}{8eb1f1bd68211dedd9d89ff4a0e21b45}
+      \strng{bibnamehash}{8eb1f1bd68211dedd9d89ff4a0e21b45}
+      \strng{authorbibnamehash}{8eb1f1bd68211dedd9d89ff4a0e21b45}
+      \strng{authornamehash}{be91bcebf3027804d350e1bcce01d73b}
+      \strng{authorfullhash}{8eb1f1bd68211dedd9d89ff4a0e21b45}
+      \strng{authorfullhashraw}{8eb1f1bd68211dedd9d89ff4a0e21b45}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Modeling, Simulation and Scientific Computing}
+      \field{number}{01}
+      \field{title}{Simulation Models Verification and Validation: Recent Development and Challenges: A Review}
+      \field{volume}{16}
+      \field{year}{2025}
+      \true{nocite}
+      \field{pages}{2530001}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1142/S1793962325300018
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1142/S1793962325300018
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1142/S1793962325300018
+      \endverb
+    \endentry
+    \entry{burke2025throughput}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ab18bf86d82959c7e434325fdec3bc9d}{%
+           family={Burke},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Search Networking, TechTarget}%
+      }
+      \strng{namehash}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{fullhash}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{fullhashraw}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{bibnamehash}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{authorbibnamehash}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{authornamehash}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{authorfullhash}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{authorfullhashraw}{ab18bf86d82959c7e434325fdec3bc9d}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.techtarget.com/searchnetworking/definition/throughput}}
+      \field{title}{What is Throughput?}
+      \field{urlday}{24}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \true{nocite}
+    \endentry
+    \entry{chaka2020modeling}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=b0d48093d23ea633e319f8cdaad6f4bb}{%
+           family={Chaka},
+           familyi={C\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6c2dec824617447b8a3a81176c9f62ab}{%
+           family={Mungadzi},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{fullhash}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{fullhashraw}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{bibnamehash}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{authorbibnamehash}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{authornamehash}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{authorfullhash}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{authorfullhashraw}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2020 International Conference on Industrial Engineering and Operations Management}
+      \field{title}{Modeling and Simulation of Student Registration Process by Using ARENA}
+      \field{year}{2020}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://ieomsociety.org/detroit2020/papers/309.pdf
+      \endverb
+      \verb{url}
+      \verb https://ieomsociety.org/detroit2020/papers/309.pdf
+      \endverb
+    \endentry
+    \entry{delarue2021optimizing}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=54c32efbd45d7806478259856b129c9f}{%
+           family={Delarue},
+           familyi={D\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Massachusetts Institute of Technology}%
+      }
+      \strng{namehash}{54c32efbd45d7806478259856b129c9f}
+      \strng{fullhash}{54c32efbd45d7806478259856b129c9f}
+      \strng{fullhashraw}{54c32efbd45d7806478259856b129c9f}
+      \strng{bibnamehash}{54c32efbd45d7806478259856b129c9f}
+      \strng{authorbibnamehash}{54c32efbd45d7806478259856b129c9f}
+      \strng{authornamehash}{54c32efbd45d7806478259856b129c9f}
+      \strng{authorfullhash}{54c32efbd45d7806478259856b129c9f}
+      \strng{authorfullhashraw}{54c32efbd45d7806478259856b129c9f}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Optimizing School Operations}
+      \field{type}{phdthesis}
+      \field{year}{2021}
+      \true{nocite}
+    \endentry
+    \entry{do2022metamodel}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=edcdfd7f994e3bef772b5ebc77b62a85}{%
+           family={Amaral},
+           familyi={A\bibinitperiod},
+           given={João\bibnamedelimb Victor\bibnamedelima Soares},
+           giveni={J\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim S\bibinitperiod},
+           prefix={do},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=6902fda739d089eb45664492546038a6}{%
+           family={Montevechi},
+           familyi={M\bibinitperiod},
+           given={José\bibnamedelimb Arnaldo\bibnamedelima Barra},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=138249ead925b81f3fc8ebfbca033511}{%
+           family={Carvalho\bibnamedelima Miranda},
+           familyi={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Rafael},
+           giveni={R\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=7166ad264c70df30610165b837311496}{%
+           family={Sousa\bibnamedelima Junior},
+           familyi={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Wilson\bibnamedelima Trigueiro},
+           giveni={W\bibinitperiod\bibinitdelim T\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5816f3230aa4d5bb6ac4ed73a3a64141}
+      \strng{fullhash}{940211cad0df0a73bd6bb4b0e7cab595}
+      \strng{fullhashraw}{940211cad0df0a73bd6bb4b0e7cab595}
+      \strng{bibnamehash}{940211cad0df0a73bd6bb4b0e7cab595}
+      \strng{authorbibnamehash}{940211cad0df0a73bd6bb4b0e7cab595}
+      \strng{authornamehash}{5816f3230aa4d5bb6ac4ed73a3a64141}
+      \strng{authorfullhash}{940211cad0df0a73bd6bb4b0e7cab595}
+      \strng{authorfullhashraw}{940211cad0df0a73bd6bb4b0e7cab595}
+      \field{sortinit}{d}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Simulation Modelling Practice and Theory}
+      \field{title}{Metamodel-based simulation optimization: A systematic literature review}
+      \field{volume}{114}
+      \field{year}{2022}
+      \true{nocite}
+      \field{pages}{102403}
+      \range{pages}{1}
+    \endentry
+    \entry{downey2022optimization}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ce09b77b3f20d09787c09f6d1caf2767}{%
+           family={Downey},
+           familyi={D\bibinitperiod},
+           given={Lucas},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{fullhash}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{fullhashraw}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{bibnamehash}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{authorbibnamehash}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{authornamehash}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{authorfullhash}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{authorfullhashraw}{ce09b77b3f20d09787c09f6d1caf2767}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Optimization: Overview and Examples in Technical Analysis}
+      \field{urlday}{18}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.investopedia.com/terms/o/optimization.asp
+      \endverb
+      \verb{url}
+      \verb https://www.investopedia.com/terms/o/optimization.asp
+      \endverb
+    \endentry
+    \entry{droscher2021approach}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=97a53d623a5e0812ad56625e685ce7a2}{%
+           family={Dröscher},
+           familyi={D\bibinitperiod},
+           given={Marcel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fcc004f01b38f5708de85fbd8ca35719}{%
+           family={Gür},
+           familyi={G\bibinitperiod},
+           given={Alpar},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5e47a372045245640e7bdef340d813ea}{%
+           family={Rehbach},
+           familyi={R\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{f153ab811e1e9601cca94d8f73ba204c}
+      \strng{fullhash}{580f4fa6060333609320e4b043beb56b}
+      \strng{fullhashraw}{580f4fa6060333609320e4b043beb56b}
+      \strng{bibnamehash}{580f4fa6060333609320e4b043beb56b}
+      \strng{authorbibnamehash}{580f4fa6060333609320e4b043beb56b}
+      \strng{authornamehash}{f153ab811e1e9601cca94d8f73ba204c}
+      \strng{authorfullhash}{580f4fa6060333609320e4b043beb56b}
+      \strng{authorfullhashraw}{580f4fa6060333609320e4b043beb56b}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2110.12777}
+      \field{title}{An approach to optimize study programs using Discrete Event Simulation}
+      \field{year}{2021}
+      \true{nocite}
+    \endentry
+    \entry{ElsevierContinuousSimulation2025}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=21abe5a91c2949aba6ef77033a5f98f3}{%
+           family={{Elsevier}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{fullhash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{fullhashraw}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{bibnamehash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{authorbibnamehash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{authornamehash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{authorfullhash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{authorfullhashraw}{21abe5a91c2949aba6ef77033a5f98f3}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Continuous Simulation}
+      \field{urlday}{1}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/topics/computer-science/continuous-simulation
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/topics/computer-science/continuous-simulation
+      \endverb
+    \endentry
+    \entry{falolo2022student}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=92e87770f5623ad64974e2a5edcde898}{%
+           family={Falolo},
+           familyi={F\bibinitperiod},
+           given={Vilma\bibnamedelima M.},
+           giveni={V\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=67699c029ad74b03f905f9e7e679c401}{%
+           family={Capillas},
+           familyi={C\bibinitperiod},
+           given={Kenneth\bibnamedelima T.},
+           giveni={K\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=05214f9fc793c11fa272bea693e24172}{%
+           family={Vergarra},
+           familyi={V\bibinitperiod},
+           given={Nerissa\bibnamedelima A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=a059548401742d577eee9c7c3cd193b4}{%
+           family={Cerbito},
+           familyi={C\bibinitperiod},
+           given={Adonis\bibnamedelima F.},
+           giveni={A\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{b37c7109392e01069953be20d2445008}
+      \strng{fullhash}{b5c9269ecb2b0a232a6c8accf4a16c8e}
+      \strng{fullhashraw}{b5c9269ecb2b0a232a6c8accf4a16c8e}
+      \strng{bibnamehash}{b5c9269ecb2b0a232a6c8accf4a16c8e}
+      \strng{authorbibnamehash}{b5c9269ecb2b0a232a6c8accf4a16c8e}
+      \strng{authornamehash}{b37c7109392e01069953be20d2445008}
+      \strng{authorfullhash}{b5c9269ecb2b0a232a6c8accf4a16c8e}
+      \strng{authorfullhashraw}{b5c9269ecb2b0a232a6c8accf4a16c8e}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Educational Management and Development Studies}
+      \field{number}{1}
+      \field{title}{Student Registration and Records Management Services towards Digitization}
+      \field{volume}{3}
+      \field{year}{2022}
+      \true{nocite}
+      \field{pages}{149\bibrangedash 165}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.53378/352867
+      \endverb
+      \verb{urlraw}
+      \verb https://iiari.org/journal_article/student-registration-and-records-management-services-towards-digitization/
+      \endverb
+      \verb{url}
+      \verb https://iiari.org/journal_article/student-registration-and-records-management-services-towards-digitization/
+      \endverb
+    \endentry
+    \entry{fernandez2021resources}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=db68c3f3fc168d4fd72d91a849dad7ba}{%
+           family={Fernández},
+           familyi={F\bibinitperiod},
+           given={Mauricio\bibnamedelima Becerra},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=dedf7632076480b338cedd540fa3c60a}{%
+           family={Ramírez},
+           familyi={R\bibinitperiod},
+           given={Milton\bibnamedelimb Mauricio\bibnamedelima Herrera},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=2e3e37d20b5d0a0c96dbac262373db41}{%
+           family={Trejo},
+           familyi={T\bibinitperiod},
+           given={Cristian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4c04a2b3159b25317751172da780decb}{%
+           family={Quiroga},
+           familyi={Q\bibinitperiod},
+           given={Olga\bibnamedelimb R\bibnamedelima Romero},
+           giveni={O\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Facultad de Ingenieria}%
+      }
+      \strng{namehash}{45af2743b7cd7401eb80c850171a0b24}
+      \strng{fullhash}{420e4228218811159fca8997269a9b27}
+      \strng{fullhashraw}{420e4228218811159fca8997269a9b27}
+      \strng{bibnamehash}{420e4228218811159fca8997269a9b27}
+      \strng{authorbibnamehash}{420e4228218811159fca8997269a9b27}
+      \strng{authornamehash}{45af2743b7cd7401eb80c850171a0b24}
+      \strng{authorfullhash}{420e4228218811159fca8997269a9b27}
+      \strng{authorfullhashraw}{420e4228218811159fca8997269a9b27}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ingeniería y universidad}
+      \field{title}{Resources allocation in service planning using discrete-event simulation}
+      \field{volume}{25}
+      \field{year}{2021}
+      \true{nocite}
+      \field{pages}{1}
+      \range{pages}{1}
+    \endentry
+    \entry{finch2025des}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c94345454c4faadbbaf902efbc9831fb}{%
+           family={Finch},
+           familyi={F\bibinitperiod},
+           given={Adrian},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{fullhash}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{fullhashraw}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{bibnamehash}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{authorbibnamehash}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{authornamehash}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{authorfullhash}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{authorfullhashraw}{c94345454c4faadbbaf902efbc9831fb}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{What is Discrete Event Simulation?}
+      \field{urlday}{1}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.autodesk.com/solutions/discrete-event-simulation
+      \endverb
+      \verb{url}
+      \verb https://www.autodesk.com/solutions/discrete-event-simulation
+      \endverb
+    \endentry
+    \entry{Fonseca2023}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=534b91b444e677313397c83dd1b5813b}{%
+           family={Casas},
+           familyi={C\bibinitperiod},
+           given={Pau\bibnamedelima Fonseca},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod},
+           prefix={i},
+           prefixi={i\bibinitperiod}}}%
+      }
+      \strng{namehash}{534b91b444e677313397c83dd1b5813b}
+      \strng{fullhash}{534b91b444e677313397c83dd1b5813b}
+      \strng{fullhashraw}{534b91b444e677313397c83dd1b5813b}
+      \strng{bibnamehash}{534b91b444e677313397c83dd1b5813b}
+      \strng{authorbibnamehash}{534b91b444e677313397c83dd1b5813b}
+      \strng{authornamehash}{534b91b444e677313397c83dd1b5813b}
+      \strng{authorfullhash}{534b91b444e677313397c83dd1b5813b}
+      \strng{authorfullhashraw}{534b91b444e677313397c83dd1b5813b}
+      \field{sortinit}{i}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ResearchGate}
+      \field{title}{A Continuous Process for Validation, Verification, and Accreditation of Simulation Models}
+      \field{year}{2023}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.13140/RG.2.2.21756.90244
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/368376956_A_Continuous_Process_for_Validation_Verification_and_Accreditation_of_Simulation_Models
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/368376956_A_Continuous_Process_for_Validation_Verification_and_Accreditation_of_Simulation_Models
+      \endverb
+    \endentry
+    \entry{jamil2023optimizing}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=0eb0d0164dc3615689e9c667391c637a}{%
+           family={Jamil},
+           familyi={J\bibinitperiod},
+           given={Md\bibnamedelima Asfaq},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ef8613554ad80cd79c08927ac0ab8634}{%
+           family={Mobin},
+           familyi={M\bibinitperiod},
+           given={Md\bibnamedelima Ahsanul},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=1e65d4eaaa9746c58d3488b37175c57c}{%
+           family={Bhowmik},
+           familyi={B\bibinitperiod},
+           given={Oyshik},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{8d0008716057f3f2a21ee1e9a0a20eff}
+      \strng{fullhash}{8b4f97fe770c6a810060e7d35b3d9c8d}
+      \strng{fullhashraw}{8b4f97fe770c6a810060e7d35b3d9c8d}
+      \strng{bibnamehash}{8b4f97fe770c6a810060e7d35b3d9c8d}
+      \strng{authorbibnamehash}{8b4f97fe770c6a810060e7d35b3d9c8d}
+      \strng{authornamehash}{8d0008716057f3f2a21ee1e9a0a20eff}
+      \strng{authorfullhash}{8b4f97fe770c6a810060e7d35b3d9c8d}
+      \strng{authorfullhashraw}{8b4f97fe770c6a810060e7d35b3d9c8d}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ResearchGate, December}
+      \field{title}{Optimizing Service Operations in Banking System: A Discrete Event Simulation Modeling Approach}
+      \field{year}{2023}
+      \true{nocite}
+    \endentry
+    \entry{kumar2025modeling}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=a6801289358db63d07e28939adf23457}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Vinay},
+           giveni={V\bibinitperiod}}}%
+        {{hash=31e3df65721cef2502e4e645ad8cad4e}{%
+           family={Upadhye},
+           familyi={U\bibinitperiod},
+           given={Neelesh\bibnamedelima Shankar},
+           giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{8e9de384499959c094538975cadd8c4b}
+      \strng{fullhash}{8e9de384499959c094538975cadd8c4b}
+      \strng{fullhashraw}{8e9de384499959c094538975cadd8c4b}
+      \strng{bibnamehash}{8e9de384499959c094538975cadd8c4b}
+      \strng{authorbibnamehash}{8e9de384499959c094538975cadd8c4b}
+      \strng{authornamehash}{8e9de384499959c094538975cadd8c4b}
+      \strng{authorfullhash}{8e9de384499959c094538975cadd8c4b}
+      \strng{authorfullhashraw}{8e9de384499959c094538975cadd8c4b}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Operational Research}
+      \field{number}{1}
+      \field{title}{Modeling and Simulation of First-come, First-served Queueing System with Impatient Multiclass Customers}
+      \field{volume}{25}
+      \field{year}{2025}
+      \true{nocite}
+      \field{pages}{1\bibrangedash 37}
+      \range{pages}{37}
+      \verb{doi}
+      \verb 10.1007/s12351-024-00877-y
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/a/spr/operea/v25y2025i1d10.1007_s12351-024-00877-y.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/a/spr/operea/v25y2025i1d10.1007_s12351-024-00877-y.html
+      \endverb
+    \endentry
+    \entry{loossens2021comparison}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=e93cfc38ba66b6345c0ffbd4f3959a12}{%
+           family={Loossens},
+           familyi={L\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a62464afee2a784490d87f9a7d3ef86f}{%
+           family={Tuerlinckx},
+           familyi={T\bibinitperiod},
+           given={Francis},
+           giveni={F\bibinitperiod}}}%
+        {{hash=74e37e707d11ab2c6e0186b974ab0ad7}{%
+           family={Verdonck},
+           familyi={V\bibinitperiod},
+           given={Stijn},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{8da004b09a3ebec50da356e0d4c9bfa6}
+      \strng{fullhash}{26d0d7dbb655c542ab544be315460e8f}
+      \strng{fullhashraw}{26d0d7dbb655c542ab544be315460e8f}
+      \strng{bibnamehash}{26d0d7dbb655c542ab544be315460e8f}
+      \strng{authorbibnamehash}{26d0d7dbb655c542ab544be315460e8f}
+      \strng{authornamehash}{8da004b09a3ebec50da356e0d4c9bfa6}
+      \strng{authorfullhash}{26d0d7dbb655c542ab544be315460e8f}
+      \strng{authorfullhashraw}{26d0d7dbb655c542ab544be315460e8f}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific reports}
+      \field{number}{1}
+      \field{title}{A comparison of continuous and discrete time modeling of affective processes in terms of predictive accuracy}
+      \field{volume}{11}
+      \field{year}{2021}
+      \true{nocite}
+      \field{pages}{6218}
+      \range{pages}{1}
+    \endentry
+    \entry{marsudi2020modeling}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=f09b2c835ac5ca20a684aacd227f90bb}{%
+           family={Marsudi},
+           familyi={M\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{fullhash}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{fullhashraw}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{bibnamehash}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{authorbibnamehash}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{authornamehash}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{authorfullhash}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{authorfullhashraw}{f09b2c835ac5ca20a684aacd227f90bb}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 5th NA International Conference on Industrial Engineering and Operations Management Detroit, Michigan, USA, str}
+      \field{title}{Modeling and Simulation of Student Registration Process by Using ARENA}
+      \field{year}{2020}
+      \true{nocite}
+      \field{pages}{1349\bibrangedash 1357}
+      \range{pages}{9}
+    \endentry
+    \entry{metto2022study}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=ba54bf62e603e7f0afd4e091b70a4443}{%
+           family={Metto},
+           familyi={M\bibinitperiod},
+           given={Elizabeth},
+           giveni={E\bibinitperiod}}}%
+        {{hash=14711476c14f6409b1508238a2530dfd}{%
+           family={Mwita},
+           familyi={M\bibinitperiod},
+           given={Miriam},
+           giveni={M\bibinitperiod}}}%
+        {{hash=22c6a585b4401a522c1d84c14d34a742}{%
+           family={Kinuthia},
+           familyi={K\bibinitperiod},
+           given={Benson\bibnamedelima N.},
+           giveni={B\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{84e112d8c3ce438ea0d640bc229a2d81}
+      \strng{fullhash}{62a11f9a78f2dce9a313b5b4e06e2639}
+      \strng{fullhashraw}{62a11f9a78f2dce9a313b5b4e06e2639}
+      \strng{bibnamehash}{62a11f9a78f2dce9a313b5b4e06e2639}
+      \strng{authorbibnamehash}{62a11f9a78f2dce9a313b5b4e06e2639}
+      \strng{authornamehash}{84e112d8c3ce438ea0d640bc229a2d81}
+      \strng{authorfullhash}{62a11f9a78f2dce9a313b5b4e06e2639}
+      \strng{authorfullhashraw}{62a11f9a78f2dce9a313b5b4e06e2639}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{African Journal of Empirical Research}
+      \field{number}{1}
+      \field{title}{A Study of the Management of Student Records in Academic Registrars’ Offices in Kenyan Universities}
+      \field{volume}{3}
+      \field{year}{2022}
+      \true{nocite}
+      \field{pages}{68\bibrangedash 77}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.51867/ajernet3.1.8
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/362513944_A_Study_of_the_Management_of_Student_Records_in_Academic_Registrars'_Offices_in_Kenyan_Universities
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/362513944_A_Study_of_the_Management_of_Student_Records_in_Academic_Registrars'_Offices_in_Kenyan_Universities
+      \endverb
+    \endentry
+    \entry{naciri2024modeling}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=94c8f937ae635546e5a0d23b422c2c46}{%
+           family={Naciri},
+           familyi={N\bibinitperiod},
+           given={Lina},
+           giveni={L\bibinitperiod}}}%
+        {{hash=94e70d25cd2949c4b24213203599ee33}{%
+           family={Gallab},
+           familyi={G\bibinitperiod},
+           given={Maryam},
+           giveni={M\bibinitperiod}}}%
+        {{hash=79c075f3ddd6f59835ef4e9909ca42d4}{%
+           family={Soulhi},
+           familyi={S\bibinitperiod},
+           given={Aziz},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7ba1afd3556e3b586d645306900b853a}{%
+           family={Merzouk},
+           familyi={M\bibinitperiod},
+           given={Safae},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0ae71b2fbf389be10a1926536582769b}{%
+           family={Di\bibnamedelima Nardo},
+           familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{d27bcd9ae2d4b8cac432060252a81ce1}
+      \strng{fullhash}{73f126f05ab5bfad9a2df69cbd980c2c}
+      \strng{fullhashraw}{73f126f05ab5bfad9a2df69cbd980c2c}
+      \strng{bibnamehash}{73f126f05ab5bfad9a2df69cbd980c2c}
+      \strng{authorbibnamehash}{73f126f05ab5bfad9a2df69cbd980c2c}
+      \strng{authornamehash}{d27bcd9ae2d4b8cac432060252a81ce1}
+      \strng{authorfullhash}{73f126f05ab5bfad9a2df69cbd980c2c}
+      \strng{authorfullhashraw}{73f126f05ab5bfad9a2df69cbd980c2c}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Procedia Computer Science}
+      \field{title}{Modeling and simulation: A comparative and systematic statistical review}
+      \field{volume}{232}
+      \field{year}{2024}
+      \true{nocite}
+      \field{pages}{242\bibrangedash 253}
+      \range{pages}{12}
+    \endentry
+    \entry{Nickson2021Translational}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=cbb5df25262eb75027bd860718fdcc74}{%
+           family={Nickson},
+           familyi={N\bibinitperiod},
+           given={Christopher\bibnamedelima Peter},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=00cdfdcad3f342ab6603f7053bc2ee6f}{%
+           family={Petrosoniak},
+           familyi={P\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d4fbd859412c9924c62c6bf0a3899a72}{%
+           family={Barwick},
+           familyi={B\bibinitperiod},
+           given={Stephanie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3df832ad7f3255fc945ab5520bbce4f0}{%
+           family={Brazil},
+           familyi={B\bibinitperiod},
+           given={Victoria},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{df7114bd5966277a55a83f3f5a427a13}
+      \strng{fullhash}{37bdb8bcc258ca57441475db31ba7a0f}
+      \strng{fullhashraw}{37bdb8bcc258ca57441475db31ba7a0f}
+      \strng{bibnamehash}{37bdb8bcc258ca57441475db31ba7a0f}
+      \strng{authorbibnamehash}{37bdb8bcc258ca57441475db31ba7a0f}
+      \strng{authornamehash}{df7114bd5966277a55a83f3f5a427a13}
+      \strng{authorfullhash}{37bdb8bcc258ca57441475db31ba7a0f}
+      \strng{authorfullhashraw}{37bdb8bcc258ca57441475db31ba7a0f}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Simulation}
+      \field{note}{Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)}
+      \field{number}{1}
+      \field{title}{Translational simulation: from description to action}
+      \field{volume}{6}
+      \field{year}{2021}
+      \true{nocite}
+      \field{pages}{6}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s41077-021-00160-6
+      \endverb
+      \verb{urlraw}
+      \verb https://advancesinsimulation.biomedcentral.com/articles/10.1186/s41077-021-00160-6
+      \endverb
+      \verb{url}
+      \verb https://advancesinsimulation.biomedcentral.com/articles/10.1186/s41077-021-00160-6
+      \endverb
+    \endentry
+    \entry{Modelling2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=7d2c94ba4373491ab342503fdcb7dded}{%
+           family={Pablo},
+           familyi={P\bibinitperiod},
+           given={Martinez},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e7552cfe4c60cc8190589dce07a47009}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={Rafiq},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{fullhash}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{fullhashraw}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{bibnamehash}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{authorbibnamehash}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{authornamehash}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{authorfullhash}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{authorfullhashraw}{3118578d6c2a1159d4cb8f52d692c693}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Modelling}
+      \field{number}{4}
+      \field{title}{Quantifying the Impact of Inspection Processes on Production Lines through Stochastic Discrete-Event Simulation Modeling}
+      \field{volume}{2}
+      \field{year}{2021}
+      \true{nocite}
+      \field{pages}{22}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/modelling2040022
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2673-3951/2/4/22
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2673-3951/2/4/22
+      \endverb
+    \endentry
+    \entry{Raczynski2020}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{hash=b545079f76ed0faf410693681b661909}{%
+           family={Raczynski},
+           familyi={R\bibinitperiod},
+           given={Stanislaw},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b545079f76ed0faf410693681b661909}
+      \strng{fullhash}{b545079f76ed0faf410693681b661909}
+      \strng{fullhashraw}{b545079f76ed0faf410693681b661909}
+      \strng{bibnamehash}{b545079f76ed0faf410693681b661909}
+      \strng{authorbibnamehash}{b545079f76ed0faf410693681b661909}
+      \strng{authornamehash}{b545079f76ed0faf410693681b661909}
+      \strng{authorfullhash}{b545079f76ed0faf410693681b661909}
+      \strng{authorfullhashraw}{b545079f76ed0faf410693681b661909}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Interacting Complexities of Herds and Social Organizations}
+      \field{title}{Discrete Event Simulation vs Continuous System Dynamics}
+      \field{year}{2020}
+      \true{nocite}
+      \field{pages}{133\bibrangedash 141}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/978-3-030-30185-0_12
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/335663109_Discrete_Event_Simulation_vs_Continuous_System_Dynamics
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/335663109_Discrete_Event_Simulation_vs_Continuous_System_Dynamics
+      \endverb
+    \endentry
+    \entry{salloum2020forecasting}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=0e392e43bb127970c0bf04539a1c824f}{%
+           family={Salloum},
+           familyi={S\bibinitperiod},
+           given={Yara},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=edcb7ff3259b55ab72be33d3b422490a}{%
+           family={Jodehl},
+           familyi={J\bibinitperiod},
+           given={Annika},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6c1c515e10fd0ff23309754cdc1b7ebb}{%
+           family={Thewes},
+           familyi={T\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=06e285feec5130236145bec471f35643}{%
+           family={König},
+           familyi={K\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{5767386a73e02d0cc60de9bda797ae8a}
+      \strng{fullhash}{6a1fcbae789a266dc59fb4a87126b7a7}
+      \strng{fullhashraw}{6a1fcbae789a266dc59fb4a87126b7a7}
+      \strng{bibnamehash}{6a1fcbae789a266dc59fb4a87126b7a7}
+      \strng{authorbibnamehash}{6a1fcbae789a266dc59fb4a87126b7a7}
+      \strng{authornamehash}{5767386a73e02d0cc60de9bda797ae8a}
+      \strng{authorfullhash}{6a1fcbae789a266dc59fb4a87126b7a7}
+      \strng{authorfullhashraw}{6a1fcbae789a266dc59fb4a87126b7a7}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 37th international CIB W78 conference}
+      \field{title}{From Forecasting to real-time process controlling with continuous simulation model updates}
+      \field{year}{2020}
+      \true{nocite}
+    \endentry
+    \entry{sevin2025analysis}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=43896f4973954f166765ac62ca8fc067}{%
+           family={Sevin},
+           familyi={S\bibinitperiod},
+           given={Abdullah},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3cc00181b2d0d5a66f9daf48b7e9efad}{%
+           family={Yaman},
+           familyi={Y\bibinitperiod},
+           given={Göktuğ},
+           giveni={G\bibinitperiod}}}%
+        {{hash=db63151a4f7c321f0bbb47cd82c22b8e}{%
+           family={Atilgan},
+           familyi={A\bibinitperiod},
+           given={Durdali},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Sakarya University}%
+      }
+      \strng{namehash}{7e844e28dc5ed143994a91ab729a4e0f}
+      \strng{fullhash}{f8dcf7feae748bf434157a0d1e74a0de}
+      \strng{fullhashraw}{f8dcf7feae748bf434157a0d1e74a0de}
+      \strng{bibnamehash}{f8dcf7feae748bf434157a0d1e74a0de}
+      \strng{authorbibnamehash}{f8dcf7feae748bf434157a0d1e74a0de}
+      \strng{authornamehash}{7e844e28dc5ed143994a91ab729a4e0f}
+      \strng{authorfullhash}{f8dcf7feae748bf434157a0d1e74a0de}
+      \strng{authorfullhashraw}{f8dcf7feae748bf434157a0d1e74a0de}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sakarya University Journal of Computer and Information Sciences}
+      \field{number}{1}
+      \field{title}{Analysis of Queue Models in Simulation Applications}
+      \field{volume}{8}
+      \field{year}{2025}
+      \true{nocite}
+      \field{pages}{123\bibrangedash 135}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.35377/saucis.1610018
+      \endverb
+    \endentry
+    \entry{shanmugasundaram2021simulation}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=7f99ba7e8b3361781b6f472367dd0dfe}{%
+           family={Shanmugasundaram},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=39d7857474413ac56afc00e85bf3874d}{%
+           family={Krishnamoorthy},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{78374ca9aff8d5f1595f79463d72db2c}
+      \strng{fullhash}{78374ca9aff8d5f1595f79463d72db2c}
+      \strng{fullhashraw}{78374ca9aff8d5f1595f79463d72db2c}
+      \strng{bibnamehash}{78374ca9aff8d5f1595f79463d72db2c}
+      \strng{authorbibnamehash}{78374ca9aff8d5f1595f79463d72db2c}
+      \strng{authornamehash}{78374ca9aff8d5f1595f79463d72db2c}
+      \strng{authorfullhash}{78374ca9aff8d5f1595f79463d72db2c}
+      \strng{authorfullhashraw}{78374ca9aff8d5f1595f79463d72db2c}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Simulation Modelling}
+      \field{number}{4}
+      \field{title}{Simulation and optimization of service systems using queueing theory: A case study in educational institutions}
+      \field{volume}{20}
+      \field{year}{2021}
+      \true{nocite}
+      \field{pages}{623\bibrangedash 635}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.2507/IJSIMM20-4-CO15
+      \endverb
+    \endentry
+    \entry{simio2025differences}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=5c31f88a853e4bd0e9f7a3ff904cd77b}{%
+           family={{Simio}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{fullhash}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{fullhashraw}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{bibnamehash}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{authorbibnamehash}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{authornamehash}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{authorfullhash}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{authorfullhashraw}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Differences Between Discrete, Continuous, and Agent-Based Simulation Software}
+      \field{urlday}{26}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.simio.com/what-are-the-differences-between-simulation-software-discrete-continuous-and-agent-based/
+      \endverb
+      \verb{url}
+      \verb https://www.simio.com/what-are-the-differences-between-simulation-software-discrete-continuous-and-agent-based/
+      \endverb
+    \endentry
+    \entry{study2025comparative}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=0c5e470022e3000e47ccac6a40d6bd8b}{%
+           family={{Study.com}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{fullhash}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{fullhashraw}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{bibnamehash}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{authorbibnamehash}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{authornamehash}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{authorfullhash}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{authorfullhashraw}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Comparative Analysis: Examples \& Overview}
+      \field{urlday}{26}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://study.com/learn/lesson/comparative-analysis-examples-overview.html
+      \endverb
+      \verb{url}
+      \verb https://study.com/learn/lesson/comparative-analysis-examples-overview.html
+      \endverb
+    \endentry
+    \entry{DigitalTwin2025}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=9b7b6b7cb2bcb592314568aed504d9ee}{%
+           family={Al-Therwah},
+           familyi={A\bibinithyphendelim T\bibinitperiod},
+           given={Rashed\bibnamedelima MF},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=a2e477704a208ecc299ed09f5ab3fab1}{%
+           family={Heshmat},
+           familyi={H\bibinitperiod},
+           given={Mahmoud},
+           giveni={M\bibinitperiod}}}%
+        {{hash=543cd2398abd96fa5fa113a4231c4323}{%
+           family={El-Sharief},
+           familyi={E\bibinithyphendelim S\bibinitperiod},
+           given={Mahmoud},
+           giveni={M\bibinitperiod}}}%
+        {{hash=487b1c3fcfeab4eb52ea994df8805a3d}{%
+           family={Hassab-Allah},
+           familyi={H\bibinithyphendelim A\bibinitperiod},
+           given={Ibrahim\bibnamedelima Mohamed},
+           giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{67f3c9ecbc4e1286751ea6c881d176a5}
+      \strng{fullhash}{ffd563731676748c4c8198bc05383883}
+      \strng{fullhashraw}{ffd563731676748c4c8198bc05383883}
+      \strng{bibnamehash}{ffd563731676748c4c8198bc05383883}
+      \strng{authorbibnamehash}{ffd563731676748c4c8198bc05383883}
+      \strng{authornamehash}{67f3c9ecbc4e1286751ea6c881d176a5}
+      \strng{authorfullhash}{ffd563731676748c4c8198bc05383883}
+      \strng{authorfullhashraw}{ffd563731676748c4c8198bc05383883}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ain Shams Engineering Journal}
+      \field{number}{4}
+      \field{title}{A Review of Digital Twin Technology in Industrial Applications}
+      \field{volume}{16}
+      \field{year}{2025}
+      \true{nocite}
+      \field{pages}{Article Number}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1016/j.asej.2025.04.017
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1110016825001747
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1110016825001747
+      \endverb
+    \endentry
+    \entry{twi2025simulation}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=3051eefabc57e1770b341abc484fc723}{%
+           family={{TWI Ltd.}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{3051eefabc57e1770b341abc484fc723}
+      \strng{fullhash}{3051eefabc57e1770b341abc484fc723}
+      \strng{fullhashraw}{3051eefabc57e1770b341abc484fc723}
+      \strng{bibnamehash}{3051eefabc57e1770b341abc484fc723}
+      \strng{authorbibnamehash}{3051eefabc57e1770b341abc484fc723}
+      \strng{authornamehash}{3051eefabc57e1770b341abc484fc723}
+      \strng{authorfullhash}{3051eefabc57e1770b341abc484fc723}
+      \strng{authorfullhashraw}{3051eefabc57e1770b341abc484fc723}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{What is Simulation? What Does it Mean? (Definition and Examples)}
+      \field{urlday}{24}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.twi-global.com/technical-knowledge/faqs/faq-what-is-simulation
+      \endverb
+      \verb{url}
+      \verb https://www.twi-global.com/technical-knowledge/faqs/faq-what-is-simulation
+      \endverb
+    \endentry
+    \entry{vu2021service}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=15b9ec3933eda1f3445c3d6cd16bf81f}{%
+           family={Vu},
+           familyi={V\bibinitperiod},
+           given={Nguyen\bibnamedelimb Khanh\bibnamedelima Duy},
+           giveni={N\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of Northampton}%
+      }
+      \strng{namehash}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{fullhash}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{fullhashraw}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{bibnamehash}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{authorbibnamehash}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{authornamehash}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{authorfullhash}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{authorfullhashraw}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Service Quality and Its Impact on Customer Satisfaction}
+      \field{type}{Bachelor of Arts (Honours) Dissertation}
+      \field{year}{2021}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/356592279_Service_Quality_And_Its_Impact_On_Customer_Satisfaction
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/356592279_Service_Quality_And_Its_Impact_On_Customer_Satisfaction
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+
+\refsection{1}
+  \datalist[entry]{anyt/global//global/global/global}
+    \entry{aye2020student}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=fc2dc307df54593256f8baeb0f34d405}{%
+           family={Aye},
+           familyi={A\bibinitperiod},
+           given={Soe\bibnamedelima Moe},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=666a2653ac1bf79dea7419fd097357e8}{%
+           family={Thant},
+           familyi={T\bibinitperiod},
+           given={Aye\bibnamedelima Aye},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=7005a61081b0be56803ea6806d7bc5c5}{%
+           family={Nwe},
+           familyi={N\bibinitperiod},
+           given={Soe\bibnamedelima Soe},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8817b4c700b108ceb59fc57fa563af6}
+      \strng{fullhash}{182fbd853fefb10ce6e588d0810d715c}
+      \strng{fullhashraw}{182fbd853fefb10ce6e588d0810d715c}
+      \strng{bibnamehash}{182fbd853fefb10ce6e588d0810d715c}
+      \strng{authorbibnamehash}{182fbd853fefb10ce6e588d0810d715c}
+      \strng{authornamehash}{a8817b4c700b108ceb59fc57fa563af6}
+      \strng{authorfullhash}{182fbd853fefb10ce6e588d0810d715c}
+      \strng{authorfullhashraw}{182fbd853fefb10ce6e588d0810d715c}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Scientific Research in Science, Engineering and Technology}
+      \field{number}{3}
+      \field{title}{Student Flow Scheduling System for Student Affairs By Using Queuing Theory}
+      \field{volume}{7}
+      \field{year}{2020}
+      \field{pages}{583\bibrangedash 591}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.32628/IJSRSET2073126
+      \endverb
+      \verb{urlraw}
+      \verb https://www.academia.edu/44887366/Student_Flow_Scheduling_System_for_Student_Affairs_By_Using_Queuing_Theory
+      \endverb
+      \verb{url}
+      \verb https://www.academia.edu/44887366/Student_Flow_Scheduling_System_for_Student_Affairs_By_Using_Queuing_Theory
+      \endverb
+    \endentry
+    \entry{burke2025throughput}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ab18bf86d82959c7e434325fdec3bc9d}{%
+           family={Burke},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Search Networking, TechTarget}%
+      }
+      \strng{namehash}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{fullhash}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{fullhashraw}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{bibnamehash}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{authorbibnamehash}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{authornamehash}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{authorfullhash}{ab18bf86d82959c7e434325fdec3bc9d}
+      \strng{authorfullhashraw}{ab18bf86d82959c7e434325fdec3bc9d}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.techtarget.com/searchnetworking/definition/throughput}}
+      \field{title}{What is Throughput?}
+      \field{urlday}{24}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+    \endentry
+    \entry{do2022metamodel}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=edcdfd7f994e3bef772b5ebc77b62a85}{%
+           family={Amaral},
+           familyi={A\bibinitperiod},
+           given={João\bibnamedelimb Victor\bibnamedelima Soares},
+           giveni={J\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim S\bibinitperiod},
+           prefix={do},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=6902fda739d089eb45664492546038a6}{%
+           family={Montevechi},
+           familyi={M\bibinitperiod},
+           given={José\bibnamedelimb Arnaldo\bibnamedelima Barra},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=138249ead925b81f3fc8ebfbca033511}{%
+           family={Carvalho\bibnamedelima Miranda},
+           familyi={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Rafael},
+           giveni={R\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=7166ad264c70df30610165b837311496}{%
+           family={Sousa\bibnamedelima Junior},
+           familyi={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Wilson\bibnamedelima Trigueiro},
+           giveni={W\bibinitperiod\bibinitdelim T\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5816f3230aa4d5bb6ac4ed73a3a64141}
+      \strng{fullhash}{940211cad0df0a73bd6bb4b0e7cab595}
+      \strng{fullhashraw}{940211cad0df0a73bd6bb4b0e7cab595}
+      \strng{bibnamehash}{940211cad0df0a73bd6bb4b0e7cab595}
+      \strng{authorbibnamehash}{940211cad0df0a73bd6bb4b0e7cab595}
+      \strng{authornamehash}{5816f3230aa4d5bb6ac4ed73a3a64141}
+      \strng{authorfullhash}{940211cad0df0a73bd6bb4b0e7cab595}
+      \strng{authorfullhashraw}{940211cad0df0a73bd6bb4b0e7cab595}
+      \field{sortinit}{d}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Simulation Modelling Practice and Theory}
+      \field{title}{Metamodel-based simulation optimization: A systematic literature review}
+      \field{volume}{114}
+      \field{year}{2022}
+      \field{pages}{102403}
+      \range{pages}{1}
+    \endentry
+    \entry{downey2022optimization}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ce09b77b3f20d09787c09f6d1caf2767}{%
+           family={Downey},
+           familyi={D\bibinitperiod},
+           given={Lucas},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{fullhash}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{fullhashraw}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{bibnamehash}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{authorbibnamehash}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{authornamehash}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{authorfullhash}{ce09b77b3f20d09787c09f6d1caf2767}
+      \strng{authorfullhashraw}{ce09b77b3f20d09787c09f6d1caf2767}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Optimization: Overview and Examples in Technical Analysis}
+      \field{urlday}{18}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.investopedia.com/terms/o/optimization.asp
+      \endverb
+      \verb{url}
+      \verb https://www.investopedia.com/terms/o/optimization.asp
+      \endverb
+    \endentry
+    \entry{ElsevierContinuousSimulation2025}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=21abe5a91c2949aba6ef77033a5f98f3}{%
+           family={{Elsevier}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{fullhash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{fullhashraw}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{bibnamehash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{authorbibnamehash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{authornamehash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{authorfullhash}{21abe5a91c2949aba6ef77033a5f98f3}
+      \strng{authorfullhashraw}{21abe5a91c2949aba6ef77033a5f98f3}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Continuous Simulation}
+      \field{urlday}{1}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/topics/computer-science/continuous-simulation
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/topics/computer-science/continuous-simulation
+      \endverb
+    \endentry
+    \entry{finch2025des}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c94345454c4faadbbaf902efbc9831fb}{%
+           family={Finch},
+           familyi={F\bibinitperiod},
+           given={Adrian},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{fullhash}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{fullhashraw}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{bibnamehash}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{authorbibnamehash}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{authornamehash}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{authorfullhash}{c94345454c4faadbbaf902efbc9831fb}
+      \strng{authorfullhashraw}{c94345454c4faadbbaf902efbc9831fb}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{What is Discrete Event Simulation?}
+      \field{urlday}{1}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.autodesk.com/solutions/discrete-event-simulation
+      \endverb
+      \verb{url}
+      \verb https://www.autodesk.com/solutions/discrete-event-simulation
+      \endverb
+    \endentry
+    \entry{Fonseca2023}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=534b91b444e677313397c83dd1b5813b}{%
+           family={Casas},
+           familyi={C\bibinitperiod},
+           given={Pau\bibnamedelima Fonseca},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod},
+           prefix={i},
+           prefixi={i\bibinitperiod}}}%
+      }
+      \strng{namehash}{534b91b444e677313397c83dd1b5813b}
+      \strng{fullhash}{534b91b444e677313397c83dd1b5813b}
+      \strng{fullhashraw}{534b91b444e677313397c83dd1b5813b}
+      \strng{bibnamehash}{534b91b444e677313397c83dd1b5813b}
+      \strng{authorbibnamehash}{534b91b444e677313397c83dd1b5813b}
+      \strng{authornamehash}{534b91b444e677313397c83dd1b5813b}
+      \strng{authorfullhash}{534b91b444e677313397c83dd1b5813b}
+      \strng{authorfullhashraw}{534b91b444e677313397c83dd1b5813b}
+      \field{sortinit}{i}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ResearchGate}
+      \field{title}{A Continuous Process for Validation, Verification, and Accreditation of Simulation Models}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.13140/RG.2.2.21756.90244
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/368376956_A_Continuous_Process_for_Validation_Verification_and_Accreditation_of_Simulation_Models
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/368376956_A_Continuous_Process_for_Validation_Verification_and_Accreditation_of_Simulation_Models
+      \endverb
+    \endentry
+    \entry{jamil2023optimizing}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=0eb0d0164dc3615689e9c667391c637a}{%
+           family={Jamil},
+           familyi={J\bibinitperiod},
+           given={Md\bibnamedelima Asfaq},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ef8613554ad80cd79c08927ac0ab8634}{%
+           family={Mobin},
+           familyi={M\bibinitperiod},
+           given={Md\bibnamedelima Ahsanul},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=1e65d4eaaa9746c58d3488b37175c57c}{%
+           family={Bhowmik},
+           familyi={B\bibinitperiod},
+           given={Oyshik},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{8d0008716057f3f2a21ee1e9a0a20eff}
+      \strng{fullhash}{8b4f97fe770c6a810060e7d35b3d9c8d}
+      \strng{fullhashraw}{8b4f97fe770c6a810060e7d35b3d9c8d}
+      \strng{bibnamehash}{8b4f97fe770c6a810060e7d35b3d9c8d}
+      \strng{authorbibnamehash}{8b4f97fe770c6a810060e7d35b3d9c8d}
+      \strng{authornamehash}{8d0008716057f3f2a21ee1e9a0a20eff}
+      \strng{authorfullhash}{8b4f97fe770c6a810060e7d35b3d9c8d}
+      \strng{authorfullhashraw}{8b4f97fe770c6a810060e7d35b3d9c8d}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ResearchGate, December}
+      \field{title}{Optimizing Service Operations in Banking System: A Discrete Event Simulation Modeling Approach}
+      \field{year}{2023}
+    \endentry
+    \entry{kumar2025modeling}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=a6801289358db63d07e28939adf23457}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Vinay},
+           giveni={V\bibinitperiod}}}%
+        {{hash=31e3df65721cef2502e4e645ad8cad4e}{%
+           family={Upadhye},
+           familyi={U\bibinitperiod},
+           given={Neelesh\bibnamedelima Shankar},
+           giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{8e9de384499959c094538975cadd8c4b}
+      \strng{fullhash}{8e9de384499959c094538975cadd8c4b}
+      \strng{fullhashraw}{8e9de384499959c094538975cadd8c4b}
+      \strng{bibnamehash}{8e9de384499959c094538975cadd8c4b}
+      \strng{authorbibnamehash}{8e9de384499959c094538975cadd8c4b}
+      \strng{authornamehash}{8e9de384499959c094538975cadd8c4b}
+      \strng{authorfullhash}{8e9de384499959c094538975cadd8c4b}
+      \strng{authorfullhashraw}{8e9de384499959c094538975cadd8c4b}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Operational Research}
+      \field{number}{1}
+      \field{title}{Modeling and Simulation of First-come, First-served Queueing System with Impatient Multiclass Customers}
+      \field{volume}{25}
+      \field{year}{2025}
+      \field{pages}{1\bibrangedash 37}
+      \range{pages}{37}
+      \verb{doi}
+      \verb 10.1007/s12351-024-00877-y
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/a/spr/operea/v25y2025i1d10.1007_s12351-024-00877-y.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/a/spr/operea/v25y2025i1d10.1007_s12351-024-00877-y.html
+      \endverb
+    \endentry
+    \entry{metto2022study}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=ba54bf62e603e7f0afd4e091b70a4443}{%
+           family={Metto},
+           familyi={M\bibinitperiod},
+           given={Elizabeth},
+           giveni={E\bibinitperiod}}}%
+        {{hash=14711476c14f6409b1508238a2530dfd}{%
+           family={Mwita},
+           familyi={M\bibinitperiod},
+           given={Miriam},
+           giveni={M\bibinitperiod}}}%
+        {{hash=22c6a585b4401a522c1d84c14d34a742}{%
+           family={Kinuthia},
+           familyi={K\bibinitperiod},
+           given={Benson\bibnamedelima N.},
+           giveni={B\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{84e112d8c3ce438ea0d640bc229a2d81}
+      \strng{fullhash}{62a11f9a78f2dce9a313b5b4e06e2639}
+      \strng{fullhashraw}{62a11f9a78f2dce9a313b5b4e06e2639}
+      \strng{bibnamehash}{62a11f9a78f2dce9a313b5b4e06e2639}
+      \strng{authorbibnamehash}{62a11f9a78f2dce9a313b5b4e06e2639}
+      \strng{authornamehash}{84e112d8c3ce438ea0d640bc229a2d81}
+      \strng{authorfullhash}{62a11f9a78f2dce9a313b5b4e06e2639}
+      \strng{authorfullhashraw}{62a11f9a78f2dce9a313b5b4e06e2639}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{African Journal of Empirical Research}
+      \field{number}{1}
+      \field{title}{A Study of the Management of Student Records in Academic Registrars’ Offices in Kenyan Universities}
+      \field{volume}{3}
+      \field{year}{2022}
+      \field{pages}{68\bibrangedash 77}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.51867/ajernet3.1.8
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/362513944_A_Study_of_the_Management_of_Student_Records_in_Academic_Registrars'_Offices_in_Kenyan_Universities
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/362513944_A_Study_of_the_Management_of_Student_Records_in_Academic_Registrars'_Offices_in_Kenyan_Universities
+      \endverb
+    \endentry
+    \entry{study2025comparative}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=0c5e470022e3000e47ccac6a40d6bd8b}{%
+           family={{Study.com}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{fullhash}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{fullhashraw}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{bibnamehash}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{authorbibnamehash}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{authornamehash}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{authorfullhash}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \strng{authorfullhashraw}{0c5e470022e3000e47ccac6a40d6bd8b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Comparative Analysis: Examples \& Overview}
+      \field{urlday}{26}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://study.com/learn/lesson/comparative-analysis-examples-overview.html
+      \endverb
+      \verb{url}
+      \verb https://study.com/learn/lesson/comparative-analysis-examples-overview.html
+      \endverb
+    \endentry
+    \entry{DigitalTwin2025}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=9b7b6b7cb2bcb592314568aed504d9ee}{%
+           family={Al-Therwah},
+           familyi={A\bibinithyphendelim T\bibinitperiod},
+           given={Rashed\bibnamedelima MF},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=a2e477704a208ecc299ed09f5ab3fab1}{%
+           family={Heshmat},
+           familyi={H\bibinitperiod},
+           given={Mahmoud},
+           giveni={M\bibinitperiod}}}%
+        {{hash=543cd2398abd96fa5fa113a4231c4323}{%
+           family={El-Sharief},
+           familyi={E\bibinithyphendelim S\bibinitperiod},
+           given={Mahmoud},
+           giveni={M\bibinitperiod}}}%
+        {{hash=487b1c3fcfeab4eb52ea994df8805a3d}{%
+           family={Hassab-Allah},
+           familyi={H\bibinithyphendelim A\bibinitperiod},
+           given={Ibrahim\bibnamedelima Mohamed},
+           giveni={I\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{67f3c9ecbc4e1286751ea6c881d176a5}
+      \strng{fullhash}{ffd563731676748c4c8198bc05383883}
+      \strng{fullhashraw}{ffd563731676748c4c8198bc05383883}
+      \strng{bibnamehash}{ffd563731676748c4c8198bc05383883}
+      \strng{authorbibnamehash}{ffd563731676748c4c8198bc05383883}
+      \strng{authornamehash}{67f3c9ecbc4e1286751ea6c881d176a5}
+      \strng{authorfullhash}{ffd563731676748c4c8198bc05383883}
+      \strng{authorfullhashraw}{ffd563731676748c4c8198bc05383883}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ain Shams Engineering Journal}
+      \field{number}{4}
+      \field{title}{A Review of Digital Twin Technology in Industrial Applications}
+      \field{volume}{16}
+      \field{year}{2025}
+      \field{pages}{Article Number}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1016/j.asej.2025.04.017
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1110016825001747
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1110016825001747
+      \endverb
+    \endentry
+    \entry{twi2025simulation}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=3051eefabc57e1770b341abc484fc723}{%
+           family={{TWI Ltd.}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{3051eefabc57e1770b341abc484fc723}
+      \strng{fullhash}{3051eefabc57e1770b341abc484fc723}
+      \strng{fullhashraw}{3051eefabc57e1770b341abc484fc723}
+      \strng{bibnamehash}{3051eefabc57e1770b341abc484fc723}
+      \strng{authorbibnamehash}{3051eefabc57e1770b341abc484fc723}
+      \strng{authornamehash}{3051eefabc57e1770b341abc484fc723}
+      \strng{authorfullhash}{3051eefabc57e1770b341abc484fc723}
+      \strng{authorfullhashraw}{3051eefabc57e1770b341abc484fc723}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{What is Simulation? What Does it Mean? (Definition and Examples)}
+      \field{urlday}{24}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.twi-global.com/technical-knowledge/faqs/faq-what-is-simulation
+      \endverb
+      \verb{url}
+      \verb https://www.twi-global.com/technical-knowledge/faqs/faq-what-is-simulation
+      \endverb
+    \endentry
+    \entry{vu2021service}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=15b9ec3933eda1f3445c3d6cd16bf81f}{%
+           family={Vu},
+           familyi={V\bibinitperiod},
+           given={Nguyen\bibnamedelimb Khanh\bibnamedelima Duy},
+           giveni={N\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of Northampton}%
+      }
+      \strng{namehash}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{fullhash}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{fullhashraw}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{bibnamehash}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{authorbibnamehash}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{authornamehash}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{authorfullhash}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \strng{authorfullhashraw}{15b9ec3933eda1f3445c3d6cd16bf81f}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Service Quality and Its Impact on Customer Satisfaction}
+      \field{type}{Bachelor of Arts (Honours) Dissertation}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/356592279_Service_Quality_And_Its_Impact_On_Customer_Satisfaction
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/356592279_Service_Quality_And_Its_Impact_On_Customer_Satisfaction
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+
+\refsection{2}
+  \datalist[entry]{anyt/global//global/global/global}
+    \entry{Biazen2025}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=2f97a08495368aacb48479c8a6996996}{%
+           family={Biazen},
+           familyi={B\bibinitperiod},
+           given={Melkamu\bibnamedelima Ambelu},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=714d71b1d2ccf74144deb6421d876273}{%
+           family={Woldeyohannes},
+           familyi={W\bibinitperiod},
+           given={Abraham\bibnamedelima Debebe},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=5ca7e4ab25090209eb5b9e0e9bfce34f}{%
+           family={Gebeyehu},
+           familyi={G\bibinitperiod},
+           given={Sisay\bibnamedelima Geremew},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific Publishing}%
+      }
+      \strng{namehash}{be91bcebf3027804d350e1bcce01d73b}
+      \strng{fullhash}{8eb1f1bd68211dedd9d89ff4a0e21b45}
+      \strng{fullhashraw}{8eb1f1bd68211dedd9d89ff4a0e21b45}
+      \strng{bibnamehash}{8eb1f1bd68211dedd9d89ff4a0e21b45}
+      \strng{authorbibnamehash}{8eb1f1bd68211dedd9d89ff4a0e21b45}
+      \strng{authornamehash}{be91bcebf3027804d350e1bcce01d73b}
+      \strng{authorfullhash}{8eb1f1bd68211dedd9d89ff4a0e21b45}
+      \strng{authorfullhashraw}{8eb1f1bd68211dedd9d89ff4a0e21b45}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Modeling, Simulation and Scientific Computing}
+      \field{number}{01}
+      \field{title}{Simulation Models Verification and Validation: Recent Development and Challenges: A Review}
+      \field{volume}{16}
+      \field{year}{2025}
+      \field{pages}{2530001}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1142/S1793962325300018
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1142/S1793962325300018
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1142/S1793962325300018
+      \endverb
+    \endentry
+    \entry{delarue2021optimizing}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=54c32efbd45d7806478259856b129c9f}{%
+           family={Delarue},
+           familyi={D\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Massachusetts Institute of Technology}%
+      }
+      \strng{namehash}{54c32efbd45d7806478259856b129c9f}
+      \strng{fullhash}{54c32efbd45d7806478259856b129c9f}
+      \strng{fullhashraw}{54c32efbd45d7806478259856b129c9f}
+      \strng{bibnamehash}{54c32efbd45d7806478259856b129c9f}
+      \strng{authorbibnamehash}{54c32efbd45d7806478259856b129c9f}
+      \strng{authornamehash}{54c32efbd45d7806478259856b129c9f}
+      \strng{authorfullhash}{54c32efbd45d7806478259856b129c9f}
+      \strng{authorfullhashraw}{54c32efbd45d7806478259856b129c9f}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Optimizing School Operations}
+      \field{type}{phdthesis}
+      \field{year}{2021}
+    \endentry
+    \entry{droscher2021approach}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=97a53d623a5e0812ad56625e685ce7a2}{%
+           family={Dröscher},
+           familyi={D\bibinitperiod},
+           given={Marcel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fcc004f01b38f5708de85fbd8ca35719}{%
+           family={Gür},
+           familyi={G\bibinitperiod},
+           given={Alpar},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5e47a372045245640e7bdef340d813ea}{%
+           family={Rehbach},
+           familyi={R\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{f153ab811e1e9601cca94d8f73ba204c}
+      \strng{fullhash}{580f4fa6060333609320e4b043beb56b}
+      \strng{fullhashraw}{580f4fa6060333609320e4b043beb56b}
+      \strng{bibnamehash}{580f4fa6060333609320e4b043beb56b}
+      \strng{authorbibnamehash}{580f4fa6060333609320e4b043beb56b}
+      \strng{authornamehash}{f153ab811e1e9601cca94d8f73ba204c}
+      \strng{authorfullhash}{580f4fa6060333609320e4b043beb56b}
+      \strng{authorfullhashraw}{580f4fa6060333609320e4b043beb56b}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2110.12777}
+      \field{title}{An approach to optimize study programs using Discrete Event Simulation}
+      \field{year}{2021}
+    \endentry
+    \entry{falolo2022student}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=92e87770f5623ad64974e2a5edcde898}{%
+           family={Falolo},
+           familyi={F\bibinitperiod},
+           given={Vilma\bibnamedelima M.},
+           giveni={V\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=67699c029ad74b03f905f9e7e679c401}{%
+           family={Capillas},
+           familyi={C\bibinitperiod},
+           given={Kenneth\bibnamedelima T.},
+           giveni={K\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=05214f9fc793c11fa272bea693e24172}{%
+           family={Vergarra},
+           familyi={V\bibinitperiod},
+           given={Nerissa\bibnamedelima A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=a059548401742d577eee9c7c3cd193b4}{%
+           family={Cerbito},
+           familyi={C\bibinitperiod},
+           given={Adonis\bibnamedelima F.},
+           giveni={A\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{b37c7109392e01069953be20d2445008}
+      \strng{fullhash}{b5c9269ecb2b0a232a6c8accf4a16c8e}
+      \strng{fullhashraw}{b5c9269ecb2b0a232a6c8accf4a16c8e}
+      \strng{bibnamehash}{b5c9269ecb2b0a232a6c8accf4a16c8e}
+      \strng{authorbibnamehash}{b5c9269ecb2b0a232a6c8accf4a16c8e}
+      \strng{authornamehash}{b37c7109392e01069953be20d2445008}
+      \strng{authorfullhash}{b5c9269ecb2b0a232a6c8accf4a16c8e}
+      \strng{authorfullhashraw}{b5c9269ecb2b0a232a6c8accf4a16c8e}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Educational Management and Development Studies}
+      \field{number}{1}
+      \field{title}{Student Registration and Records Management Services towards Digitization}
+      \field{volume}{3}
+      \field{year}{2022}
+      \field{pages}{149\bibrangedash 165}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.53378/352867
+      \endverb
+      \verb{urlraw}
+      \verb https://iiari.org/journal_article/student-registration-and-records-management-services-towards-digitization/
+      \endverb
+      \verb{url}
+      \verb https://iiari.org/journal_article/student-registration-and-records-management-services-towards-digitization/
+      \endverb
+    \endentry
+    \entry{fernandez2021resources}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=db68c3f3fc168d4fd72d91a849dad7ba}{%
+           family={Fernández},
+           familyi={F\bibinitperiod},
+           given={Mauricio\bibnamedelima Becerra},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=dedf7632076480b338cedd540fa3c60a}{%
+           family={Ramírez},
+           familyi={R\bibinitperiod},
+           given={Milton\bibnamedelimb Mauricio\bibnamedelima Herrera},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=2e3e37d20b5d0a0c96dbac262373db41}{%
+           family={Trejo},
+           familyi={T\bibinitperiod},
+           given={Cristian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4c04a2b3159b25317751172da780decb}{%
+           family={Quiroga},
+           familyi={Q\bibinitperiod},
+           given={Olga\bibnamedelimb R\bibnamedelima Romero},
+           giveni={O\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Facultad de Ingenieria}%
+      }
+      \strng{namehash}{45af2743b7cd7401eb80c850171a0b24}
+      \strng{fullhash}{420e4228218811159fca8997269a9b27}
+      \strng{fullhashraw}{420e4228218811159fca8997269a9b27}
+      \strng{bibnamehash}{420e4228218811159fca8997269a9b27}
+      \strng{authorbibnamehash}{420e4228218811159fca8997269a9b27}
+      \strng{authornamehash}{45af2743b7cd7401eb80c850171a0b24}
+      \strng{authorfullhash}{420e4228218811159fca8997269a9b27}
+      \strng{authorfullhashraw}{420e4228218811159fca8997269a9b27}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ingeniería y universidad}
+      \field{title}{Resources allocation in service planning using discrete-event simulation}
+      \field{volume}{25}
+      \field{year}{2021}
+      \field{pages}{1}
+      \range{pages}{1}
+    \endentry
+    \entry{loossens2021comparison}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=e93cfc38ba66b6345c0ffbd4f3959a12}{%
+           family={Loossens},
+           familyi={L\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a62464afee2a784490d87f9a7d3ef86f}{%
+           family={Tuerlinckx},
+           familyi={T\bibinitperiod},
+           given={Francis},
+           giveni={F\bibinitperiod}}}%
+        {{hash=74e37e707d11ab2c6e0186b974ab0ad7}{%
+           family={Verdonck},
+           familyi={V\bibinitperiod},
+           given={Stijn},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{8da004b09a3ebec50da356e0d4c9bfa6}
+      \strng{fullhash}{26d0d7dbb655c542ab544be315460e8f}
+      \strng{fullhashraw}{26d0d7dbb655c542ab544be315460e8f}
+      \strng{bibnamehash}{26d0d7dbb655c542ab544be315460e8f}
+      \strng{authorbibnamehash}{26d0d7dbb655c542ab544be315460e8f}
+      \strng{authornamehash}{8da004b09a3ebec50da356e0d4c9bfa6}
+      \strng{authorfullhash}{26d0d7dbb655c542ab544be315460e8f}
+      \strng{authorfullhashraw}{26d0d7dbb655c542ab544be315460e8f}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific reports}
+      \field{number}{1}
+      \field{title}{A comparison of continuous and discrete time modeling of affective processes in terms of predictive accuracy}
+      \field{volume}{11}
+      \field{year}{2021}
+      \field{pages}{6218}
+      \range{pages}{1}
+    \endentry
+    \entry{marsudi2020modeling}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=f09b2c835ac5ca20a684aacd227f90bb}{%
+           family={Marsudi},
+           familyi={M\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{fullhash}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{fullhashraw}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{bibnamehash}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{authorbibnamehash}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{authornamehash}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{authorfullhash}{f09b2c835ac5ca20a684aacd227f90bb}
+      \strng{authorfullhashraw}{f09b2c835ac5ca20a684aacd227f90bb}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 5th NA International Conference on Industrial Engineering and Operations Management Detroit, Michigan, USA, str}
+      \field{title}{Modeling and Simulation of Student Registration Process by Using ARENA}
+      \field{year}{2020}
+      \field{pages}{1349\bibrangedash 1357}
+      \range{pages}{9}
+    \endentry
+    \entry{naciri2024modeling}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=94c8f937ae635546e5a0d23b422c2c46}{%
+           family={Naciri},
+           familyi={N\bibinitperiod},
+           given={Lina},
+           giveni={L\bibinitperiod}}}%
+        {{hash=94e70d25cd2949c4b24213203599ee33}{%
+           family={Gallab},
+           familyi={G\bibinitperiod},
+           given={Maryam},
+           giveni={M\bibinitperiod}}}%
+        {{hash=79c075f3ddd6f59835ef4e9909ca42d4}{%
+           family={Soulhi},
+           familyi={S\bibinitperiod},
+           given={Aziz},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7ba1afd3556e3b586d645306900b853a}{%
+           family={Merzouk},
+           familyi={M\bibinitperiod},
+           given={Safae},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0ae71b2fbf389be10a1926536582769b}{%
+           family={Di\bibnamedelima Nardo},
+           familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{d27bcd9ae2d4b8cac432060252a81ce1}
+      \strng{fullhash}{73f126f05ab5bfad9a2df69cbd980c2c}
+      \strng{fullhashraw}{73f126f05ab5bfad9a2df69cbd980c2c}
+      \strng{bibnamehash}{73f126f05ab5bfad9a2df69cbd980c2c}
+      \strng{authorbibnamehash}{73f126f05ab5bfad9a2df69cbd980c2c}
+      \strng{authornamehash}{d27bcd9ae2d4b8cac432060252a81ce1}
+      \strng{authorfullhash}{73f126f05ab5bfad9a2df69cbd980c2c}
+      \strng{authorfullhashraw}{73f126f05ab5bfad9a2df69cbd980c2c}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Procedia Computer Science}
+      \field{title}{Modeling and simulation: A comparative and systematic statistical review}
+      \field{volume}{232}
+      \field{year}{2024}
+      \field{pages}{242\bibrangedash 253}
+      \range{pages}{12}
+    \endentry
+    \entry{Modelling2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=7d2c94ba4373491ab342503fdcb7dded}{%
+           family={Pablo},
+           familyi={P\bibinitperiod},
+           given={Martinez},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e7552cfe4c60cc8190589dce07a47009}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={Rafiq},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{fullhash}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{fullhashraw}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{bibnamehash}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{authorbibnamehash}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{authornamehash}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{authorfullhash}{3118578d6c2a1159d4cb8f52d692c693}
+      \strng{authorfullhashraw}{3118578d6c2a1159d4cb8f52d692c693}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Modelling}
+      \field{number}{4}
+      \field{title}{Quantifying the Impact of Inspection Processes on Production Lines through Stochastic Discrete-Event Simulation Modeling}
+      \field{volume}{2}
+      \field{year}{2021}
+      \field{pages}{22}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/modelling2040022
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2673-3951/2/4/22
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2673-3951/2/4/22
+      \endverb
+    \endentry
+    \entry{salloum2020forecasting}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=0e392e43bb127970c0bf04539a1c824f}{%
+           family={Salloum},
+           familyi={S\bibinitperiod},
+           given={Yara},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=edcb7ff3259b55ab72be33d3b422490a}{%
+           family={Jodehl},
+           familyi={J\bibinitperiod},
+           given={Annika},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6c1c515e10fd0ff23309754cdc1b7ebb}{%
+           family={Thewes},
+           familyi={T\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=06e285feec5130236145bec471f35643}{%
+           family={König},
+           familyi={K\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{5767386a73e02d0cc60de9bda797ae8a}
+      \strng{fullhash}{6a1fcbae789a266dc59fb4a87126b7a7}
+      \strng{fullhashraw}{6a1fcbae789a266dc59fb4a87126b7a7}
+      \strng{bibnamehash}{6a1fcbae789a266dc59fb4a87126b7a7}
+      \strng{authorbibnamehash}{6a1fcbae789a266dc59fb4a87126b7a7}
+      \strng{authornamehash}{5767386a73e02d0cc60de9bda797ae8a}
+      \strng{authorfullhash}{6a1fcbae789a266dc59fb4a87126b7a7}
+      \strng{authorfullhashraw}{6a1fcbae789a266dc59fb4a87126b7a7}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 37th international CIB W78 conference}
+      \field{title}{From Forecasting to real-time process controlling with continuous simulation model updates}
+      \field{year}{2020}
+    \endentry
+    \entry{sevin2025analysis}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=43896f4973954f166765ac62ca8fc067}{%
+           family={Sevin},
+           familyi={S\bibinitperiod},
+           given={Abdullah},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3cc00181b2d0d5a66f9daf48b7e9efad}{%
+           family={Yaman},
+           familyi={Y\bibinitperiod},
+           given={Göktuğ},
+           giveni={G\bibinitperiod}}}%
+        {{hash=db63151a4f7c321f0bbb47cd82c22b8e}{%
+           family={Atilgan},
+           familyi={A\bibinitperiod},
+           given={Durdali},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Sakarya University}%
+      }
+      \strng{namehash}{7e844e28dc5ed143994a91ab729a4e0f}
+      \strng{fullhash}{f8dcf7feae748bf434157a0d1e74a0de}
+      \strng{fullhashraw}{f8dcf7feae748bf434157a0d1e74a0de}
+      \strng{bibnamehash}{f8dcf7feae748bf434157a0d1e74a0de}
+      \strng{authorbibnamehash}{f8dcf7feae748bf434157a0d1e74a0de}
+      \strng{authornamehash}{7e844e28dc5ed143994a91ab729a4e0f}
+      \strng{authorfullhash}{f8dcf7feae748bf434157a0d1e74a0de}
+      \strng{authorfullhashraw}{f8dcf7feae748bf434157a0d1e74a0de}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sakarya University Journal of Computer and Information Sciences}
+      \field{number}{1}
+      \field{title}{Analysis of Queue Models in Simulation Applications}
+      \field{volume}{8}
+      \field{year}{2025}
+      \field{pages}{123\bibrangedash 135}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.35377/saucis.1610018
+      \endverb
+    \endentry
+    \entry{simio2025differences}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=5c31f88a853e4bd0e9f7a3ff904cd77b}{%
+           family={{Simio}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{fullhash}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{fullhashraw}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{bibnamehash}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{authorbibnamehash}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{authornamehash}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{authorfullhash}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \strng{authorfullhashraw}{5c31f88a853e4bd0e9f7a3ff904cd77b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Differences Between Discrete, Continuous, and Agent-Based Simulation Software}
+      \field{urlday}{26}
+      \field{urlmonth}{5}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.simio.com/what-are-the-differences-between-simulation-software-discrete-continuous-and-agent-based/
+      \endverb
+      \verb{url}
+      \verb https://www.simio.com/what-are-the-differences-between-simulation-software-discrete-continuous-and-agent-based/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+
+\refsection{3}
+  \datalist[entry]{anyt/global//global/global/global}
+    \entry{chaka2020modeling}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=b0d48093d23ea633e319f8cdaad6f4bb}{%
+           family={Chaka},
+           familyi={C\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6c2dec824617447b8a3a81176c9f62ab}{%
+           family={Mungadzi},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{fullhash}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{fullhashraw}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{bibnamehash}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{authorbibnamehash}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{authornamehash}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{authorfullhash}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \strng{authorfullhashraw}{3e421c4cbd1c459a9d95594a7f1cf198}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2020 International Conference on Industrial Engineering and Operations Management}
+      \field{title}{Modeling and Simulation of Student Registration Process by Using ARENA}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://ieomsociety.org/detroit2020/papers/309.pdf
+      \endverb
+      \verb{url}
+      \verb https://ieomsociety.org/detroit2020/papers/309.pdf
+      \endverb
+    \endentry
+    \entry{Nickson2021Translational}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=cbb5df25262eb75027bd860718fdcc74}{%
+           family={Nickson},
+           familyi={N\bibinitperiod},
+           given={Christopher\bibnamedelima Peter},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=00cdfdcad3f342ab6603f7053bc2ee6f}{%
+           family={Petrosoniak},
+           familyi={P\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d4fbd859412c9924c62c6bf0a3899a72}{%
+           family={Barwick},
+           familyi={B\bibinitperiod},
+           given={Stephanie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3df832ad7f3255fc945ab5520bbce4f0}{%
+           family={Brazil},
+           familyi={B\bibinitperiod},
+           given={Victoria},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{df7114bd5966277a55a83f3f5a427a13}
+      \strng{fullhash}{37bdb8bcc258ca57441475db31ba7a0f}
+      \strng{fullhashraw}{37bdb8bcc258ca57441475db31ba7a0f}
+      \strng{bibnamehash}{37bdb8bcc258ca57441475db31ba7a0f}
+      \strng{authorbibnamehash}{37bdb8bcc258ca57441475db31ba7a0f}
+      \strng{authornamehash}{df7114bd5966277a55a83f3f5a427a13}
+      \strng{authorfullhash}{37bdb8bcc258ca57441475db31ba7a0f}
+      \strng{authorfullhashraw}{37bdb8bcc258ca57441475db31ba7a0f}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Simulation}
+      \field{note}{Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)}
+      \field{number}{1}
+      \field{title}{Translational simulation: from description to action}
+      \field{volume}{6}
+      \field{year}{2021}
+      \field{pages}{6}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s41077-021-00160-6
+      \endverb
+      \verb{urlraw}
+      \verb https://advancesinsimulation.biomedcentral.com/articles/10.1186/s41077-021-00160-6
+      \endverb
+      \verb{url}
+      \verb https://advancesinsimulation.biomedcentral.com/articles/10.1186/s41077-021-00160-6
+      \endverb
+    \endentry
+    \entry{Raczynski2020}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{hash=b545079f76ed0faf410693681b661909}{%
+           family={Raczynski},
+           familyi={R\bibinitperiod},
+           given={Stanislaw},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b545079f76ed0faf410693681b661909}
+      \strng{fullhash}{b545079f76ed0faf410693681b661909}
+      \strng{fullhashraw}{b545079f76ed0faf410693681b661909}
+      \strng{bibnamehash}{b545079f76ed0faf410693681b661909}
+      \strng{authorbibnamehash}{b545079f76ed0faf410693681b661909}
+      \strng{authornamehash}{b545079f76ed0faf410693681b661909}
+      \strng{authorfullhash}{b545079f76ed0faf410693681b661909}
+      \strng{authorfullhashraw}{b545079f76ed0faf410693681b661909}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Interacting Complexities of Herds and Social Organizations}
+      \field{title}{Discrete Event Simulation vs Continuous System Dynamics}
+      \field{year}{2020}
+      \field{pages}{133\bibrangedash 141}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/978-3-030-30185-0_12
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/335663109_Discrete_Event_Simulation_vs_Continuous_System_Dynamics
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/335663109_Discrete_Event_Simulation_vs_Continuous_System_Dynamics
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput

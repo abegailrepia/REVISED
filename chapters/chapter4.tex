@@ -1,0 +1,351 @@
+\chapter{Results and Discussion}
+This chapter presented the results and analysis of the study, organized according to the researched objectives. Each section directly addressed a researched objective, demonstrating how the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models were implemented, evaluated, and visualized. The organization ensured that findings were systematically connected to the study’s goals.
+
+\section{4.1 Implementation of Discrete-Event and Continuous Simulation Models}
+The implementation of the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models was carried out using dedicated scientific computing tools built in Python: the SimPy 4.0.1 framework for DES and SciPy’s solve\_ivp method (with the RK45 solver)} for CS.
+
+For the DES model, the simulation was implemented using SimPy 4.0.1, a process-based discrete-event simulation library built on Python’s generator architecture, which allows asynchronous event scheduling and resource management. The study began by collecting and preparing data from the Registrar’s Office, such as student arrival times, service durations, and queue lengths, which were then standardized to ensure reliability. Using the simpy.Environment() class, an event-driven simulation environment was created, enabling continuous tracking of individual student processes. Service counters were defined as shared resources using simpy.Resource(), limiting concurrent service capacity and modeling congestion in high-demand scenarios. Each simulated “student” entity followed a lifecycle process encompassing arrival, waiting, service, and departure. The time between these states was managed using env.timeout(), which advanced the simulation’s event clock without iterating through every unit of real time. Performance metrics, including waiting time, queue length, throughput, and resource utilization, were monitored throughout the simulation. The resulting model effectively captured queue dynamics and congestion variability consistent with real-world operations. Finally, verification and validation were conducted by comparing simulation results with observed registrar data, ensuring that the DES accurately represented operational conditions.
+
+For the Continuous Simulation (CS) model, the SciPy framework was employed to represent student flow behavior using mathematical modeling rather than discrete event tracking. In particular, the  solve\_ivp function with the Runge-Kutta (RK45) integration method was utilized to solve a system of differential equations describing the change in the number of students within the system over time. 
+The model continuously tracked the states of waiting, served, and completed students with time-based changes represented through numerical solutions rather than discrete state jumps. This provided smooth approximations of system dynamics and made it possible to observe overall flow stability and transition trends. Simulated trends revealed efficiency metrics such as an approximately 12-minute average waiting time, a throughput rate of around 12.6 students per hour, and a service utilization rate close to 49.5\%. Validation and sensitivity analysis were later performed to ensure robustness under varying input conditions, confirming that the differential equation model accurately captured the temporal patterns of student flow. These results highlight the suitability of the Continuous Simulation approach for examining long-term system behavior and average performance trends rather than individual service interactions. Consequently, the CS model served as a complementary analytical tool to the Discrete-Event Simulation model, supporting strategic evaluation and capacity planning for the Registrar’s Office.
+
+
+\subsubsection{4.1.1 Discrete-Event Simulation (DES) Development}
+The Discrete-Event Simulation (DES) model was implemented to represent and analyze the detailed movement of students within the Registrar’s Office. The model simulated how students arrived, waited, and were served at different counters based on real-world operational data, allowing the system to capture realistic service interactions, queue formations, and variations in workload throughout the operational period.
+\ref{tbl:sampleTbl2} presents the Simulation Parameters for DES Model.
+
+\begin{table}[!h]
+\centering
+\caption{Simulation
+\ Parameters for DES Model}
+\label{tbl:sampleTbl2}
+\begin{tabular}{l|c}
+\hline
+\textbf{Parameter} & \textbf{Value/Description} \\ \hline
+Number of Service Counters        & 4  \\
+Average Service Time (minutes)      & 9.33 \\
+Average Time Between Arrivals (minutes) & 2  \\
+Simulation Duration (minutes)           & 480 (8 hours)  \\
+Simulation horizon        & 480 minutes (8 hours)  \\
+Maximum Number of Students	&353 \\
+Initial Students in Queue	&353 \\
+Expected Load	&240 students \\
+Queue Discipline	&First-Come, First-Served (FCFS) \\
+Simulation Type	&Discrete-Event Simulation (DES) \\ \hline
+\end{tabular}
+\end{table}
+
+The DES model was developed to capture the step-by-step transactions of students in the Registrar’s Office, treating each process—such as arrival, waiting, service start, and service completion—as a discrete event that changes the system’s state. In the simulation, students are modeled as entities, while service counters act as finite resources, reflecting the real-world service environment. The simulation follows a First-Come, First-Served (FCFS) policy, ensuring that students are served in the order they arrive, consistent with the actual operations of the Registrar’s Office. This setup allows the model to replicate realistic system behaviors such as queue build-ups during peak periods and service recovery after delays.
+
+Service times are derived from empirical data, averaging 9.33 minutes per transaction, while arrival intervals average 2 minutes, indicating frequent student arrivals and potential queue formation. The model runs for 480 minutes (8 hours), representing a full workday, and continuously monitors metrics such as average waiting time, queue length, throughput, and service utilization. By simulating student transactions at the individual level, the DES model provides a highly detailed and dynamic view of operational performance, enabling the identification of bottlenecks, idle time, and peak-hour congestion. This event-driven approach ensures a realistic depiction of student flow and serves as a foundation for evaluating efficiency improvements and optimization strategies.
+
+\subsubsection{4.1.2 Continuous Simulation (CS) Development}
+The Continuous Simulation (CS) model was developed to provide an aggregate and system-wide perspective of student flow in the Registrar’s Office. Unlike the Discrete-Event Simulation (DES), which tracks individual students as separate entities, the CS approach models the system in terms of flows, rates, and state variables that evolve continuously over time. The main state variable in the model is the number of students in the system, N(t), which changes as students arrive, join the queue, and complete service.
+
+The governing equation of the system is expressed as:
+
+\[
+\frac{dN}{dt} = \lambda(t) - \mu(t) \cdot S(t)
+\]
+
+
+where $\lambda(t)$ represents the arrival rate of students, $\mu(t)$ is the service rate, and $S(t)$ is the number of active service counters. In this study, arrival and service rates were estimated from the preprocessed dataset and aggregated into smoothed hourly averages to approximate the continuous inflow and outflow of students. This mathematical structure enables the CS model to approximate overall congestion trends and long-term flow stability, providing a broader understanding of system behavior.
+
+Following this system-level formulation, the Continuous Simulation (CS) model was configured using parameters that reflect actual operating conditions in the Registrar’s Office. These parameters translate the abstract mathematical structure into a realistic representation of daily operations by defining the simulation duration, service capacity, arrival intensity, and student population. Through this configuration, the CS model bridges theoretical flow dynamics with practical operational settings, allowing the continuous behavior of student flow to be observed over a full working day. 
+ \ref{tbl:sampleTbl3} presents the Simulation Parameters for CS Model.
+
+\begin{table}[!h]
+\centering
+\caption{Simulation Parameters for CS Model}
+\label{tbl:sampleTbl3}
+\begin{tabular}{l|c}
+\hline
+\textbf{Parameter} & \textbf{Value/Description} \\ \hline
+Number of Service Counters	&4 \\
+Average Service Time (minutes)	&9.33 \\
+Average Time Between Arrivals (minutes)	&2 \\
+Simulation Time (minutes)	&480 (8 hours) \\
+Maximum Number of Students	&353 \\
+Initial Students in Queue	&353 \\
+Expected Load	&240 students \\
+Simulation Type	&Continuous Simulation (CS) \\ \hline
+\end{tabular}
+\end{table}
+
+\ref{tbl:sampleTbl3} the simulation horizon was set to 480 minutes (8 hours), replicating a full workday operation in the Registrar’s Office. Within this timeframe, four active service counters were configured to represent the available service points, ensuring that the model could capture multi-counter operations under real-world conditions. The average service time was set at 9.33 minutes per transaction, based on empirical data, while the average time between arrivals was 2 minutes, reflecting a steady and frequent inflow of students. In total, 353 students were included in the simulation, serving both as the maximum population and as the initial queue load, accurately representing peak operational hours where congestion typically occurs. These parameters allowed the Continuous Simulation (CS) model to approximate the dynamic flow of students over time, emphasizing overall system behavior rather than individual event tracking. The Discrete-Event Simulation (DES), which models each transaction step-by-step, the CS model focuses on continuous system evolution, showing how the number of students changes throughout the operational period. This makes it particularly effective in understanding macro-level performance, such as long-term utilization trends, system capacity, and average congestion patterns. It enables administrators to predict how the office would perform under varying workloads or staffing conditions, offering valuable insights for long-term planning and scheduling.
+
+A significant strength of the CS approach is its ability to present a smooth and stable visualization of system behavior, ideal for strategic decision-making and forecasting. However, it lacks sensitivity to short-term fluctuations—such as sudden surges in arrivals, short service delays, or temporary bottlenecks—which are better captured by the DES model. Despite this limitation, the CS and DES models complement each other: DES provides micro-level precision for daily operations, while CS delivers a broader, aggregated view of system efficiency. Combined, they form a powerful analytical framework for optimizing registrar operations through both tactical and strategic perspectives.
+
+
+\subsubsection{4.1.3 Initial Results and Visualizations of DES and CS}
+To better understand the operational dynamics of the Registrar’s Office, the initial results of the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models were compared using two key performance indicators: average waiting time over time and average queue length over time. These visualizations highlight how each modeling approach captured system performance within the same operating horizon and revealed differences in sensitivity and accuracy.
+These performance indicators were selected because they directly reflect student experience and service efficiency within the Registrar’s Office. Average waiting time over time illustrates how quickly students are processed under varying demand levels, while average queue length over time shows how congestion builds up and dissipates throughout the operating period. Examining these indicators simultaneously allows for a clearer comparison of how DES and CS respond to changes in arrival patterns, service capacity, and workload intensity. These comparisons also help identify periods where operational strain is most significant and where resources may be underutilized. Such insights support a more informed evaluation of how each simulation model represents real-world registrar operations under varying demand conditions. As a result, the visual outputs provide meaningful insights into the strengths and limitations of each modeling approach when applied to real operational conditions. \ref{fig:threeFig}, displayed the Comparison of Average Waiting Time.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm\linewidth]{figures/figure4.png}
+    \caption{Comparison of Average Waiting Time}
+    \label{fig:threeFig}
+\end{figure}
+
+\ref{fig:threeFig} showcased the comparison of average waiting times between the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models across the Registrar’s Office operations. The DES model, represented by the blue line, demonstrated fluctuating waiting times throughout the simulation period, accurately reflecting real-world variations in student arrivals and service capacity. During the morning hours, the average waiting time remained high at around 40 to 45 minutes due to the early buildup of students in the queue and limited service counters. Around midday, waiting times dropped significantly to about 20 minutes, indicating a temporary reduction in congestion before increasing again in the afternoon as new students arrived.
+
+The CS model, shown in red, maintained a nearly constant average waiting time of approximately 12 minutes throughout the entire 8-hour period. This steady pattern occurs because the CS model represents the system as a continuous flow of entities, averaging arrival and service rates rather than capturing individual events. While this approach provides a smoother and more stable representation of the system, it lacks sensitivity to real-time fluctuations—such as sudden increases in arrivals or temporary service delays—that are common in actual registrar operations. 
+
+The DES model proved to be more effective in capturing real-time dynamics, queue fluctuations, and variations in service performance. It offers a more realistic depiction of operational efficiency and short-term system behavior. On the other hand, the CS model is valuable for identifying long-term patterns and overall process stability. Together, both models complement each other—DES provides detailed, event-level insights for operational improvement, while CS supports high-level planning and strategic decision-making. \ref{fig:fourthFig} displayed the Comparison of Queue Length.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{figures/figure5.png}
+    \caption{Comparison of Queue Length}
+    \label{fig:fourthFig}
+\end{figure}
+
+\ref{fig:fourthFig} presents the comparison of average queue lengths between the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models throughout the Registrar’s Office operations. The DES model, represented by the blue line, showed an average queue length of approximately 20 students, indicating a higher level of congestion during the simulation period. This pattern reflects the discrete and event-driven nature of the DES model, where each student arrival, service initiation, and completion caused variations in the queue length. As the simulation progressed, short-term fluctuations and peaks emerged due to the uneven distribution of arrivals and the limited number of available service counters. These variations mirror actual operational conditions, in which queues tend to build up rapidly during peak hours and decrease when service efficiency improves. 
+
+The CS model, represented by the red line, maintained a nearly constant average queue length of around 15 students. This stability results from the continuous nature of the CS approach, which models the system using averaged rates rather than individual events [\citeyear{Raczynski2020}]. Instead of responding to discrete arrivals and service completions, the CS model captures the overall flow dynamics in a smooth and continuous manner, depicting the equilibrium behavior of the system under consistent arrival and service conditions. Although this model simplifies the representation of queues, it provides valuable insights into long-term operational stability and system capacity. 
+
+The DES model proved to be more sensitive to short-term variations and queue fluctuations, offering a realistic reflection of the dynamic interactions between students and service counters. On the other hand, the CS model is more suitable for high-level analysis and long-term performance evaluation, as it illustrates the general flow stability without focusing on micro-level events. Together, both models complement each other—DES offers detailed insights for operational adjustments, while CS supports strategic planning by emphasizing overall system steadiness.
+
+\subsubsection{4.1.4 DES/CS Performance by Service Type}
+The performance comparison of various registrar service purposes-Certificate of Authentication and Verification (CAV), Certificate of Enrollment (COE), Diploma, ID Validation, and Transcript of Records (TOR)—based on four key indicators: average waiting time, average service time, throughput, and students served. It highlights the differences in service efficiency and workload distribution across each transaction type. 
+The comparison further reveals how variations in transaction complexity and processing requirements influence overall system performance. Services that require multiple verification steps or additional processing tend to exhibit longer waiting and service times, while more routine transactions demonstrate higher throughput and faster completion rates. These distinctions provide valuable insight into how different registrar services contribute to congestion patterns and resource demand, supporting more balanced staffing allocation and improved scheduling strategies. \ref{fig:fifthFig}, displayed the Discrete-Event and Continuous Simulation Performance by Service Type.
+
+\begin{figure}[H]
+	\centering
+         % Row 1
+	\begin{subfigure}[b]  {0.40\textwidth}
+		\centering
+		\fbox{\includegraphics[width=1\textwidth]{figures/metrics1.png}}
+		\caption{DES Wait Time (minutes) and CS Wait Time (minutes)}
+		\label{fig:firstFig:a}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.40\textwidth}
+		\centering
+		\fbox{\includegraphics[width=1\textwidth]{figures/metrics2.png}}
+		\caption{DES Service Time (minutes) and CS Service Time (minutes)}
+		\label{fig:firstFig:b}
+	\end{subfigure}
+	
+	\vspace{1em}
+	
+	% Row 2
+	\begin{subfigure}[b]{0.40\textwidth}
+		\centering
+		\fbox{\includegraphics[width=1\textwidth]{figures/metrics3.png}}
+		\caption{DES Throughput (students/hour) and CS Throughput (students/hour)}
+		\label{fig:firstFig:c}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.40\textwidth}
+		\centering
+		\fbox{\includegraphics[width=1\textwidth]{figures/metrics4.png}}
+		\caption{DES Students Served and CS Students Served}
+		\label{fig:firstFig:d}
+	\end{subfigure}
+	
+	\caption{DES/CS Performance by Service Type}
+	\label{fig:fifthFig}
+\end{figure}
+
+\textit{a.) DES Wait Time (minutes) and CS Wait Time (minutes)}
+
+This chart shows that DES wait times vary widely depending on the type of transaction. For example, TOR and diploma requests have noticeably higher wait times in DES, while services like COE and CAV show lower waiting times. This indicates that DES captures actual service congestion and demand differences across transaction types. The CS model maintains very low and nearly constant wait times for all services. This means CS smooths out real queue fluctuations and does not reflect sudden surges or peak-hour delays, making its results more generalized compared to DES.
+
+
+\textit{b.) DES Service Time (minutes) and CS Service Time (minutes)}
+
+The DES service time values vary across different purposes, showing that some services (e.g., Diploma) require more processing time, while others (e.g., Authentication, ID Validation) are completed faster. This reflects actual workload differences among service types.
+On the other hand, the CS model shows almost the same service time for every purpose, which means it uses average service duration rather than distinguishing based on transaction complexity.
+
+\textit{c.) DES Throughput (students/hour) and CS Throughput (students/hour)}
+
+Throughput results indicate that DES can process more students per hour for certain services, such as COE and TOR, because it accounts for situations where counters work faster or queues clear quickly. In comparison, CS throughput is lower and more uniform, showing that it assumes a steady, averaged service rate. This makes CS less responsive to real-time speed variations in the workflow.
+
+\textit{d.) DES Students Served and CS Students Served}
+
+The DES model shows high variation in how many students are served for each transaction type, with higher counts for faster transactions like Authentication and TOR and lower counts for slower ones like Diploma. The CS model, however, shows no variation in students served per purpose because it does not track individual transactions. Instead, it only estimates the general system flow, meaning it cannot represent which services handle more or fewer students during the day.
+    
+ 
+\subsubsection{4.1.5 DataSet Collection}
+The dataset used as input for both the Discrete-Event and Continuous Simulation models. It contains key operational variables such as arrival times, queue lengths, service durations, and counter assignments. These variables were extracted from the collected observational data and served as the basis for understanding system behavior. As shown in the \ref{tbl:sampleTbl7}, patterns such as early congestion before counter operations and uneven distribution of workloads across service counters were identified.
+
+
+\begin{table}[!h]
+\centering
+\caption{Registrar’s Office Student Flow Dataset}
+\label{tbl:sampleTbl7}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
+\hline
+\textbf{Date} & \textbf{Student ID} & \textbf{Arrival Time} & 
+\textbf{Service Start} & \textbf{Service End} & 
+\textbf{Service Duration(min)} & \textbf{Purpose} & \textbf{Queue Length} & \textbf{Counter ID}\\ \hline
+10/13/25 & S1  & 6:07 am  & 8:00 am   & 8:03 am  & 3 & TOR            & 15 & C1 \\
+10/13/25 & S2  & 6:10 am  & 8:03 am   & 8:06 am  & 3 & Diploma        & 14 & C1 \\
+10/13/25 & S3  & 6:25 am  & 8:06 am   & 8:09 am  & 3 & CAV            & 13 & C1 \\
+10/13/25 & S4  & 6:32 am  & 8:09 am   & 8:12 am  & 3 & Authentication & 12 & C1 \\
+10/13/25 & S5  & 6:39 am  & 8:12 am   & 8:15am   & 3 & TOR            & 11 & C1 \\
+10/13/25 & S1  & 8:40 am  & 10:30 am  & 10:32 am & 2 & Authentication & 30 & C2\\
+10/13/25 & S2  & 8:46 am  & 10:32 am  & 10:35 am & 3 & CAV            & 30 & C2\\
+10/13/25 & S3  & 8:51 am  & 10:35 am  & 10:38 am & 3 & Diploma        & 30 & C2\\
+10/13/25 & S4  & 8:56 am  & 10:38 am  & 10:41 am & 3 & CAV            & 31 & C2\\
+10/13/25 & S5  & 9:01 am  & 10:41 am  & 10:43 am & 2 & TOR            & 31 & C2\\
+10/13/25 & S1  & 6:34 am  & 8:00 am  & 8:02 am   & 2 & COE            & 8  & C3\\
+10/13/25 & S2  & 6:38 am  & 8:02 am  & 8:04 am   & 2 & COE            & 7  & C3\\
+10/13/25 & S3  & 6:46 am  & 8:04 am  & 8:07 am   & 3 & COE            & 6  & C3\\
+10/13/25 & S4  & 6:53 am  & 8:07 am  & 8:09 am   & 2 & COE            & 5  & C3\\
+10/13/25 & S5  & 7:26 am  & 8:09 am  & 8:11 am   & 2 & COE            & 4  & C3\\
+10/13/25 & S1  & 6:37 am  & 8:00 am  & 8:02 am   & 2 & ID VALIDATION  & 8  & C4\\
+10/13/25 & S2  & 6:47 am  & 8:02 am  & 8:04 am   & 2 & ID VALIDATION  & 7  & C4\\
+10/13/25 & S3  & 6:58 am  & 8:04 am  & 8:05 am   & 1 & ID VALIDATION  & 6  & C4\\
+10/13/25 & S4  & 7:16 am  & 8:05 am  & 8:06 am   & 1 & ID VALIDATION  & 5  & C4\\
+10/13/25 & S5  & 7:27 am  & 8:06 am  & 8:07 am   & 1 & ID VALIDATION  & 4  & C4\\
+-- & -- & -- & -- & -- & -- & -- & -- & -- \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\ref{tbl:sampleTbl7} presented the operational data needed for the development of both DES and CS models when analyzing the flow of students in the Registrar's Office. These include essential variables such as arrival times, service start and end times, service duration, queue length, transaction purpose, and assigned counter. These variables provide the main parameters for modeling how students enter the system, wait in queues, receive service, and exit the process.
+
+Using this dataset, the DES model can accurately replicate the sequence of events student arrivals, queue formation, and service completion—while the CS model can represent the continuous change in system congestion and service load over time. The table shows early arrival records with the high queue lengths recorded at the very start, representing the peak congestion period even before the official hours of service. At the same time, service durations remain constant at 2–3 minutes, providing a good basis for estimating the processing capacity and finding bottlenecks across counters.
+
+Additionally, the operational profiles support the further refinement and testing of the developed simulation models. By integrating the arrival peaks observed, consistent service durations, and activities specific to each counter, the DES and CS models can simulate how varied system configurations affect the overall students' flow. In this respect, the study is able to simulate several improvement strategies, such as the reallocation of counters, changes in service start times, or workload leveling, in order to identify the interventions that will result in the greatest queue length and waiting time reduction. In this context, the data provides not only input regarding the construction of the models but also a benchmark with which to understand the effects of the suggested operational changes.
+
+
+\subsubsection{4.1.5 Simulation Platform Flow}
+The implementation of both Discrete-Event Simulation (DES) and Continuous Simulation (CS) models, a comprehensive simulation platform architecture was designed and developed. This architecture served as the foundation of the entire system, enabling seamless interaction between data processing, simulation execution, and real-time visualization. It integrates multiple functional components into a unified platform that supported both academic research and practical decision-making. Through the integration of a Flask-based backend for simulation logic with a React.js-based frontend for user interaction, the platform ensured efficient data flow, flexible configuration, and interactive visualization. It was built with scalability, modularity, and user accessibility in mind, allowing stakeholders to configure simulation parameters, upload datasets, run analyses, and visualize results dynamically. \ref{fig:seventhFig} displayed the diagram of the Simulation Platform Flow.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/arch 1.png}
+    \caption{Simulation Platform Flow}
+    \label{fig:seventhFig}
+\end{figure}
+
+\ref{fig:seventhFig}, showed a comprehensive overview of how the integrated system operates, connecting both backend and frontend components into a unified, interactive, and scalable solution. The platform was designed to support the full cycle of simulation activities—from data processing and model execution to real-time visualization and analysis—ensuring seamless communication between components.
+
+The backend, developed using Flask, functions as the core engine that drives the simulation logic. It features a RESTful API serving as the main communication bridge between the backend and frontend. This API interacts with both the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models, which execute simulation computations based on user-defined inputs. Additionally, a PDF Parser module automates the extraction of data from structured documents and stores the processed data in the centralized Data Storage, which manages datasets and model parameters for consistent use across simulations. On the frontend, built with React.js, users can interact with the system through intuitive interfaces such as Simulation Control and Dataset Upload. These interfaces allow users to configure simulation parameters, upload datasets, and initiate simulation runs. Once the backend completes processing, the resulting data is transmitted to the Metrics Dashboard, where it is analyzed and displayed as key performance indicators (KPIs). The data is also visualized in the 3D Visualization module, which dynamically renders the simulated environment, enabling users to clearly observe system behavior and performance outcomes.
+
+The upper layer of the platform are several enhanced features designed to enrich usability and flexibility. These include CSPC Branding for institutional identity, Realistic Timed Mode to simulate actual operational timelines, Fast Analysis Mode for rapid computation and preview, and a Dynamic Counter Layout that allows real-time reconfiguration of the simulation environment. These features collectively improve the platform’s adaptability for different operational needs and ensure a smooth, responsive user experience—from data ingestion and simulation execution to visualization and analysis. The simulation platform flow not only streamlines the execution of both DES and CS models but also bridges data-driven analysis with administrative decision-making. Its modular and interactive design enables iterative testing and optimization of registrar operations, allowing stakeholders to visualize the effects of adjustments in staffing, counter assignments, and service schedules in real time. By integrating backend computation and frontend visualization, the platform effectively supports the study’s objective of optimizing student flow and provides a scalable framework that can be extended to other academic service units within CSPC.
+
+
+
+\section{4.2 Evaluation of Model Performance}
+
+For the second objective, the performance of the models was evaluated using average waiting time, queue length, service utilization, throughput, and system efficiency. Both the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models were tested under the same dataset and operational conditions. The following subsections presented the results for each metric, highlighting similarities and differences between the two models. \ref{tbl:sampleTbl5} presented the Simulation Model Performance Comparison.
+
+
+\begin{table}[!h]
+\centering
+\caption{Simulation Model Performance Comparison}
+\label{tbl:sampleTbl5}
+\begin{tabular}{l|c|c|c}
+\hline
+\textbf{Metric} & \textbf{DES} & \textbf{CS} & \textbf{Difference} \\ \hline
+Average Wait Time      & 59.60 min   & 12.00 min  & +147.60 min (-+396.7\%) \\
+Throughput             & 21.9/hr     & 12.6/hr      & +9.3/hr (+73.3\%) \\
+Resource Utilization   & 94.3\%     & 49.5\%      & +44.8 (+90.7\%) \\
+Computation Time       & 21.35 ms   & 64.60 ms   & -43.25 ms (-67.0\%\%) \\
+Overall Efficiency     & 34.5\%    & 19.5\%       & +15.0 (+77.1\%) \\ \hline
+\end{tabular}
+\end{table}
+
+ A clearly understanding of how each simulation model performed required a detailed evaluation of their behavior under identical conditions. The evaluation focused on the five primary performance metrics: average waiting time, queue length, service utilization, throughput, and system efficiency. Each metric offers a distinct perspective on how effectively the models captured real operational dynamics inside the Registrar’s Office. The following sections discuss these results individually, providing insights into the strengths and limitations of both DES and CS.
+
+
+
+\begin{itemize}
+    \item \textit{Average Waiting Time.} The average waiting time indicates how long students wait from their arrival until the start of service. The DES model recorded a significantly lower waiting time of 59.60 minutes compared to the CS model’s 12.00 minutes. This large gap highlights how DES, which tracks individual student events, captures real-time variations and minimizes waiting delays. In contrast, the CS model relies on continuous flow rates, which tend to average out fluctuations and may underestimate congestion during peak hours.
+\end{itemize}
+
+\begin{itemize}
+    \item \textit{Average Queue Length.} The average queue length represents the number of students waiting at any given time. Results showed that DES effectively minimized queues and managed variations more dynamically than CS.
+\end{itemize}
+
+\begin{itemize}
+    \item \textit{Throughput.} Throughput, which measures the number of students served per hour, also favored DES with a rate of 21.9 students per hour, compared to CS’s 12.6. Although the difference seems small, it demonstrates DES’s ability to model event-driven operations and complete more transactions under identical conditions, providing higher responsiveness and operational accuracy.
+\end{itemize}
+
+\begin{itemize}
+    \item \textit{Service Utilization and System Efficiency.} Resource utilization measures how often service counters are actively engaged in processing students. DES recorded a higher utilization rate of 94.3\%, showing that counters are efficiently used without excessive idle periods. The CS model, at 49.5\%, indicated under utilization due to its generalized representation of the process. DES also outperformed CS in computation time, processing faster with 21.35 milliseconds compared to CS’s 64.60 milliseconds. Finally, in terms of overall system efficiency, DES achieved 34.5\% compared to CS’s 19.5\%, proving its capability to simulate real-time operations more accurately. These results confirm that DES provides a more detailed, efficient, and responsive representation of the Registrar’s Office workflow compared to the broader but less dynamic CS model.
+\end{itemize}
+
+\subsubsection{4.2.1 Comparison of DES and CS Model Outcomes Across Performance Metrics}
+The graph presented a direct comparison of key performance indicators between Discrete Event Simulation (DES) and Continuous Simulation (CS), emphasizing how each method handled system efficiency. DES (shown in blue) demonstrates a significant advantage over CS (in red) in both weighted time and queued length, with values that were nearly negligible.
+\ref{fig:eightFig} displayed the Comparison of DES and CS Model Outcomes Across Performance Metrics.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/figure 7.png}
+    \caption[Comparison of DES and CS Model] {Outcomes Across Performance Metrics}
+    \label{fig:eightFig}
+\end{figure}
+
+The Side-by-Side Metrics graph provides a visual comparison of four major performance indicators—average waiting time, queue length, throughput, and utilization—between the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models. The blue line (DES) and red line (CS) illustrate how each model responded to operational dynamics during the 480-minute simulation period. The DES model recorded a significantly lower average waiting time, which means students are able to receive services more quickly after arrival. This suggests that DES successfully modeled real-time event handling, queue clearing, and service prioritization, resulting in a more efficient system flow. Conversely, the CS model displayed longer waiting times, representing a more static and generalized view that fails to capture short-term variations in student arrivals and service completions.
+
+In terms of queue length, the DES model again demonstrated superiority, maintaining shorter and more dynamic queue levels throughout the simulation. It effectively reflected actual operational fluctuations, where queues increase during peak hours and decrease as service counters clear transactions. Meanwhile, the CS model showed consistently longer queues due to its aggregated approach, which tends to overestimate congestion since it smooths out real-time data. This contrast highlights DES’s advantage in modeling detailed, event-driven scenarios that are closer to actual office behavior. When evaluating throughput, or the number of students served per hour, both models produced relatively similar results. However, DES had a slight edge, indicating a higher completion rate within the same time frame, confirming its ability to adapt faster to changing demand and service durations.
+
+Resource utilization and overall efficiency also reveal important differences between the two models \citeauthor{Ivo2021simulation} [\citeyear{Ivo2021simulation}]. The CS model exhibited higher utilization values, meaning its resources were active for a larger portion of the simulation time. However, this higher utilization did not translate to better performance—it came with longer waiting times and higher congestion, suggesting inefficiency under variable workloads. In contrast, the DES model achieved balanced utilization and much greater system efficiency, optimizing service time while preventing counter overload. The graph overall demonstrates that DES is the more responsive and accurate simulation technique, capable of capturing both micro-level operational dynamics and real-time service variations. Meanwhile, the CS model, though less precise, remains useful for long-term analysis and planning since it highlights broader system trends and capacity limits. Together, these models offer a comprehensive view of registrar operations—DES for detailed, short-term optimization and CS for strategic, macro-level forecasting.
+
+\subsubsection{4.2.2 Feedback Loop Mechanism in the Simulation Framework}
+An essential component of the simulation framework was the feedback loop, which played a critical role in refining the overall system. Once the simulations were executed and their outputs analyzed, the results were systematically feedback into the input stage to improve subsequent iterations of the model. This iterative process allowed for the continuous enhancement of the Registrar’s Office operations by identifying weak points and testing alternative strategies in real time.
+For example, if the output indicated that queued lengths and waited times significantly increased during peak hours, this insight fed back into the input parameters by adjusting student arrival rates, service times, or the number of available counters. Similarly, if resource utilization was found to be either too low (indicating idle capacity) or too high (indicating system strain), staffing levels and scheduling strategies were modified to find an optimal balance. This process ensured that each new simulation that ran was based on improved, data-driven parameters rather than static assumptions.
+By cycling performance insights back into the model’s inputs, the system enabled evidence-based decision-making and adaptive operational planning. This feedback mechanism not only enhanced the accuracy and relevance of the simulation but also ensured that the 3D interactive environment could support real-world scenarios tested and optimized. Ultimately, the feedback loop transformed the simulation from a one-time analysis tool into a dynamic decision-support system and allowed the Registrar’s Office to continuously refine its operations for improved efficiency and service quality.
+
+\section{4.3 3D Prototype Visualization Development}
+ This section presents the 3D prototype designed to visualize the simulation results derived from both the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models. The prototype was developed to serve as an interactive tool that translates simulation data into a dynamic and realistic environment, enabling users to observe and analyze the flow of students, queue behavior, and service counter utilization in the Registrar’s Office.
+
+\subsubsection{4.3.1 Prototype Design and Implementation}
+For the last objective, a 3D prototype was developed based on the model outputs of both the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models. The purpose of this prototype was to transform simulation data into an interactive, visual environment that demonstrates the actual flow of students, queue behavior, and counter utilization in the Registrar’s Office. The prototype functioned as a visual decision-support tool, bridging the gap between analytical simulation results and operational insights for administrators. \ref{fig:nineFig}, showcased the 3D Prototype of the Registrar’s Office.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/Screenshot 2025-11-08 091238.png}
+    \caption{3D Prototype of the Registrar’s Office}
+    \label{fig:nineFig}
+\end{figure}
+
+\ref{fig:nineFig} the 3D environment closely replicated the physical layout of the Registrar’s Office, including service counters, waiting areas, entrances and exits, and seating arrangements. Student entities were animated to follow simulated pathways—from arrival to queueing, service, and departure—mirroring the outputs generated by the DES and CS models. Staff stations and counter distributions were also represented to provide a realistic depiction of operational activities. By integrating simulation data directly into the 3D layout, the system allowed users to visualize how arrival rates, service durations, queue lengths, and waiting times influenced the movement and density of students at any point in the simulation.
+
+The 3D model system enables data-driven decision-making because it uses actual operational inputs—such as congestion levels, service delays, arrival patterns, and processing capacity—and converts them into a visible and quantifiable representation of real behavior. Through this integration, every movement and queue buildup displayed in the 3D model corresponds to actual simulation values, ensuring that decisions are grounded on evidence rather than assumptions. This provides administrators with a more reliable understanding of peak-hour congestion, counter performance, and workflow bottlenecks affecting service delivery.
+
+Furthermore, the prototype significantly enhances operational planning by supporting the analysis of “what-if” scenarios without affecting day-to-day registrar operations. Administrators can experiment with alternative staffing arrangements, additional counters, improved layouts, or policy adjustments and immediately compare how these changes affect waiting times, queue lengths, and overall throughput. This makes the 3D model a powerful and practical tool for optimizing workflow strategies before implementation in the real setting.
+
+Overall, the 3D prototype system transforms raw simulation data into a practical, accessible, and visually rich platform that strengthens both decision-making and operational planning in the Registrar’s Office. By converting complex metrics into an intuitive real-world visualization, the system enables stakeholders to recognize inefficiencies and potential solutions more quickly. It also enhances communication among decision-makers by presenting technical findings in a format that non-technical users can easily interpret. Ultimately, the integration of DES and CS outputs into a 3D environment not only improves analytical accuracy but also fosters a more informed, proactive, and strategic approach to managing student flow and optimizing registrar services.
+
+\subsubsection{4.3.2 3D Prototype Interface Guide}
+ The \ref{fig:tenthFig} presented the 3D Prototype’s Interface and Visual Guide, which was designed to help users navigate and interpret the simulation environment effectively. It outlines the visual state of students, office layout elements, timed simulation modes, and navigation controlled integrated into the system.
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10 cm\linewidth]{figures/student state and visual guide.png}
+    \caption{Student State and Visual Guide}
+    \label{fig:tenthFig}
+\end{figure}
+
+The Student State and Visual Guide section identifies how different elements in the simulation are represented. Students in the waiting line (DES) were shown in blue, those being served are highlighted in yellow, and those exiting after service appeared in green. CS students are indicated by red bases to distinguish them from DES entities. Additional visual indicators, such as red for the "waiting" status and gold for "active service," helped users easily monitor real-time changes in the system. The office layout used blue carpets for the waiting area, beige floors for service counters, and red queued management posts to clearly visualize flow paths.
+
+The Navigation and Time Controls section explained how users interact with the simulation. Mouse control allowed for flexible viewing through rotation, zooming, and panning, while playback controls enabled starting, pausing, or scrubbing through the simulation timeline. A comparison feature allowed toggling between DES and CS students for side-by-side evaluation. Users could switch between Realistic Mode (real-time simulation) for live demonstrations and Fast Mode for analytical testing, making the prototype suitable for both trained operational staff and research analysis. This combination of visual clarity and interactive controls enhanced the usability and practical value of the 3D prototype.
+
+\subsubsection{4.3.3 What-If Scenario Configuration and Testing}
+To further enhance the functionality of the simulation platform, a What-If Scenario feature was integrated to allow administrators to test various operational strategies and their impact on system performance. This tool supported data-driven decision-making by simulating different configurations, such as changes in service capacity, operating hours, or arrival patterns, before applying them in real operations. \ref{fig:elevenFig} displayed the What-If Scenario Configuration Interface.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10 cm\linewidth]{figures/Screenshot 2025-10-05 101350.png}
+    \caption{What-If Scenario Configuration Interface}
+    \label{fig:elevenFig}
+\end{figure}
+
+The image above illustrated the What-If Scenario interface, which offered multiple configuration options: adding more counters, speeding up service times, simulating peak hour surges, and extending office hours. Each scenario could have been tested with a single click, triggering the simulation engine to recalculate key performance metrics such as average weighted time, throughput, utilization, and overall efficiency. For example, selecting the “Faster Service” scenario reduced service time by 30\%, allowed administrators to immediately observe the resulting decrease in wait time and increase in throughput in the Scenario Results panel. This interactive feature enables the Registrar’s Office to explore different operational strategies, anticipate outcomes, and choose the most effective improvements without disrupting real-world operations.
+
+\begin{refsection}
+%=======================================================%
+%%%%% Do not delete this part %%%%%%
+\clearpage
+
+\printbibliography[heading=subbibintoc, title={\texorpdfstring{\centering}{} Notes}]
+\end{refsection}

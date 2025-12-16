@@ -1,0 +1,78 @@
+\chapter{Summary, Conclusions, and Recommendations}
+\begin{refsection}
+The next chapter summarizes these findings objectively, presents conclusions, and makes targeted recommendations for the registrar’s office. The results from Chapter 4 are synthesized here to highlight the implications of the comparative analysis between the Discrete-Event Simulation (DES) and Continuous Simulation (CS) models, as well as the role of the 3D prototype in supported decision-making in the Registrar’s Office.
+
+\section{Summary}
+In this study, the emphasis is on improving student movement and service flow in the Registrar’s Office of Camarines Sur Polytechnic Colleges using both Discrete-Event Simulation (DES) and Continuous Simulation (CS). Moreover, the research aims to develop a 3D prototype that could improve stakeholders’ understanding of office operations. Through the comparison of both models, the study identifies strengths and limitations in managing student flow. These insights support informed decisions for improving efficiency and service delivery in the Registrar’s Office.
+
+The Discrete Event Simulation was utilized to model the individual student process activities as separate events such as arrivals, queuing, and service completion. Using separate models of students, DES simulated real-world variability of student arrivals, service, and queueing in the Registrar’s Office effectively. This application of DES enabled the accurate analysis of bottlenecks and resource waste, ensuring that DES is very effective in the short term for maximizing day-to-day operations.
+
+A Continuous Simulation model was developed to study the total student movement as a continuing process. CS dealt with student service demands, congestions, and resource allocations in terms of trends. Though it was effective for studying trends for long-term planning purposes, it was not effective enough for capturing discontinuous trends in queueing that occur in peak registration times. These were dealt with in the Queueing Model.
+
+It is clearly evident that the difference in the performance of DES and CS is significant  based on key metrics such as average waiting time, queue behavior, service utilization, throughput, and overall system efficiency. The DES model recorded a higher average waiting time of 59.60 minutes, reflecting its sensitivity to peak-time congestion and individual delays, while the CS model produced a smoother and lower average waiting time of 12.00 minutes due to its flow-based averaging mechanism. These results demonstrate that DES provides a more realistic depiction of actual student experience during busy operational periods.
+In terms of efficiency and output, DES achieved a higher throughput of 21.9 students per hour with a service utilization rate of 94.3\%, indicating effective use of service counters and accurate modeling of workload intensity. In contrast, the CS model recorded a throughput of 12.6 students per hour and a service utilization of 49.5\%, suggesting under utilization caused by the smoothing effect of continuous modeling. Overall system efficiency further favored DES at 34.5\%, compared to 19.5\%for CS, confirming DES as more suitable for operational decision-making, while CS remains valuable for understanding macro-level system behavior.
+
+A 3D prototype system was created to enable the graphical illustration of the results of both the DES and CS models for the simulation system. This was achieved using the 3D setting, which converted the numerical results of the simulation into a graphical representation of the Registrar’s Office system, illustrating student flows, queues, and congestions. The 3D prototype explains that it allows for data-informed decision-making and more effective operational planning by facilitating tests of what-if questions, analysis of layout alternatives, and analysis of staff allocation proposals before implementation takes place.
+Again, through the integration of DES, CS, and 3D, the implementation process for student services is streamlined, with more effective decision-making through evidence. 
+
+\section{Findings}
+These are the results submitted by the researchers with respect to the objectives of the study:
+
+
+\begin{enumerate}
+    \item The study successfully implemented both Discrete-Event Simulation (DES) and Continuous Simulation (CS) models using actual datasets from the Registrar’s Office, which included arrival times, service durations, queue lengths, and counter assignments. The DES model effectively captured individual student transactions, queues, and service variations, providing a detailed representation of system behavior. Meanwhile, the CS model generated a broader and smoother overview of student flow trends, emphasizing general system dynamics rather than micro-level fluctuations. Together, the two models offered complementary perspectives in understanding the operational flow of registrar services.
+    \item The comparison was guided by key performance metrics that illustrate how each model handled student flow, detailed as follows:
+    \begin{enumerate} 
+    \item [a.)]Average Waiting Time
+
+    The DES model recorded an average waiting time of 59.60 minutes, significantly higher than the CS model’s 12.00 minutes. This difference shows how DES captures individual process delays and peak-time congestion more realistically, while CS produces an averaged behavior that smooths out fluctuations in student arrivals.
+
+   \item [b.)]Queue Length
+
+     Findings indicated that DES represented longer and more variable queue formations compared to CS. The CS model displayed shorter queues due to its continuous nature, which distributes system load more uniformly. This difference highlights DES’s ability to reflect real-time bottlenecks more accurately, especially during high-traffic periods.
+
+    \item [c.)] Service Utilization
+
+   DES demonstrated a higher resource utilization of 94.3\%, showing that service counters were active for most of the simulated time. Meanwhile, CS recorded only 49.5\%, indicating underutilization due to the smoothing effect of continuous flow modeling. This suggests that DES is more effective at capturing actual workload intensity experienced by front-line personnel.
+
+    \item [d.)]Throughput
+
+    DES achieved a throughput of 21.9 students per hour, outperforming CS, which processed 12.6 students per hour. This implies that DES more accurately reflects real-world operational output because it tracks distinct service completions, whereas CS models output as a flow rate rather than discrete transactions.
+
+   \item [e.)]System Efficiency
+
+    Overall system efficiency further highlighted DES’s advantage, achieving 34.5\%, compared to 19.5\% for CS. DES showed better performance in capturing idle time, congestion points, and system responsiveness. Although CS offered long-term patterns, it was less capable of representing actual operational pressures.    
+\end{enumerate}
+
+    \item A 3D prototype system was developed to visualize the results of the simulation models. This prototype provided a realistic representation of the Registrar’s Office and showed student movements, queue formations, and counter utilization. It allowed administrators to observe congestion points, test scenarios such as adding service counters, and evaluate strategies for reducing waiting time. By transforming quantitative results into a visual and interactive format, the prototype made complex data more accessible and actionable, enhancing decision-making and operational planning within the Registrar’s Office.
+\end{enumerate}
+
+\section{Conclusion}
+Hence, based on the findings, the researchers concluded:
+
+\begin{enumerate}
+ \item The study concluded that both Discrete-Event Simulation (DES) and Continuous Simulation (CS) effectively modeled student flow in the Registrar’s Office, but they provided different levels of detail. DES offered a precise, event-driven representation of arrivals, queues, and service processes, making it highly suitable for operational analysis. In contrast, CS provided a smoother and more generalized view of system behavior, which was better suited for identifying long-term flow patterns. Together, these models demonstrated the value of simulation as a tool for understanding and optimizing registrar operations.
+
+ \item The evaluation confirmed that DES outperformed CS in terms of efficiency, accuracy, and responsiveness. DES consistently produced shorter waiting times, smaller queue lengths, higher throughput, and better resource utilization, demonstrating its ability to capture real-world variations and minimize congestion. CS, while still effective, showed longer waiting times and slightly less efficient queue management, reflecting its limitation in capturing abrupt fluctuations. Therefore, DES was considered more appropriate for day-to-day operational improvements, while CS provided valuable insights for strategic and long-term planning.
+
+ \item The study further concluded that the development of the 3D prototype system enhanced the applicability of the simulation results by transforming numerical data into a visual and interactive tool. This prototype allowed administrators to easily observe student movements, counter utilization, and congestion points, making simulation outputs more accessible to decision-makers. It also provided a practical platform for testing different scenarios and strategies, thereby supporting data-driven decisions in managing registrar operations.
+\end{enumerate}
+
+\section{Recommendations}
+On the basis of the findings, the researchers recommend:
+
+\begin{enumerate}
+    \item Discrete-Event Simulation (DES) and Continuous Simulation (CS) should be continuously applied in analyzing registrar operations. DES is recommended for addressing immediate service concerns such as congestion, waiting time, and counter utilization due to its detailed and event-driven nature, making it suitable for daily operational management. Meanwhile, CS should be used for long-term forecasting and strategic planning, including enrollment trends and future resource requirements. The development of hybrid simulation models that integrate DES with forecasting techniques may further enhance accuracy and system responsiveness.
+
+    \item The outputs of DES have to be the main reference in trying to minimize queue length, waiting time, and enhance the daily service efficiency since it gave detailed information about the transactions of each student and real-time system behavior. On the other hand, outputs from CS should drive long-term staffing decisions, counter allocation, and resource planning for sustainability of operational efficiency. Monitoring and evaluation of key performance indicators, such as average waiting time, queue length, throughput, and utilization—should be institutionalized to support continuous improvement.
+
+    \item The developed 3D prototype system should be further enhanced, regularly maintained, and gradually expanded to other CSPC service units with similar congestion issues, such as the Cashier and Library. The system should be used to simulate various “what-if” scenarios, including changes in staffing levels, counter layouts, and student arrival patterns, to assess potential effects before implementation. 
+    Additionally, the 3D prototype serve as a improvement of service workflows, supporting informed decision-making and effective operational planning.
+    
+\end{enumerate}
+%=======================================================%
+%%%%% Do not delete this part %%%%%%
+\clearpage
+
+\printbibliography[heading=subbibintoc, title={\texorpdfstring{\centering}{} Notes}]
+\end{refsection}

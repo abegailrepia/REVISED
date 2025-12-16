@@ -1,0 +1,57 @@
+\documentclass[12pt]{cspcccsthesis}
+% preamble
+
+\title{Comparative Analysis of Discrete-Event And Continuous Simulation Models For Students Flow Optimization}
+\authorOne{Regaspi, May Angeline M.}
+\authorTwo{Repia, Abegail C.}
+\authorThree{Ruin, Joy Ann M.}
+\degree{Bachelor of Science in Computer Science}
+\approvaldate{December 5, 2025}
+\school{Camarines Sur Polytechnic Colleges}
+\adviser{KAELA MARIE N. FORTUNO, MIT}
+\dean{ROSEL O. ONESA, MIT}
+\committeeMemberOne{FREDDIE B. PRIANES, MIT}
+\committeeMemberTwo{JOSEPH JESSIE S. OÑATE, MSc}
+\committeeChair{TIFFANY LYN O. PANDES, MSc}
+\department{College of Computer Studies}
+\thesisAbstract{This study assesses the effectiveness of Discrete-Event Simulation (DES) versus Continuous Simulation (CS) in optimizing student flow at the Registrar’s Office of Camarines Sur Polytechnic Colleges (CSPC). The research aims to address issues like long queues and service delays by using operational data to build and evaluate DES and CS models according to metrics like waiting time and system efficiency. The findings indicate that DES outperformed CS in operational capacity and resource utilization, achieving a higher throughput of 21.9 students per hour compared with 12.6 students per hour for CS, a resource utilization rate of 94.3\% compared with 49.5\%, and greater overall system efficiency of 34.5\% compared with 19.5\%. The study concludes that DES is better for short-term optimization, whereas CS is more appropriate for long-term trend analysis. Additionally, a 3D prototype system was developed to aid in the visualization and optimization of student service workflows.}
+\keywords{Discrete-Event Simulation, Continuous Simulation, Student Flow Optimization}
+
+% Load glossary entries
+\input{settings/glossary.tex}
+
+% document body
+\begin{document}
+
+\makeTitlePage{December}{2025}
+
+\begin{frontmatter}
+    \input{approvalPage}
+    \makePanelofExaminers{}
+    \makeDedication{The unwavering love and support of our families, especially our parents, have been the foundation of our journey and the inspiration behind this achievement.
+
+    Guidance and encouragement from our professors and mentors greatly shaped this research, and their dedication to our growth is deeply appreciated.
+
+    Supportive friends made the challenges more bearable, offering comfort and motivation throughout the process.
+
+    This work also reflects the teamwork, perseverance, and shared commitment within our group—a milestone we proudly accomplished together.}
+    
+    \input{acknowledgments}
+    \makeAbstract
+    \makeTOC
+    \makeListOfTables
+    \makeListOfFigures
+\end{frontmatter}
+
+\begin{thesisbody}
+    \input{chapters/chapter1}
+    \input{chapters/chapter2}
+    \input{chapters/chapter3}
+    \input{chapters/chapter4}
+    \input{chapters/chapter5}
+    \makeBibliography
+    \input{chapters/appendix}
+    \input{vita}
+\end{thesisbody}
+
+\end{document}

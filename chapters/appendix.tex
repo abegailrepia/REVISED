@@ -1,0 +1,870 @@
+
+% The environment used here (theappendices) is a wrapper for the basic appendices environment which changes the appearance of the title page and the structure and appearance of the appendices in the table of contents and PDF bookmarks. The original functionality can be restored by simply removing the 'the' from the \begin{} and \end{} statements below.
+
+\begin{theappendices}   
+
+\appendix
+
+\chapter{Source Codes}
+\centering
+\textbf{Constraint}
+\\
+\begin{verbatim}
+from constraint import *
+
+from playground.models import Instructor
+from playground.models import Laboratory
+from playground.models import Schedule
+
+from datetime import datetime
+
+
+class SchedulingProblem:
+    def __init__(
+        self,
+        course,
+        section,
+        instructor=None,
+        laboratory=None,
+        time=None,
+        day=None,
+    ):
+        self.problem = Problem(BacktrackingSolver())
+        self.course = course
+        self.section = section
+
+        # These constraints are hard constraints if they are defined
+        self.laboratory = laboratory
+        self.time = time
+        self.day = day
+        self.instructor = instructor
+
+        self.timeslots = [
+            "Monday 7:00 am",
+            "Monday 8:00 am",
+            "Monday 9:00 am",
+            "Monday 10:00 am",
+            "Monday 11:00 am",
+            "Monday 12:00 pm",
+            "Monday 1:00 pm",
+            "Monday 2:00 pm",
+            "Monday 3:00 pm",
+            "Monday 4:00 pm",
+            "Monday 5:00 pm",
+            "Monday 6:00 pm",
+            "Monday 7:00 pm",
+            "Tuesday 7:00 am",
+            "Tuesday 8:00 am",
+            "Tuesday 9:00 am",
+            "Tuesday 10:00 am",
+            "Tuesday 11:00 am",
+            "Tuesday 12:00 pm",
+            "Tuesday 1:00 pm",
+            "Tuesday 2:00 pm",
+            "Tuesday 3:00 pm",
+            "Tuesday 4:00 pm",
+            "Tuesday 5:00 pm",
+            "Tuesday 6:00 pm",
+            "Tuesday 7:00 pm",
+            "Wednesday 7:00 am",
+            "Wednesday 8:00 am",
+            "Wednesday 9:00 am",
+            "Wednesday 10:00 am",
+            "Wednesday 11:00 am",
+            "Wednesday 12:00 pm",
+            "Wednesday 1:00 pm",
+            "Wednesday 2:00 pm",
+            "Wednesday 3:00 pm",
+            "Wednesday 4:00 pm",
+            "Wednesday 5:00 pm",
+            "Wednesday 6:00 pm",
+            "Wednesday 7:00 pm",
+            "Thursday 7:00 am",
+            "Thursday 8:00 am",
+            "Thursday 9:00 am",
+            "Thursday 10:00 am",
+            "Thursday 11:00 am",
+            "Thursday 12:00 pm",
+            "Thursday 1:00 pm",
+            "Thursday 2:00 pm",
+            "Thursday 3:00 pm",
+            "Thursday 4:00 pm",
+            "Thursday 5:00 pm",
+            "Thursday 6:00 pm",
+            "Thursday 7:00 pm",
+            "Friday 7:00 am",
+            "Friday 8:00 am",
+            "Friday 9:00 am",
+            "Friday 10:00 am",
+            "Friday 11:00 am",
+            "Friday 12:00 pm",
+            "Friday 1:00 pm",
+            "Friday 2:00 pm",
+            "Friday 3:00 pm",
+            "Friday 4:00 pm",
+            "Friday 5:00 pm",
+            "Friday 6:00 pm",
+            "Friday 7:00 pm",
+            "Saturday 7:00 am",
+            "Saturday 8:00 am",
+            "Saturday 9:00 am",
+            "Saturday 10:00 am",
+            "Saturday 11:00 am",
+            "Saturday 12:00 pm",
+            "Saturday 1:00 pm",
+            "Saturday 2:00 pm",
+            "Saturday 3:00 pm",
+            "Saturday 4:00 pm",
+            "Saturday 5:00 pm",
+            "Saturday 6:00 pm",
+            "Saturday 7:00 pm",
+        ]
+
+    def solve(self):
+        labs = Laboratory.objects.all()
+        instructors = Instructor.objects.all()
+
+        self.problem.addVariable("laboratory", labs)
+        self.problem.addVariable("timeslot", self.timeslots)
+        self.problem.addVariable("instructors", instructors)
+
+        self.problem.addConstraint(self.laboratory_constraint,
+        ["laboratory", "timeslot"])
+        self.problem.addConstraint(self.time_constraint, 
+        
+        ["timeslot"])
+        self.problem.addConstraint(self.instructor_constraint, 
+        ["instructors", "timeslot"])
+
+        solutions = self.problem.getSolutions()
+        if len(solutions) == 0:
+            self.problem.reset()
+            self.problem.addVariable("timeslot", self.timeslots)
+            self.problem.addVariable("laboratory", labs)
+            self.problem.addVariable("instructors", instructors)
+            self.problem.addConstraint(self.instructor_constraint,
+            ["instructors", "timeslot"])
+            self.problem.addConstraint
+            (self.laboratory_soft_constraint, 
+            
+            ["laboratory", "timeslot"])
+            self.problem.addConstraint
+            (self.time_constraint, ["timeslot"])
+            solutions = self.problem.getSolutions()
+
+        return solutions
+    
+
+    def instructor_constraint(self, instructor,timeslot):
+        if (
+            instructor.expertise is not None
+            and instructor.expertise.name == self.course
+        ):
+            instructor_ids = Instructor.objects.filter
+            (name=instructor.name)
+            time = self.get_time(timeslot)
+            
+            for instructor in instructor_ids:
+                schedules = instructor.get_schedules()
+                if not schedules:
+                    return True
+                
+                for schedule in schedules:
+                    start = self.get_time(schedule.time_start)
+                    end = self.get_time(schedule.time_end)
+                    
+                    if (
+                        time >= start
+                        and time < end
+                        and timeslot.split(" ")[0] == schedule.
+                        time_start.split(" ")[0]
+                    ):
+                        return False
+                    else:
+                        return True
+
+    def laboratory_soft_constraint(self, laboratory, timeslot):
+        if self.laboratory is not None:
+            return self.laboratory == laboratory.name
+        special_courses = (
+            laboratory.course.replace("[", "")
+            .replace("]", "")
+            .replace("'", "")
+            .split(", ")
+        )
+        if special_courses[0] == "":
+            return True
+        
+        time = self.get_time(timeslot)
+            
+        schedules = laboratory.get_schedules()
+        if not schedules:
+            return True
+        
+        for schedule in schedules:
+            start = self.get_time(schedule.time_start)
+            end = self.get_time(schedule.time_end)
+            
+            if (
+                time >= start
+                and time < end
+                and timeslot.split(" ")[0] == 
+                schedule.time_start.split(" ")[0]
+            ):
+                return False
+            else:
+                return True
+        
+
+    def laboratory_constraint(self, laboratory, timeslot):
+        if self.laboratory is not None:
+            return self.laboratory == laboratory.name
+        special_courses = (
+            laboratory.course.replace("[", "")
+            .replace("]", "")
+            .replace("'", "")
+            .split(", ")
+        )
+        schedules = laboratory.get_schedules()
+        time = self.get_time(timeslot)
+        
+        if self.course not in special_courses:
+            return False
+        for schedule in schedules:
+            start = self.get_time(schedule.time_start)
+            end = self.get_time(schedule.time_end)
+            
+            if (
+                time >= start
+                and time < end
+                and timeslot.split(" ")[0] == 
+                schedule.time_start.split(" ")[0]
+            ):
+                return False
+            else:
+                return True
+        
+        return True
+
+    def time_constraint(self, timeslot):
+        schedules = Schedule.objects.filter(section=self.section).
+        all()
+        time = self.get_time(timeslot)
+
+        for schedule in schedules:
+            start = self.get_time(schedule.time_start)
+            end = self.get_time(schedule.time_end)
+            if (
+                time >= start
+                and time < end
+                and timeslot.split(" ")[0] == schedule.time_start.
+                split(" ")[0]
+            ):
+                return False
+
+        return True
+
+    def get_time(self, time):
+        time_format = "%I:%M %p"
+        time_arr = time.split(" ")
+        time_arr.pop(0)
+        time = " ".join(time_arr)
+        value = datetime.strptime(time, time_format).time()
+
+        return value
+
+\end{verbatim}
+
+\begin{table}[!h]
+\centering
+\chapter{DATASET}
+\label{tbl:sampleTbl4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
+\hline
+\textbf{Date} & \textbf{Student ID} & \textbf{Arrival Time} &
+\textbf{Service Start} & \textbf{Service End} &
+\textbf{Service Duration(min)} & \textbf{Purpose} & \textbf{Queue Length} & \textbf{Counter ID (RECEIVING)}\\ \hline
+10/13/25 & S1  & 6:07 am  & 8:00 am  & 8:03 am  & 3 & TOR            & 15 & C1 \\
+10/13/25 & S2  & 6:10 am  & 8:03 am  & 8:06 am  & 3 & Diploma        & 14 & C1 \\
+10/13/25 & S3  & 6:25 am  & 8:06 am  & 8:09 am  & 3 & CAV            & 13 & C1 \\
+10/13/25 & S4  & 6:32 am  & 8:09 am  & 8:12 am  & 3 & Authentication & 12 & C1 \\
+10/13/25 & S5  & 6:39 am  & 8:12 am  & 8:15 am  & 3 & TOR            & 11 & C1 \\
+10/13/25 & S6  & 6:45 am  & 8:15 am  & 8:18 am  & 3 & Diploma        & 10 & C1 \\
+10/13/25 & S7  & 6:50 am  & 8:18 am  & 8:20 am  & 2 & TOR            & 9  & C1 \\
+10/13/25 & S8  & 6:54 am  & 8:20 am  & 8:22 am  & 2 & CAV            & 9  & C1 \\
+10/13/25 & S9  & 6:57 am  & 8:22 am  & 8:23 am  & 1 & Authentication & 8  & C1 \\
+10/13/25 & S10 & 7:05 am  & 8:23 am  & 8:26 am  & 3 & TOR            & 7  & C1 \\
+10/13/25 & S11 & 7:15 am  & 8:26 am  & 8:29 am  & 3 & Diploma        & 6  & C1 \\
+10/13/25 & S12 & 7:35 am  &  8:29am  & 8:32 am  & 3 & CAV            & 6  & C1 \\
+10/14/25 & S1  & 7:23 am  & 8:00 am  & 8:03 am  & 3 & Diploma        & 3  & C1 \\
+10/14/25 & S2  & 7:36 am  & 8:03 am  & 8:05 am  & 2 & TOR            & 2  & C1 \\
+10/14/25 & S3  & 7:56 am  & 8:05 am  & 8:07 am  & 2 & Authentication & 1  & C1 \\
+10/14/25 & S4  & 8:16 am  & 9:31 am  & 9:34 am  & 3 & Authentication & 7  & C1 \\
+10/14/25 & S5  & 8:23 am  & 9:34 am  & 9:35 am  & 1 & Authentication & 6  & C1 \\
+10/14/25 & S6  & 8:32 am  & 9:35 am  & 9:37 am  & 2 & TOR            & 5  & C1 \\
+10/14/25 & S7  & 8:37 am  & 9:37 am  & 9:39 am  & 2 & TOR            & 4  & C1 \\
+10/14/25 & S8  & 9:06 am  & 9:39 am  & 9:42 am  & 3 & TOR            & 3  & C1 \\
+10/14/25 & S9  & 9:16 am  & 9:42 am  & 9:44 am  & 2 & Diploma        & 2  & C1 \\
+10/14/25 & S10 & 9:20 am  & 9:44 am  & 9:47 am  & 3 & TOR            & 1  & C1 \\
+10/14/25 & S11 & 10:12 am & 10:13 am & 10:15 am & 2 & Diploma        & 1  & C1 \\
+10/14/25 & S12 & 10:29 am & 10:30 am & 10:32 am & 2 & CAV            & 1  & C1 \\
+10/14/25 & S13 & 11:00 am & 11:01 am & 11:03 am & 2 & TOR            & 1  & C1 \\
+10/14/25 & S14 & 11:28 am & 11:29 am & 11:31 am & 2 & CAV            & 1  & C1 \\
+10/14/25 & S15 & 11:31 am & 11:31 am & 11:34 am & 3 & TOR            & 1  & C1 \\
+10/14/25 & S16 & 11:36 am & 11:37 am & 11:40 am & 3 & TOR            & 1  & C1 \\
+10/14/25 & S17 & 11:45 am & 11:46 am & 11:49 am & 3 & Diploma        & 1  & C1 \\
+10/15/25 & S1  & 7:22 am  & 8:00 am  & 8:02 am  & 2 & Authentication & 5  & C1 \\
+10/15/25 & S2  & 7:28 am  & 8:02 am  & 8:04 am  & 2 & CAV            & 4  & C1 \\
+10/15/25 & S3  & 7:34 am  & 8:04 am  & 8:06 am  & 2 & Diploma        & 3  & C1 \\
+10/15/25 & S4  & 7:47 am  & 8:06 am  & 8:09 am  & 3 & Diploma        & 2  & C1 \\
+10/15/25 & S5  & 7:54 am  & 8:09 am  & 8:12 am  & 3 & TOR            & 1  & C1 \\
+10/15/25 & S6  & 8:10 am  & 8:12 am  & 8:15 am  & 3 & CAV            & 1  & C1 \\
+10/15/25 & S7  & 8:25 am  & 8:29 am  & 8:31 am  & 3 & Diploma        & 1  & C1 \\
+10/15/25 & S8  & 8:34 am  & 8:42 am  & 8:44 am  & 2 & CAV            & 1  & C1 \\
+10/15/25 & S9  & 8:59 am  & 9:04 am  & 9:06 am  & 2 & Diploma        & 2  & C1 \\
+10/15/25 & S10 & 9:00 am  & 9:09 am  & 9:12 am  & 2 & CAV            & 1  & C1 \\
+10/15/25 & S11 & 9:12 am  & 9:16 am  & 9:18 am  & 2 & TOR            & 1  & C1 \\
+10/15/25 & S12 & 9:18 am  & 9:26 am  & 9:28 am  & 2 & TOR            & 1  & C1 \\
+10/15/25 & S13 & 10:11 am & 10:16 am & 10:18 am & 2 & Diploma        & 1  & C1 \\
+10/15/25 & S14 & 10:18 am & 10:21 am & 10:23 am & 2 & CAV            & 1  & C1 \\
+10/16/25 & S1  & 7:08 am  & 8:02 am  & 8:04 am  & 2 & Diploma        & 2  & C1 \\
+10/16/25 & S2  & 7:20 am  & 8:06 am  & 8:08 am  & 2 & TOR            & 1  & C1 \\
+10/16/25 & S3  & 8:35 am  & 8:46 am  & 8:48 am  & 2 & TOR            & 1  & C1 \\
+10/16/25 & S4  & 8:53 am  & 8:58 am  & 8:59 am  & 1 & TOR            & 1  & C1 \\
+10/16/25 & S5  & 9:03 am  & 9:19 am  & 9:21 am  & 2 & CAV            & 1  & C1 \\
+10/16/25 & S6  & 9:29 am  & 9:34 am  & 9:36 am  & 2 & CAV            & 1  & C1 \\
+10/16/25 & S7  & 9:55 am  & 10:01 am & 10:03 am & 2 & CAV            & 1  & C1 \\
+10/16/25 & S8  & 10:17 am & 10:24 am & 10:27 am & 3 & TOR            & 2  & C1 \\
+10/16/25 & S9  & 10:23 am & 10:35 am & 10:36 am & 1 & CAV            & 1  & C1 \\
+10/16/25 & S10 & 11:10 am & 11:18 am & 11:21 am & 3 & TOR            & 1  & C1 \\
+10/16/25 & S11 & 11:19 am & 11:26 am & 11:28 am & 2 & CAV            & 1  & C1 \\
+10/16/25 & S12 & 11:41 am & 11:47 am & 11:48 am & 1 & CAV            & 1  & C1 \\
+10/16/25 & S13 & 11:51 am & 11:58 am & 11:59 am & 1 & CAV            & 1  & C1 \\
+10/16/25 & S14 & 12:18 pm & 12:25 pm & 12:27 am & 2 & CAV            & 2  & C1 \\
+10/16/25 & S15 & 12:25 am & 12:33 pm & 12:35 pm & 2 & CAV            & 1  & C1 \\
+10/16/25 & S16 & 12:49 pm & 12:52 pm & 12:54 pm & 2 & Authentication & 1  & C1 \\
+10/17/25 & S1  & 7:14 am  & 8:05 am  & 8:07 am  & 2 & CAV            & 5  & C1 \\
+10/17/25 & S2  & 7:22 am  & 8:12 am  & 8:14 am  & 2 & Diploma        & 4  & C1 \\
+10/17/25 & S3  & 7:34 am  & 8:15 am  & 8:17 am  & 2 & Diploma        & 3  & C1 \\
+10/17/25 & S4  & 7:41 am  & 8:23 am  & 8:25 am  & 2 & TOR            & 2  & C1 \\
+10/17/25 & S5  & 7:52 am  & 8:32 am  & 8:33 am  & 1 & CAV            & 1  & C1 \\
+10/17/25 & S6  & 8:07 am  & 8:45 am  & 8:47 am  & 2 & CAV            & 0  & C1 \\
+10/17/25 & S7  & 8:19 am  & 8:51 am  & 8:52 am  & 1 & CAV            & 0  & C1 \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[ht]
+\centering
+\label{tbl:sampleTbl4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
+\hline
+\textbf{Date} & \textbf{Student ID} & \textbf{Arrival Time} &
+\textbf{Service Start} & \textbf{Service End} &
+\textbf{Service Duration(min)} & \textbf{Purpose} & \textbf{Queue Length} & \textbf{Counter ID (RELEASING)}\\ \hline
+10/13/25 & S1  & 8:40 am  & 10:30 am  & 10:32 am & 2 & Authentication & 30 & C2\\
+10/13/25 & S2  & 8:46 am  & 10:32 am  & 10:35 am & 3 & CAV            & 30 & C2\\
+10/13/25 & S3  & 8:51 am  & 10:35 am  & 10:38 am & 3 & Diploma        & 30 & C2\\
+10/13/25 & S4  & 8:56 am  & 10:38 am  & 10:41 am & 3 & CAV            & 31 & C2\\
+10/13/25 & S5  & 9:01 am  & 10:41 am  & 10:43 am & 2 & TOR            & 31 & C2\\
+10/13/25 & S6  & 9:10 am  & 10:43 am  & 10:45 am & 2 & CAV            & 30 & C2\\
+10/13/25 & S7  & 9:14 am  & 10:45 am  & 10:47 am & 2 & CAV            & 29 & C2\\
+10/13/25 & S8  & 9:20 am  & 10:47 am  & 10:49 am & 2 & CAV            & 28 & C2\\
+10/13/25 & S9  & 9:23 am  & 10:49 am  & 10:51 am & 2 & Diploma        & 27 & C2\\
+10/13/25 & S10 & 9:27 am  & 10:51 am  & 10:53 am & 2 & TOR            & 26 & C2\\
+10/13/25 & S11 & 9:36 am  & 10:53 am  & 10:55 am & 2 & CAV            & 25 & C2\\
+10/13/25 & S12 & 9:39 am  & 10:55 am  & 10:58 am & 3 & TOR            & 24 & C2\\
+10/13/25 & S13 & 9:42 am  & 10:58 am  & 11:00 am & 2 & CAV            & 23 & C2\\
+10/13/25 & S14 & 9:45 am  & 12:00 pm  & 12:03 pm & 3 & Authentication & 40 & C2\\
+10/13/25 & S15 & 9:48 am  & 12:03 pm  & 12:05 pm & 2 & Authentication & 40 & C2\\
+10/13/25 & S16 & 9:51 am  & 12:05 pm  & 12:07 pm & 2 & CAV            & 39 & C2\\
+10/13/25 & S17 & 9:53 am  & 12:07 pm  & 12:10 pm & 3 & CAV            & 38 & C2\\
+10/13/25 & S18 & 9:56 am  & 12:10 pm  & 12:13 pm & 3 & CAV            & 37 & C2\\
+10/13/25 & S19 & 9:58 am  & 12:13 pm  & 12:16 pm & 3 & Diploma        & 36 & C2\\
+10/13/25 & S20 & 9:59 am  & 12:16 pm  & 12:19 pm & 3 & Authentication & 35 & C2\\
+10/13/25 & S21 & 10:01 am & 12:19 pm  & 12:21 pm & 2 & CAV            & 34 & C2\\
+10/13/25 & S22 & 10:03 am & 12:21 pm  & 12:23 pm & 2 & CAV            & 33 & C2\\
+10/13/25 & S23 & 10:06 am & 12:23 pm  & 12:25 pm & 2 & Diploma        & 32 & C2\\
+10/13/25 & S24 & 10:09 am & 12:25 pm  & 12:27 pm & 2 & Authentication & 31 & C2\\
+10/13/25 & S25 & 10:11 am & 12:27 pm  & 12:30 pm & 3 & Diploma        & 30 & C2\\
+10/13/25 & S26 & 10:16 am & 1:30 pm   & 1:32 pm  & 2 & Diploma        & 31 & C2\\
+10/13/25 & S27 & 10:18 am & 1:32 pm   & 1:34 pm  & 2 & TOR            & 30 & C2\\
+10/13/25 & S28 & 10:22 am & 1:34 pm   & 1:36 pm  & 2 & TOR            & 29 & C2\\
+10/13/25 & S29 & 10:25 am & 1:36 pm   & 1:38 pm  & 2 & CAV            & 28 & C2\\
+10/13/25 & S30 & 10:28 am & 1:38 pm   & 1:40 pm  & 2 & Authentication & 27 & C2\\
+10/13/25 & S31 & 10:30 am & 1:40 pm   & 1:43 pm  & 3 & CAV            & 26 & C2\\
+10/13/25 & S32 & 10:33 am & 1:43 pm   & 1:46 pm  & 3 & CAV            & 25 & C2\\
+10/13/25 & S33 & 10:36 am & 1:46 pm   & 1:49 pm  & 3 & CAV            & 24 & C2\\
+10/13/25 & S34 & 10:37 am & 1:49 pm   & 1:52 pm  & 3 & Diploma        & 23 & C2\\
+10/13/25 & S35 & 10:39 am & 1:52 pm   & 1:55 pm  & 3 & CAV            & 22 & C2\\
+10/13/25 & S36 & 11:00 am & 1:55 pm   & 1:58 pm  & 3 & Authentication & 21 & C2\\
+10/13/25 & S37 & 11:02 am & 1:58 pm   & 2:00 pm  & 2 & Authentication & 20 & C2\\
+10/13/25 & S38 & 11:06 am & 3:00 pm   & 3:03 pm  & 3 & Authentication & 19 & C2\\
+10/13/25 & S39 & 11:08 am & 3:03 pm   & 3:06 pm  & 3 & Diploma        & 18 & C2\\
+10/13/25 & S40 & 11:11 am & 3:06 pm   & 3:08 pm  & 2 & CAV            & 17 & C2\\
+10/13/25 & S41 & 11:13 am & 3:08 pm   & 3:10 pm  & 2 & Authentication & 16 & C2\\
+10/13/25 & S42 & 11:17 am & 3:10 pm   & 3:12 pm  & 2 & TOR            & 15 & C2\\
+10/13/25 & S43 & 11:19 am & 3:12 pm   & 3:14 pm  & 2 & CAV            & 14 & C2\\
+10/13/25 & S44 & 11:23 am & 3:14 pm   & 3:16 pm  & 2 & TOR            & 13 & C2\\
+10/13/25 & S45 & 11:29 am & 3:16 pm   & 3:18 pm  & 2 & CAV            & 12 & C2\\
+10/13/25 & S46 & 11:38 am & 3:18 pm   & 3:20 pm  & 2 & TOR            & 11 & C2\\
+10/14/25 & S1  & 6:08 am  & 10:30 am  & 10:32 am & 2 & CAV            & 36 & C2\\
+10/14/25 & S2  & 6:12 am  & 10:32 am  & 10:34 am & 2 & CAV            & 35 & C2\\
+10/14/25 & S3  & 6:17 am  & 10:34 am  & 10:36 am & 2 & CAV            & 34 & C2\\
+10/14/25 & S4  & 6:24 am  & 10:36 am  & 10:39 am & 3 & CAV            & 34 & C2\\
+10/14/25 & S5  & 6:27 am  & 10:39 am  & 10:42 am & 3 & CAV            & 33 & C2\\
+10/14/25 & S6  & 6:34 am  & 10:42 am  & 10:44 am & 2 & Diploma        & 32 & C2\\
+10/14/25 & S7  & 6:38 am  & 10:44 am  & 10:46 am & 2 & CAV            & 31 & C2\\
+10/14/25 & S8  & 6:43 am  & 10:46 am  & 10:48 am & 2 & CAV            & 31 & C2\\
+10/14/25 & S9  & 6:54 am  & 10:48 am  & 10:50 am & 2 & CAV            & 30 & C2\\
+10/14/25 & S10 & 7:01 am  & 10:50 am  & 10:52 am & 2 & CAV            & 29 & C2\\
+10/14/25 & S11 & 7:06am   & 10:52 am  & 10:55 am & 3 & CAV            & 28 & C2\\
+10/14/25 & S12 & 7:10 am  & 10:55 am  & 10:58 am & 3 & CAV            & 27 & C2\\
+10/14/25 & S13 & 7:12 am  & 10:58 am  & 11:00 am & 2 & CAV            & 26 & C2\\
+10/14/25 & S14 & 7:27 am  & 12:00 pm  & 12:03 pm & 3 & TOR            & 25 & C2\\
+10/14/25 & S15 & 7:32 am  & 12:03 pm  & 12:06 pm & 3 & TOR            & 24 & C2\\
+10/14/25 & S16 & 7:36 am  & 12:06 pm  & 12:09 pm & 3 & CAV            & 23 & C2\\
+10/14/25 & S17 & 7:41 am  & 12:09 pm  & 12:11 pm & 2 & CAV            & 22 & C2\\
+10/14/25 & S18 & 7:46 am  & 12:11 pm  & 12:13 pm & 2 & CAV            & 21 & C2\\
+10/14/25 & S19 & 7:51 am  & 12:13 pm  & 12:15 pm & 2 & CAV            & 20 & C2\\
+10/14/25 & S20 & 7:56 am  & 12:15 pm  & 12:17 pm & 2 & TOR            & 19 & C2\\
+10/14/25 & S21 & 8:05 am  & 12:17 pm  & 12:19 pm & 2 & CAV            & 18 & C2\\
+10/14/25 & S22 & 8:08 am  & 12:19 pm  & 12:21 pm & 2 & TOR            & 17 & C2\\
+10/14/25 & S23 & 8:17 am  & 12:21 pm  & 12:24 pm & 3 & Diploma        & 16 & C2\\
+10/14/25 & S24 & 8:30 am  & 12:24 pm  & 12:27 pm & 3 & Diploma        & 15 & C2\\
+10/14/25 & S25 & 8:42 am  & 12:27 pm  & 12:30 pm & 3 & TOR            & 14 & C2\\
+10/14/25 & S26 & 8:48 am  & 1:30 pm   & 1:33 pm  & 3 & Diploma        & 13 & C2\\
+10/14/25 & S27 & 8:59 am  & 1:33 pm   & 1:36 pm  & 3 & CAV            & 12 & C2\\
+10/14/25 & S28 & 9:00 am  & 1:36 pm   & 1:39 pm  & 3 & CAV            & 11 & C2\\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
+\hline
+\textbf{Date} & \textbf{Student ID} & \textbf{Arrival Time} &
+\textbf{Service Start} & \textbf{Service End} &
+\textbf{Service Duration(min)} & \textbf{Purpose} & \textbf{Queue Length} & \textbf{Counter ID (RELEASING)}\\ \hline
+10/15/25 & S1  & 6:21 am  & 10:30 am  & 10:32 am & 2 & CAV            & 36 & C2\\
+10/15/25 & S2  & 6:28 am  & 10:32 am  & 10:34 am & 2 & CAV            & 35 & C2\\
+10/15/25 & S3  & 6:34 am  & 10:34 am  & 10:36 am & 2 & Diploma        & 34 & C2\\
+10/15/25 & S4  & 6:37 am  & 10:36 am  & 10:39 am & 3 & CAV            & 33 & C2\\
+10/15/25 & S5  & 6:47 am  & 10:39 am  & 10:42 am & 3 & TOR            & 32 & C2\\
+10/15/25 & S6  & 6:52 am  & 10:42 am  & 10:44 am & 2 & CAV            & 31 & C2\\
+10/15/25 & S7  & 6:57 am  & 10:44 am  & 10:47 am & 3 & CAV            & 30 & C2\\
+10/15/25 & S8  & 7:00 am  & 10:47 am  & 10:50 am & 3 & CAV            & 29 & C2\\
+10/15/25 & S9  & 7:04 am  & 10:50 am  & 10:53 am & 3 & Diploma        & 28 & C2\\
+10/15/25 & S10 & 7:07 am  & 10:53 am  & 10:56 am & 3 & Authentication & 27 & C2\\
+10/15/25 & S11 & 7:10 am  & 10:56 am  & 10:58 am & 2 & CAV            & 26 & C2\\
+10/15/25 & S12 & 7:16 am  & 10:58 am  & 11:00 am & 2 & CAV            & 25 & C2\\
+10/15/25 & S13 & 7:20 am  & 12:00 pm  & 12:02 pm & 2 & CAV            & 24 & C2\\
+10/15/25 & S14 & 7:22 am  & 12:02 pm  & 12:04 pm & 2 & Authentication & 23 & C2\\
+10/15/25 & S15 & 7:25 am  & 12:04 pm  & 12:06 pm & 2 & TOR            & 22 & C2\\
+10/15/25 & S16 & 7:32 am  & 12:06 pm  & 12:08 pm & 2 & CAV            & 21 & C2\\
+10/15/25 & S17 & 7:42 am  & 12:08 pm  & 12:10 pm & 2 & CAV            & 20 & C2\\
+10/15/25 & S18 & 7:58 am  & 12:10 pm  & 12:12 pm & 2 & CAV            & 19 & C2\\
+10/15/25 & S19 & 8:03 am  & 12:12 pm  & 12:15 pm & 3 & CAV            & 18 & C2\\
+10/15/25 & S20 & 8:18 am  & 12:15 pm  & 12:18 pm & 3 & CAV            & 17 & C2\\
+10/15/25 & S21 & 8:25 am  & 12:18 pm  & 12:21 pm & 3 & CAV            & 16 & C2\\
+10/15/25 & S22 & 8:32 am  & 12:21 pm  & 12:24 pm & 3 & Diploma        & 15 & C2\\
+10/15/25 & S23 & 8:34 am  & 12:24 pm  & 12:27 pm & 3 & Authentication & 14 & C2\\
+10/15/25 & S24 & 9:00 am  & 12:27 pm  & 12:30 pm & 3 & TOR            & 13 & C2\\
+10/15/25 & S25 & 9:05 am  & 1:30 pm   & 1:32 pm  & 2 & CAV            & 12 & C2\\
+10/15/25 & S26 & 9:12 am  & 1:32 pm   & 1:34 pm  & 2 & Authentication & 11 & C2\\
+10/15/25 & S27 & 9:23 am  & 1:34 pm   & 1:36 pm  & 2 & CAV            & 10 & C2\\
+10/15/25 & S28 & 9:27 am  & 1:36 pm   & 1:38 pm  & 2 & CAV            & 9  & C2\\
+10/16/25 & S1  & 7:15 am  & 10:30 am  & 10:32 am & 2 & CAV            & 21 & C2\\
+10/16/25 & S2  & 7:18 am  & 10:32 am  & 10:34 am & 2 & CAV            & 20 & C2\\
+10/16/25 & S3  & 7:21 am  & 10:34 am  & 10:36 am & 2 & Diploma        & 19 & C2\\
+10/16/25 & S4  & 7:44 am  & 10:36 am  & 10:38 am & 2 & CAV            & 18 & C2\\
+10/16/25 & S5  & 7:46 am  & 10:38 am  & 10:41 am & 3 & Diploma        & 17 & C2\\
+10/16/25 & S6  & 7:51 am  & 10:41 am  & 10:44 am & 3 & CAV            & 16 & C2\\
+10/16/25 & S7  & 8:02 am  & 10:44 am  & 10:46 am & 2 & TOR            & 15 & C2\\
+10/16/25 & S8  & 8:17 am  & 10:46 am  & 10:48 am & 2 & TOR            & 14 & C2\\
+10/16/25 & S9  & 8:23 am  & 10:48 am  & 10:50 am & 2 & CAV            & 13 & C2\\
+10/16/25 & S10 & 8:45 am  & 10:50 am  & 10:52 am & 2 & TOR            & 12 & C2\\
+10/16/25 & S11 & 8:47 am  & 10:52 am  & 10:54 am & 2 & CAV            & 11 & C2\\
+10/16/25 & S12 & 8:56 am  & 10:54 am  & 10:56 am & 2 & CAV            & 10 & C2\\
+10/16/25 & S13 & 8:59 am  & 10:56 am  & 10:58 am & 2 & CAV            & 9  & C2\\
+10/16/25 & S14 & 9:00 am  & 10:58 am  & 11:00 am & 2 & CAV            & 8  & C2\\
+10/16/25 & S15 & 9:19 am  & 12:00 pm  & 12:03 pm & 3 & TOR            & 7  & C2\\
+10/16/25 & S16 & 9:20 am  & 12:03 pm  & 12:06 pm & 3 & TOR            & 6  & C2\\
+10/17/25 & S1  & 6:12 am  & 10:30 am  & 10:33 am & 3 & CAV            & 34 & C2\\
+10/17/25 & S2  & 6:17 am  & 10:33 am  & 10:36 am & 3 & CAV            & 33 & C2\\
+10/17/25 & S3  & 6:21 am  & 10:36 am  & 10:39 am & 3 & Authentication & 32 & C2\\
+10/17/25 & S4  & 6:27 am  & 10:39 am  & 10:41 am & 2 & CAV            & 31 & C2\\
+10/17/25 & S5  & 6:56 am  & 10:41 am  & 10:43 am & 2 & CAV            & 30 & C2\\
+10/17/25 & S6  & 7:07 am  & 10:43 am  & 10:45 am & 2 & Diploma        & 29 & C2\\
+10/17/25 & S7  & 7:09 am  & 10:45 am  & 10:47 am & 2 & Diploma        & 28 & C2\\
+10/17/25 & S8  & 7:12 am  & 10:47 am  & 10:49 am & 2 & CAV            & 27 & C2\\
+10/17/25 & S9  & 7:23 am  & 10:49 am  & 10:51 am & 2 & CAV            & 26 & C2\\
+10/17/25 & S10 & 7:27 am  & 10:51 am  & 10:53 am & 2 & CAV            & 25 & C2\\
+10/17/25 & S11 & 7:40 am  & 10:53 am  & 10:55 am & 2 & Diploma        & 24 & C2\\
+10/17/25 & S12 & 7:43 am  & 10:55 am  & 10:57 am & 2 & TOR            & 23 & C2\\
+10/17/25 & S13 & 7:59 am  & 10:57 am  & 11:00 am & 3 & TOR            & 22 & C2\\
+10/17/25 & S14 & 8:01 am  & 12:00 pm  & 12:03 pm & 3 & CAV            & 21 & C2\\
+10/17/25 & S15 & 8:07 am  & 12:03 pm  & 12:06 pm & 3 & TOR            & 20 & C2\\
+10/17/25 & S16 & 8:16 am  & 12:06 pm  & 12:09 pm & 3 & CAV            & 19 & C2\\
+10/17/25 & S17 & 8:27 am  & 12:09 pm  & 12:12 pm & 3 & TOR            & 18 & C2\\
+10/17/25 & S18 & 8:38 am  & 12:12 pm  & 12:14 pm & 2 & CAV            & 17 & C2\\
+10/17/25 & S19 & 8:48 am  & 12:14 pm  & 12:16 pm & 2 & CAV            & 16 & C2\\
+10/17/25 & S20 & 8:49 am  & 12:16 pm  & 12:18 pm & 2 & CAV            & 15 & C2\\
+10/17/25 & S21 & 8:53 am  & 12:18 pm  & 12:21 pm & 3 & Diploma        & 14 & C2\\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+
+\begin{table}[ht]
+\centering
+\label{tbl:sampleTbl4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
+\hline
+\textbf{Date} & \textbf{Student ID} & \textbf{Arrival Time} &
+\textbf{Service Start} & \textbf{Service End} &
+\textbf{Service Duration(min)} & \textbf{Purpose} & \textbf{Queue Length} & \textbf{Counter ID (COE)}\\ \hline
+10/13/25 & S1  & 6:34 am  & 8:00 am  & 8:02 am  & 2 & COE & 8 & C3\\
+10/13/25 & S2  & 6:38 am  & 8:02 am  & 8:04 am  & 2 & COE & 7 & C3\\
+10/13/25 & S3  & 6:46 am  & 8:04 am  & 8:07 am  & 3 & COE & 6 & C3\\
+10/13/25 & S4  & 6:53 am  & 8:07 am  & 8:09 am  & 2 & COE & 5 & C3\\
+10/13/25 & S5  & 7:26 am  & 8:09 am  & 8:11 am  & 2 & COE & 4 & C3\\
+10/13/25 & S6  & 7:36 am  & 8:11 am  & 8:13 am  & 2 & COE & 3 & C3\\
+10/13/25 & S7  & 7:49 am  & 8:13 am  &  8:15 am & 2 & COE & 2 & C3\\
+10/13/25 & S8  & 7:56 am  & 8:15 am  & 8:17 am  & 2 & COE & 1 & C3\\
+10/13/25 & S9  & 8:12 am  & 8:17 am  & 8:20 am  & 3 & COE & 0 & C3\\
+10/13/25 & S10 & 8:19 am  & 8:20 am  & 8:22 am  & 2 & COE & 0 & C3\\
+10/13/25 & S11 & 8:59 am  & 9:00 am  & 9:02 am  & 2 & COE & 0 & C3\\
+10/13/25 & S12 & 9:18 am  & 9:19 am  & 9:21 am  & 2 & COE & 0 & C3\\
+10/13/25 & S13 & 9:48 am  & 9:49 am  & 9:52 am  & 3 & COE & 0 & C3\\
+10/13/25 & S14 & 10:02 am & 10:03 am & 10:06 am & 3 & COE & 0 & C3\\
+10/13/25 & S15 & 10:16 am & 10:17 am & 10:19 am & 2 & COE & 0 & C3\\
+10/14/25 & S1  & 7:26 am  & 8:02 am  & 8:04 am  & 2 & COE & 0 & C3\\
+10/14/25 & S2  & 7:38 am  & 8:04 am  & 8:06 am  & 2 & COE & 1 & C3\\
+10/14/25 & S4  & 8:12 am  & 8:13 am  & 8:15 am  & 2 & COE & 0 & C3\\
+10/14/25 & S5  & 8:27 am  & 8:28 am  & 8:29 am  & 1 & COE & 0 & C3\\
+10/14/25 & S6  & 8:36 am  & 8:37 am  & 8:38 am  & 1 & COE & 0 & C3\\
+10/14/25 & S7  & 8:39 am  & 8:40 am  & 8:41 am  & 1 & COE & 0 & C3\\
+10/14/25 & S8  & 8:47 am  & 8:48 am  & 8:50 am  & 2 & COE & 0 & C3\\
+10/14/25 & S9  & 8:54 am  & 8:55 am  & 8:56 am  & 1 & COE & 0 & C3\\
+10/14/25 & S10 & 9:26 am  & 9:27 am  & 9:28 am  & 1 & COE & 0 & C3\\
+10/14/25 & S11 & 9:49 am  & 9:50 am  & 9:51 am  & 1 & COE & 0 & C3\\
+10/14/25 & S12 & 9:54 am  & 9:55 am  & 9:57 am  & 2 & COE & 0 & C3\\
+10/14/25 & S13 & 10:00 am & 10:01 am & 10:02 am & 1 & COE & 0 & C3\\
+10/14/25 & S14 & 10:36 am & 10:37 am & 10:39 am & 2 & COE & 0 & C3\\
+10/15/25 & S1  & 7:16 am  & 8:01 am  & 8:03 am  & 2 & COE & 3 & C3\\
+10/15/25 & S2  & 7:28 am  & 8:03 am  & 8:04 am  & 1 & COE & 2 & C3\\
+10/15/25 & S3  & 7:49 am  & 8:04 am  & 8:06 am  & 2 & COE & 1 & C3\\
+10/15/25 & S4  & 8:24 am  & 8:25 am  & 8:26 am  & 1 & COE & 0 & C3\\
+10/15/25 & S5  & 9:29 am  & 9:30 am  & 9:31 am  & 1 & COE & 0 & C3\\
+10/15/25 & S6  & 9:56 am  & 9:57 am  & 9:58 am  & 1 & COE & 0 & C3\\
+10/15/25 & S7  & 11:04 am & 11:05 am & 11:06 am & 1 & COE & 0 & C3\\
+10/15/25 & S8  & 11:23 am & 11:24 am & 11:25 am & 1 & COE & 0 & C3\\
+10/15/25 & S9  & 11:48 am & 11:49 am & 11:50 am & 1 & COE & 0 & C3\\
+10/15/25 & S10 & 1:02 pm  & 1:03 pm  & 1:05 pm  & 2 & COE & 0 & C3\\
+10/15/25 & S11 & 1:35 pm  & 1:36 pm  & 1:37 pm  & 1 & COE & 0 & C3\\
+10/15/25 & S12 & 1:37 pm  & 1:38 pm  & 1:40 pm  & 2 & COE & 1 & C3\\
+10/15/25 & S13 & 1:49 pm  & 1:50 pm  & 1:52 pm  & 2 & COE & 0 & C3\\
+10/15/25 & S14 & 2:16 pm  & 2:17 pm  & 2:19 pm  & 2 & COE & 0 & C3\\
+10/16/25 & S1  & 7:27 am  & 8:00 am  & 8:02 am  & 2 & COE & 2 & C3\\
+10/16/25 & S2  & 7:45 am  & 8:02 am  & 8:04 am  & 2 & COE & 1 & C3\\
+10/16/25 & S3  & 8:45 am  & 8:46 am  & 8:47 am  & 1 & COE & 0 & C3\\
+10/16/25 & S4  & 10:23 am & 10:24 am & 10:25 am & 1 & COE & 0 & C3\\
+10/16/25 & S5  & 10:48 am & 10:49 am & 10:50 am & 1 & COE & 0 & C3\\
+10/16/25 & S6  & 10:56 am & 10:57 am & 10:59 am & 2 & COE & 0 & C3\\
+10/16/25 & S7  & 11:34 am & 11:35 am & 11:37 am & 2 & COE & 0 & C3\\
+10/16/25 & S8  & 1:12 pm  & 1:13 pm  & 1:14 pm  & 1 & COE & 0 & C3\\
+10/16/25 & S9  & 1:47 pm  & 1:48 pm  & 1:49 pm  & 1 & COE & 0 & C3\\
+10/17/25 & S1  & 7:10 am  & 8:10 am  & 8:11 am  & 1 & COE & 4 & C3\\
+10/17/25 & S2  & 7:26 am  & 8:11 am  & 8:12 am  & 1 & COE & 3 & C3\\
+10/17/25 & S3  & 7:46 am  & 8:12 am  & 8:13 am  & 1 & COE & 2 & C3\\
+10/17/25 & S4  & 7:59 am  & 8:13 am  & 8:14 am  & 1 & COE & 1 & C3\\
+10/17/25 & S5  & 8:02 am  & 8:14 am  & 8:15 am  & 1 & COE & 0 & C3\\
+10/17/25 & S6  & 8:45 am  & 8:46 am  & 8:48 am  & 2 & COE & 0 & C3\\
+10/17/25 & S7  & 9:34 am  & 9:35 am  & 9:37 am  & 2 & COE & 0 & C3\\
+10/17/25 & S8  & 10:34 am & 10:35 am & 10:37 am & 2 & COE & 0 & C3\\
+10/17/25 & S9  & 10:56 am & 10:57 am & 10:59 am & 2 & COE & 0 & C3\\
+10/17/25 & S10 & 1:05 pm  & 1:06 pm  & 1:07 pm  & 1 & COE & 0 & C3\\
+10/17/25 & S11 & 1:07 pm  & 1:08 pm  & 1:09 pm  & 1 & COE & 0 & C3\\
+10/17/25 & S12 & 1:34 pm  & 1:35 pm  & 1:36 pm  & 1 & COE & 0 & C3\\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[ht]
+\centering
+\label{tbl:sampleTbl4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
+\hline
+\textbf{Date} & \textbf{Student ID} & \textbf{Arrival Time} &
+\textbf{Service Start} & \textbf{Service End} &
+\textbf{Service Duration(min)} & \textbf{Purpose} & \textbf{Queue Length} & \textbf{Counter ID (ID VALIDATION)}\\ \hline
+10/13/25 & S1  & 6:37 am  & 8:00 am  & 8:02 am  & 2 & ID VALIDATION & 8  & C4\\
+10/13/25 & S2  & 6:47 am  & 8:02 am  & 8:04 am  & 2 & ID VALIDATION & 7  & C4\\
+10/13/25 & S3  & 6:58 am  & 8:04 am  & 8:05 am  & 1 & ID VALIDATION & 6  & C4\\
+10/13/25 & S4  & 7:16 am  & 8:05 am  & 8:06 am  & 1 & ID VALIDATION & 5  & C4\\
+10/13/25 & S5  & 7:27 am  & 8:06 am  & 8:07 am  & 1 & ID VALIDATION & 4  & C4\\
+10/13/25 & S6  & 7:30 am  & 8:07 am  & 8:08 am  & 1 & ID VALIDATION & 3  & C4\\
+10/13/25 & S7  & 7:37 am  & 8:08 am  & 8:09 am  & 1 & ID VALIDATION & 2  & C4\\
+10/13/25 & S8  & 7:49 am  & 8:09 am  & 8:11 am  & 2 & ID VALIDATION & 1  & C4\\
+10/13/25 & S9  & 8:25 am  & 8:26 am  & 8:28 am  & 2 & ID VALIDATION & 0  & C4\\
+10/13/25 & S10 & 8:40 am  & 8:41 am  & 8:43 am  & 2 & ID VALIDATION & 0  & C4\\
+10/13/25 & S11 & 9:12 am  & 9:13 am  & 9:14 am  & 1 & ID VALIDATION & 0  & C4\\
+10/13/25 & S13 & 9:47 am  & 9:48 am  & 9:50 am  & 2 & ID VALIDATION & 0  & C4\\
+10/13/25 & S14 & 9:50 am  & 9:51 am  & 9:52 am  & 1 & ID VALIDATION & 0  & C4\\
+10/13/25 & S15 & 10:03 am & 10:04 am & 10:05 am & 1 & ID VALIDATION & 0  & C4\\
+10/13/25 & S16 & 10:05 am & 10:06 am & 10:08 am & 2 & ID VALIDATION & 0  & C4\\
+10/13/25 & S17 & 10:10 am & 10:11 am & 10:13 am & 2 & ID VALIDATION & 0  & C4\\
+10/13/25 & S18 & 10:37 am & 10:37 am & 10:38 am & 1 & ID VALIDATION & 0  & C4\\
+10/13/25 & S19 & 10:38 am & 10:38 am & 10:40 am & 2 & ID VALIDATION & 0  & C4\\
+10/13/25 & S20 & 10:40 am & 10:40 am & 10:41 am & 1 & ID VALIDATION & 0  & C4\\
+10/14/25 & S1  & 6:19 am  & 8:05 am  & 8:06 am  & 1 & ID VALIDATION & 6  & C4\\
+10/14/25 & S2  & 6:27 am  & 8:06 am  & 8:08 am  & 2 & ID VALIDATION & 5  & C4\\
+10/14/25 & S3  & 6:48 am  & 8:08 am  & 8:10 am  & 2 & ID VALIDATION & 4  & C4\\
+10/14/25 & S4  & 6:56 am  & 8:10 am  & 8:12 am  & 2 & ID VALIDATION & 4  & C4\\
+10/14/25 & S5  & 7:14 am  & 8:12 am  & 8:13 am  & 1 & ID VALIDATION & 3  & C4\\
+10/14/25 & S6  & 7:37 am  & 8:13 am  & 8:14 am  & 1 & ID VALIDATION & 2  & C4\\
+10/14/25 & S7  & 7:56 am  & 8:14 am  & 8:15 am  & 1 & ID VALIDATION & 1  & C4\\
+10/14/25 & S8  & 8:10 am  & 8:15 am  & 8:16 am  & 1 & ID VALIDATION & 0  & C4\\
+10/14/25 & S9  & 8:36 am  & 8:37 am  & 8:38 am  & 1 & ID VALIDATION & 0  & C4\\
+10/14/25 & S10 & 8:39 am  & 8:40 am  & 8:42 am  & 2 & ID VALIDATION & 0  & C4\\
+10/14/25 & S11 & 8:48 am  & 8:49 am  & 8:50 am  & 1 & ID VALIDATION & 0  & C4\\
+10/14/25 & S12 & 8:56 am  & 8:57 am  & 8:59 am  & 2 & ID VALIDATION & 0  & C4\\
+10/14/25 & S13 & 9:03 am  & 9:04 am  & 9:05 am  & 1 & ID VALIDATION & 0  & C4\\
+10/14/25 & S14 & 9:35 am  & 9:36 am  & 9:37 am  & 1 & ID VALIDATION & 0  & C4\\
+10/14/25 & S15 & 9:47 am  & 9:48 am  & 9:49 am  & 1 & ID VALIDATION & 0  & C4\\
+10/14/25 & S16 & 10:01 am & 10:02 am & 10:04 am & 2 & ID VALIDATION & 0  & C4\\
+10/15/25 & S1  & 6:34 am  & 8:00 am  & 8:01 am  & 1 & ID VALIDATION & 7  & C4\\
+10/15/25 & S2  & 6:46 am  & 8:01 am  & 8:02 am  & 1 & ID VALIDATION & 6  & C4\\
+10/15/25 & S3  & 6:48 am  & 8:02 am  & 8:03 am  & 1 & ID VALIDATION & 5  & C4\\
+10/15/25 & S4  & 6:58 am  & 8:03 am  & 8:04 am  & 1 & ID VALIDATION & 4  & C4\\
+10/15/25 & S5  & 7:00 am  & 8:04 am  & 8:05 am  & 1 & ID VALIDATION & 3  & C4\\
+10/15/25 & S6  & 7:46 am  & 8:05 am  & 8:07 am  & 2 & ID VALIDATION & 2  & C4\\
+10/15/25 & S7  & 7:52 am  & 8:07 am  & 8:09 am  & 2 & ID VALIDATION & 1  & C4\\
+10/15/25 & S8  & 8:05 am  & 8:09 am  & 8:11 am  & 2 & ID VALIDATION & 0  & C4\\
+10/15/25 & S9  & 8:16 am  & 8:17 am  & 8:18 am  & 1 & ID VALIDATION & 0  & C4\\
+10/15/25 & S10 & 8:18 am  & 8:19 am  & 8:21 am  & 2 & ID VALIDATION & 0  & C4\\
+10/15/25 & S11 & 8:24 am  & 8:25 am  & 8:26 am  & 1 & ID VALIDATION & 0  & C4\\
+10/15/25 & S12 & 9:15 am  & 9:16 am  & 9:18 am  & 2 & ID VALIDATION & 0  & C4\\
+10/15/25 & S13 & 9:19 am  & 9:19 am  & 9:20 am  & 1 & ID VALIDATION & 0  & C4\\
+10/15/25 & S14 & 9:28 am  & 9:29 am  & 9:31 am  & 2 & ID VALIDATION & 0  & C4\\
+10/15/25 & S15 & 9:34 am  & 9:35 am  & 9:37 am  & 2 & ID VALIDATION & 0  & C4\\
+10/15/25 & S16 & 9:40 am  & 9:41 am  & 9:42 am  & 1 & ID VALIDATION & 0  & C4\\
+10/15/25 & S17 & 9:59 am  & 10:00 am & 10:01 am & 1 & ID VALIDATION & 0  & C4\\
+10/15/25 & S18 & 10:04 am & 10:05 am & 10:06 am & 1 & ID VALIDATION & 0  & C4\\
+10/15/25 & S19 & 10:16 am & 10:17 am & 10:18 am & 1 & ID VALIDATION & 0  & C4\\
+10/15/25 & S20 & 10:45 am & 10:46 am & 10:47 am & 1 & ID VALIDATION & 0  & C4\\
+10/15/25 & S21 & 10:57 am & 10:58 am & 10:59 am & 1 & ID VALIDATION & 0  & C4\\
+10/15/25 & S22 & 11:16 am & 11:17 am & 11:19 am & 2 & ID VALIDATION & 0  & C4\\
+10/15/25 & S23 & 11:46 am & 11:47 am & 11:48 am & 1 & ID VALIDATION & 0  & C4\\
+10/15/25 & S24 & 11:56 am & 11:57 am & 11:58 am & 1 & ID VALIDATION & 0  & C4\\
+10/15/25 & S25 & 1:12 pm  & 1:13 pm  & 1:14 pm  & 1 & ID VALIDATION & 0  & C4\\
+10/16/25 & S1  & 7:21 am  & 8:10 am  & 8:12 am  & 2 & ID VALIDATION & 3  & C4\\
+10/16/25 & S2  & 7:29 am  & 8:18 am  & 8:19 am  & 1 & ID VALIDATION & 2  & C4\\
+10/16/25 & S3  & 7:44 am  & 8:45 am  & 8:46 am  & 1 & ID VALIDATION & 1  & C4\\
+10/16/25 & S4  & 8:01 am  & 8:46 am  & 8:47 am  & 1 & ID VALIDATION & 0  & C4\\
+10/16/25 & S5  & 8:28 am  & 8:47 am  & 8:48 am  & 1 & ID VALIDATION & 0  & C4\\
+10/16/25 & S6  & 8:45 am  & 8:48 am  & 8:50 am  & 2 & ID VALIDATION & 1  & C4\\
+10/16/25 & S7  & 9:15 am  & 9:16 am  & 9:18 am  & 2 & ID VALIDATION & 0  & C4\\
+10/16/25 & S8  & 9:27 am  & 9:28 am  & 9:30 am  & 2 & ID VALIDATION & 0  & C4\\
+10/16/25 & S9  & 9:56 am  & 9:57 am  & 9:58 am  & 1 & ID VALIDATION & 0  & C4\\
+10/16/25 & S10 & 10:02 am & 10:03 am & 10:04 am & 1 & ID VALIDATION & 0  & C4\\
+10/16/25 & S11 & 10:18 am & 10:19 am & 10:21 am & 2 & ID VALIDATION & 0  & C4\\
+10/17/25 & S1  & 6:48 am  & 8:30 am  & 8:32 am  & 2 & ID VALIDATION & 6  & C4\\
+10/17/25 & S2  & 6:56 am  & 8:32 am  & 8:34 am  & 2 & ID VALIDATION & 5  & C4\\
+10/17/25 & S3  & 7:12 am  & 8:34 am  & 8:36 am  & 2 & ID VALIDATION & 4  & C4\\
+10/17/25 & S4  & 7:16 am  & 8:36 am  & 8:38 am  & 2 & ID VALIDATION & 3  & C4\\
+10/17/25 & S5  & 7:34 am  & 8:38 am  & 8:40 am  & 2 & ID VALIDATION & 2  & C4\\
+10/17/25 & S6  & 7:56 am  & 8:40 am  & 8:41 am  & 1 & ID VALIDATION & 1  & C4\\
+10/17/25 & S7  & 8:37 am  & 8:41 am  & 8:42 am  & 1 & ID VALIDATION & 0  & C4\\
+10/17/25 & S8  & 8:57 am  & 8:58 am  & 9:00 am  & 2 & ID VALIDATION & 0  & C4\\
+10/17/25 & S9  & 9:34 am  & 9:35 am  & 9:36 am  & 1 & ID VALIDATION & 0  & C4\\
+10/17/25 & S10 & 9:48 am  & 9:49 am  & 9:50 am  & 1 & ID VALIDATION & 0  & C4\\
+10/17/25 & S11 & 9:58 am  & 9:59 am  & 10:00 am & 1 & ID VALIDATION & 0  & C4\\
+10/17/25 & S12 & 10:00 am & 10:00 am & 10:02 am & 2 & ID VALIDATION & 0  & C4\\ \hline
+\end{tabular}%
+}
+\end{table}	 
+
+\chapter{Non-Disclosure Agreement Form(NDA)}
+
+\begin{figure}[htb]
+	\centering	\includegraphics[width=0.85\linewidth]{figures/Tiffany_1.jpg}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Tiffany_2.jpg}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Freddie_1.jpg}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Freddie_2.jpg}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Oñate_1.jpg}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Oñate_2.jpg}
+\end{figure}
+
+\chapter{JOINT AFFIDAVIT OF UNDERTAKING (Plagiarism)}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/affidavit_1.jpg}
+\end{figure}
+
+\chapter{Project Team Assignment Form}
+
+\chapter{Role Acceptance Form}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.85\linewidth]{figures/Kaela_1.jpg}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Juan_2.jpg}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Jayvie_3.jpg}
+\end{figure}
+
+\chapter{Final Project Title Form}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.85\linewidth]{figures/Project_1.jpg}
+\end{figure}
+
+\chapter{Thesis/Capstone Project Hearing Form}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.85\linewidth]{figures/HearingFormTD_1.jpg}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/HearingPOD_2.jpg}
+\end{figure}
+
+\chapter{Recommendations, Suggestions and Comment (RSC)}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.85\linewidth]{figures/Recommend.jpg}
+\end{figure}
+
+\chapter{Letter for Data Gathering}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.85\linewidth]{figures/Letter.jpg}
+\end{figure}
+
+\chapter{Consultation Log Forms}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.85\linewidth]{figures/Consultation_1.jpg}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Consultation_2.jpg}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Consultation_3.jpg}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Consultation_4.jpg}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Consultation_5.jpg}
+\end{figure}	  
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Consultation_6.jpg}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Consultation_7.jpg}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Consultation_8.jpg}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Consultation_9.jpg}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Consultation_10.jpg}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Consultation_11.jpg}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Consultation_12.jpg}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{figures/Consultation_13.jpg}
+\end{figure}
+
+
+\chapter{Language Editing Certification}
+\centering
+
+This is to certify that the undersigned has reviewed and went through all the pages of the Bachelor of Science in Computer Science thesis manuscript titled \\
+
+\textbf{"COMPARATIVE ANALYSIS OF DISCRETE-EVENT AND CONTINUOUS SIMULATION MODELS FOR STUDENTS FLOW OPTIMIZATION"} \\
+
+\textbf{May Angeline M. Regaspi}, \textbf{Abegail C. Repia}, \textbf{Joy Ann M. Ruin}, as against the set of structural rules that govern research writing in accord with the composition of sentences, phrases, and words in the English language.
+ \newline \newline \newline \\
+
+\noindent \textbf{MS. JAYVIE B. MARGATE} \\
+\textit{Language Editor} \\
+
+Date:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+
+\chapter{Secretary's Certification}
+\centering
+
+This is to certify that the undersigned has provided accurate recommendations, suggestions, and comments unanimously agreed and approved by the panel of examiners during the oral examination of the thesis titled \\ \textbf{"COMPARATIVE ANALYSIS OF DISCRETE-EVENT AND CONTINUOUS SIMULATION MODELS FOR STUDENTS FLOW OPTIMIZATION"} \\  prepared and submitted by \textbf{May Angeline M. Regaspi}, \textbf{Abegail C. Repia}, \textbf{Joy Ann M. Ruin}, and that the same have not been amended, modified or obliterated. \newline \newline \newline \\
+
+
+
+\textbf{MS. MARRI GRACE MORATA} \\
+\textit{Secretary} \\
+
+
+Date:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\end{theappendices}
